@@ -26,8 +26,8 @@ class RoomInput(BaseModel):
     """
     RoomInput
     """ # noqa: E501
-    key_id: Optional[StrictStr] = Field(default='674f8943bf63ea47fb683894', description="Reference ID of the key.")
-    room_type_id: Optional[StrictStr] = Field(default='674f8943bf63ea47fb683895', description="Reference ID of the RoomType.")
+    key_id: Optional[StrictStr] = Field(default='674f89f3caad30d1418f12bd', description="Reference ID of the key.")
+    room_type_id: Optional[StrictStr] = Field(default='674f89f3caad30d1418f12be', description="Reference ID of the RoomType.")
     number: StrictStr = Field(description="The number of rooms, e.g., 203.")
     priority: StrictInt = Field(description="The OTA system will give priority to rooms with a higher value to guests. If the priorities are the same, then it is random.")
     __properties: ClassVar[List[str]] = ["key_id", "room_type_id", "number", "priority"]
@@ -83,8 +83,8 @@ class RoomInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '674f8943bf63ea47fb683894',
-            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '674f8943bf63ea47fb683895',
+            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '674f89f3caad30d1418f12bd',
+            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '674f89f3caad30d1418f12be',
             "number": obj.get("number"),
             "priority": obj.get("priority")
         })
