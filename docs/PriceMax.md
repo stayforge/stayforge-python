@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.price_max import PriceMax
+from stayforge.models.price_max import PriceMax
 
 # TODO update the JSON string below
 json = "{}"

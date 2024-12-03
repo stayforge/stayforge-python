@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.stayforge import Stayforge
+from stayforge.models.stayforge import Stayforge
 
 class TestStayforge(unittest.TestCase):
     """Stayforge unit test stubs"""

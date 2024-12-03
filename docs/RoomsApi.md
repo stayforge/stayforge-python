@@ -1,4 +1,4 @@
-# openapi_client.RoomsApi
+# stayforge.RoomsApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,24 +20,24 @@ Create Room
 
 
 ```python
-import openapi_client
-from openapi_client.models.room_input import RoomInput
-from openapi_client.models.room_responses import RoomResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.room_input import RoomInput
+from stayforge.models.room_responses import RoomResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.RoomsApi(api_client)
-    room_input = openapi_client.RoomInput() # RoomInput | 
+    api_instance = stayforge.RoomsApi(api_client)
+    room_input = stayforge.RoomInput() # RoomInput | 
 
     try:
         # Create Room
@@ -89,22 +89,22 @@ Delete Room
 
 
 ```python
-import openapi_client
-from openapi_client.models.room_responses import RoomResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.room_responses import RoomResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.RoomsApi(api_client)
+    api_instance = stayforge.RoomsApi(api_client)
     id = 'id_example' # str | 
 
     try:
@@ -156,22 +156,22 @@ Get Room
 
 
 ```python
-import openapi_client
-from openapi_client.models.room_responses import RoomResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.room_responses import RoomResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.RoomsApi(api_client)
+    api_instance = stayforge.RoomsApi(api_client)
     id = 'id_example' # str | 
 
     try:
@@ -223,22 +223,22 @@ Get Rooms
 
 
 ```python
-import openapi_client
-from openapi_client.models.room_responses import RoomResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.room_responses import RoomResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.RoomsApi(api_client)
+    api_instance = stayforge.RoomsApi(api_client)
     name = 'name_example' # str |  (optional)
     address = 'address_example' # str |  (optional)
     telephone = 'telephone_example' # str |  (optional)
@@ -294,25 +294,25 @@ Put Room
 
 
 ```python
-import openapi_client
-from openapi_client.models.room_input import RoomInput
-from openapi_client.models.room_responses import RoomResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.room_input import RoomInput
+from stayforge.models.room_responses import RoomResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.RoomsApi(api_client)
+    api_instance = stayforge.RoomsApi(api_client)
     id = 'id_example' # str | 
-    room_input = openapi_client.RoomInput() # RoomInput | 
+    room_input = stayforge.RoomInput() # RoomInput | 
 
     try:
         # Put Room

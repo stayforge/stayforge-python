@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.webhooks_manager_input import WebhooksManagerInput
+from stayforge.models.webhooks_manager_input import WebhooksManagerInput
 
 # TODO update the JSON string below
 json = "{}"

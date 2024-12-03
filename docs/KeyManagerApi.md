@@ -1,4 +1,4 @@
-# openapi_client.KeyManagerApi
+# stayforge.KeyManagerApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,24 +20,24 @@ Create Key
 
 
 ```python
-import openapi_client
-from openapi_client.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
-from openapi_client.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
+from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.KeyManagerApi(api_client)
-    api_key_manager_models_key_input = openapi_client.ApiKeyManagerModelsKeyInput() # ApiKeyManagerModelsKeyInput | 
+    api_instance = stayforge.KeyManagerApi(api_client)
+    api_key_manager_models_key_input = stayforge.ApiKeyManagerModelsKeyInput() # ApiKeyManagerModelsKeyInput | 
 
     try:
         # Create Key
@@ -89,22 +89,22 @@ Delete Key
 
 
 ```python
-import openapi_client
-from openapi_client.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.KeyManagerApi(api_client)
+    api_instance = stayforge.KeyManagerApi(api_client)
     id = 'id_example' # str | 
 
     try:
@@ -156,22 +156,22 @@ Get Key
 
 
 ```python
-import openapi_client
-from openapi_client.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.KeyManagerApi(api_client)
+    api_instance = stayforge.KeyManagerApi(api_client)
     id = 'id_example' # str | 
 
     try:
@@ -223,22 +223,22 @@ Get Key By Num
 
 
 ```python
-import openapi_client
-from openapi_client.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.KeyManagerApi(api_client)
+    api_instance = stayforge.KeyManagerApi(api_client)
     num = 'num_example' # str |  (optional)
 
     try:
@@ -290,25 +290,25 @@ Put Key
 
 
 ```python
-import openapi_client
-from openapi_client.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
-from openapi_client.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
+from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.KeyManagerApi(api_client)
+    api_instance = stayforge.KeyManagerApi(api_client)
     id = 'id_example' # str | 
-    api_key_manager_models_key_input = openapi_client.ApiKeyManagerModelsKeyInput() # ApiKeyManagerModelsKeyInput | 
+    api_key_manager_models_key_input = stayforge.ApiKeyManagerModelsKeyInput() # ApiKeyManagerModelsKeyInput | 
 
     try:
         # Put Key

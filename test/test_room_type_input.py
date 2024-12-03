@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.room_type_input import RoomTypeInput
+from stayforge.models.room_type_input import RoomTypeInput
 
 class TestRoomTypeInput(unittest.TestCase):
     """RoomTypeInput unit test stubs"""

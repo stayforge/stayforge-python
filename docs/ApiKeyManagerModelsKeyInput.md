@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **str** | The name of the hotel key. By default, it combines a base name with a random town. | 
 **num** | **str** | Order number | [optional] [default to '']
-**effective_at** | **str** | Effective at | [optional] [default to '2024-12-03T19:39:40.927036Z']
-**ineffective_at** | **str** | Ineffective at | [optional] [default to '2024-12-04T19:39:40.927068Z']
+**effective_at** | **str** | Effective at | [optional] [default to '2024-12-03T20:46:46.590373Z']
+**ineffective_at** | **str** | Ineffective at | [optional] [default to '2024-12-04T20:46:46.590405Z']
 
 ## Example
 
 ```python
-from openapi_client.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
+from stayforge.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
 
 # TODO update the JSON string below
 json = "{}"

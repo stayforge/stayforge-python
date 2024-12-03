@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.room_input import RoomInput
+from stayforge.models.room_input import RoomInput
 
 class TestRoomInput(unittest.TestCase):
     """RoomInput unit test stubs"""
@@ -35,8 +35,8 @@ class TestRoomInput(unittest.TestCase):
         model = RoomInput()
         if include_optional:
             return RoomInput(
-                key_id = '674f5e7cbd127f5cafd0e813',
-                room_type_id = '674f5e7cbd127f5cafd0e814',
+                key_id = '674f6e36ae65a0dc1f51f272',
+                room_type_id = '674f6e36ae65a0dc1f51f273',
                 number = '',
                 priority = 56
             )

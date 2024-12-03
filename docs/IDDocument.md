@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.id_document import IDDocument
+from stayforge.models.id_document import IDDocument
 
 # TODO update the JSON string below
 json = "{}"

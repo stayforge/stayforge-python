@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.guest import Guest
+from stayforge.models.guest import Guest
 
 # TODO update the JSON string below
 json = "{}"

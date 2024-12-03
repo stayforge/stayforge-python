@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.healthcheck_api import HealthcheckApi
+from apis.healthcheck_api import HealthcheckApi
 
 
 class TestHealthcheckApi(unittest.TestCase):

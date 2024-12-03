@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.key_manager_api import KeyManagerApi
+from apis.key_manager_api import KeyManagerApi
 
 
 class TestKeyManagerApi(unittest.TestCase):

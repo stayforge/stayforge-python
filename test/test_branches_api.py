@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.branches_api import BranchesApi
+from apis.branches_api import BranchesApi
 
 
 class TestBranchesApi(unittest.TestCase):

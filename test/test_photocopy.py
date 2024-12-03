@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.photocopy import Photocopy
+from stayforge.models.photocopy import Photocopy
 
 class TestPhotocopy(unittest.TestCase):
     """Photocopy unit test stubs"""

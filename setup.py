@@ -20,8 +20,8 @@ from setuptools import setup, find_packages  # noqa: H301
 #
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
-NAME = "openapi-client"
-VERSION = "1.0.0"
+NAME = "StayForge SDK"
+VERSION = ""
 PYTHON_REQUIRES = ">= 3.8"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 3.0.0",
@@ -45,5 +45,5 @@ setup(
     long_description="""\
     This is a basic API description.
     """,  # noqa: E501
-    package_data={"openapi_client": ["py.typed"]},
+    package_data={"stayforge": ["py.typed"]},
 )

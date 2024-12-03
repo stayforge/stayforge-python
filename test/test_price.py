@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.price import Price
+from stayforge.models.price import Price
 
 class TestPrice(unittest.TestCase):
     """Price unit test stubs"""

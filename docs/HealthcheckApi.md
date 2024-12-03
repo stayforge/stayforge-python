@@ -1,4 +1,4 @@
-# openapi_client.HealthcheckApi
+# stayforge.HealthcheckApi
 
 All URIs are relative to *http://localhost*
 
@@ -19,22 +19,22 @@ Stayforge API Info
 
 
 ```python
-import openapi_client
-from openapi_client.models.stayforge import Stayforge
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.stayforge import Stayforge
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HealthcheckApi(api_client)
+    api_instance = stayforge.HealthcheckApi(api_client)
 
     try:
         # Info
@@ -83,21 +83,21 @@ ping! pong! ping!ping!ping!......pong?
 
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HealthcheckApi(api_client)
+    api_instance = stayforge.HealthcheckApi(api_client)
 
     try:
         # Ping

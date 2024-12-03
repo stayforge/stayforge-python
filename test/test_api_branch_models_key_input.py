@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.api_branch_models_key_input import ApiBranchModelsKeyInput
+from stayforge.models.api_branch_models_key_input import ApiBranchModelsKeyInput
 
 class TestApiBranchModelsKeyInput(unittest.TestCase):
     """ApiBranchModelsKeyInput unit test stubs"""

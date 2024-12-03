@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.price_min import PriceMin
+from stayforge.models.price_min import PriceMin
 
 class TestPriceMin(unittest.TestCase):
     """PriceMin unit test stubs"""
