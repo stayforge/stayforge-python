@@ -1,4 +1,4 @@
-# openapi_client.WebhooksManagerApi
+# stayforge.WebhooksManagerApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,24 +20,24 @@ Create Webhooks Profile
 
 
 ```python
-import openapi_client
-from openapi_client.models.webhooks_manager_input import WebhooksManagerInput
-from openapi_client.models.webhooks_manager_responses import WebhooksManagerResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.webhooks_manager_input import WebhooksManagerInput
+from stayforge.models.webhooks_manager_responses import WebhooksManagerResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.WebhooksManagerApi(api_client)
-    webhooks_manager_input = openapi_client.WebhooksManagerInput() # WebhooksManagerInput | 
+    api_instance = stayforge.WebhooksManagerApi(api_client)
+    webhooks_manager_input = stayforge.WebhooksManagerInput() # WebhooksManagerInput | 
 
     try:
         # Create Webhooks Profile
@@ -89,22 +89,22 @@ Delete Webhooks Profile
 
 
 ```python
-import openapi_client
-from openapi_client.models.webhooks_manager_responses import WebhooksManagerResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.webhooks_manager_responses import WebhooksManagerResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.WebhooksManagerApi(api_client)
+    api_instance = stayforge.WebhooksManagerApi(api_client)
     id = 'id_example' # str | 
 
     try:
@@ -156,22 +156,22 @@ Get Webhooks Profile
 
 
 ```python
-import openapi_client
-from openapi_client.models.webhooks_manager_responses import WebhooksManagerResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.webhooks_manager_responses import WebhooksManagerResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.WebhooksManagerApi(api_client)
+    api_instance = stayforge.WebhooksManagerApi(api_client)
     webhook_name = 'webhook_name_example' # str | A friendly name you can remember. (optional)
     endpoint = 'endpoint_example' # str | The URL endpoint where the webhook is to be sent, e.g., `https://youapplocation/webhook/endpoint`. (optional)
     catch_path = 'catch_path_example' # str | This refers to the API within Stayforage, the path part of its URL e.g., `/api/order/`. (optional)
@@ -231,22 +231,22 @@ Get Webhooks Profile
 
 
 ```python
-import openapi_client
-from openapi_client.models.webhooks_manager_responses import WebhooksManagerResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.webhooks_manager_responses import WebhooksManagerResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.WebhooksManagerApi(api_client)
+    api_instance = stayforge.WebhooksManagerApi(api_client)
     id = 'id_example' # str | 
 
     try:
@@ -298,25 +298,25 @@ Put Webhooks Profile
 
 
 ```python
-import openapi_client
-from openapi_client.models.webhooks_manager_input import WebhooksManagerInput
-from openapi_client.models.webhooks_manager_responses import WebhooksManagerResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.webhooks_manager_input import WebhooksManagerInput
+from stayforge.models.webhooks_manager_responses import WebhooksManagerResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.WebhooksManagerApi(api_client)
+    api_instance = stayforge.WebhooksManagerApi(api_client)
     id = 'id_example' # str | 
-    webhooks_manager_input = openapi_client.WebhooksManagerInput() # WebhooksManagerInput | 
+    webhooks_manager_input = stayforge.WebhooksManagerInput() # WebhooksManagerInput | 
 
     try:
         # Put Webhooks Profile

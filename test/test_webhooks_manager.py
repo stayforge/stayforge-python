@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.webhooks_manager import WebhooksManager
+from stayforge.models.webhooks_manager import WebhooksManager
 
 class TestWebhooksManager(unittest.TestCase):
     """WebhooksManager unit test stubs"""
@@ -35,7 +35,7 @@ class TestWebhooksManager(unittest.TestCase):
         model = WebhooksManager()
         if include_optional:
             return WebhooksManager(
-                id = '674f5e7cbd127f5cafd0e810',
+                id = '674f6e36ae65a0dc1f51f26f',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 webhook_name = '',

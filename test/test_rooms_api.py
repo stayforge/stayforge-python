@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.rooms_api import RoomsApi
+from apis.rooms_api import RoomsApi
 
 
 class TestRoomsApi(unittest.TestCase):

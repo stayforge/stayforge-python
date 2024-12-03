@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.order_input import OrderInput
+from stayforge.models.order_input import OrderInput
 
 class TestOrderInput(unittest.TestCase):
     """OrderInput unit test stubs"""
@@ -37,7 +37,7 @@ class TestOrderInput(unittest.TestCase):
             return OrderInput(
                 num = '',
                 room_id = '',
-                guest = openapi_client.models.guest.Guest(
+                guest = stayforge.models.guest.Guest(
                     first_name = '', 
                     middle_name = '', 
                     last_name = '', 
@@ -49,7 +49,7 @@ class TestOrderInput(unittest.TestCase):
                     address = '', 
                     occupation = '', 
                     passport_number = '', 
-                    id_document = openapi_client.models.id_document.IDDocument(
+                    id_document = stayforge.models.id_document.IDDocument(
                         mrz = '', 
                         photocopy = null, ), ),
                 type = '',

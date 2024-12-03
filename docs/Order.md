@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '674f5e7cbd127f5cafd0e810']
+**id** | **str** | Reference ID of the key. | [optional] [default to '674f6e36ae65a0dc1f51f26f']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **num** | **str** | Order number | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.order import Order
+from stayforge.models.order import Order
 
 # TODO update the JSON string below
 json = "{}"

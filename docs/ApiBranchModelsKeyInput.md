@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.api_branch_models_key_input import ApiBranchModelsKeyInput
+from stayforge.models.api_branch_models_key_input import ApiBranchModelsKeyInput
 
 # TODO update the JSON string below
 json = "{}"

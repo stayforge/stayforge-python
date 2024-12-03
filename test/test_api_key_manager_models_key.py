@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.api_key_manager_models_key import ApiKeyManagerModelsKey
+from stayforge.models.api_key_manager_models_key import ApiKeyManagerModelsKey
 
 class TestApiKeyManagerModelsKey(unittest.TestCase):
     """ApiKeyManagerModelsKey unit test stubs"""
@@ -35,13 +35,13 @@ class TestApiKeyManagerModelsKey(unittest.TestCase):
         model = ApiKeyManagerModelsKey()
         if include_optional:
             return ApiKeyManagerModelsKey(
-                id = '674f5e7cbd127f5cafd0e810',
+                id = '674f6e36ae65a0dc1f51f26f',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 url = '',
                 num = '',
-                effective_at = '2024-12-03T19:39:40.927036Z',
-                ineffective_at = '2024-12-04T19:39:40.927068Z'
+                effective_at = '2024-12-03T20:46:46.590373Z',
+                ineffective_at = '2024-12-04T20:46:46.590405Z'
             )
         else:
             return ApiKeyManagerModelsKey(

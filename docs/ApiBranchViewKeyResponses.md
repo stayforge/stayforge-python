@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
+from stayforge.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
 
 # TODO update the JSON string below
 json = "{}"

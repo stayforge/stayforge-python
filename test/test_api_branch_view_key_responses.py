@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
+from stayforge.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
 
 class TestApiBranchViewKeyResponses(unittest.TestCase):
     """ApiBranchViewKeyResponses unit test stubs"""
@@ -36,8 +36,8 @@ class TestApiBranchViewKeyResponses(unittest.TestCase):
         if include_optional:
             return ApiBranchViewKeyResponses(
                 data = [
-                    openapi_client.models.key.Key(
-                        id = '674f5e7cbd127f5cafd0e810', 
+                    stayforge.models.key.Key(
+                        id = '674f6e36ae65a0dc1f51f26f', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '', 
@@ -48,14 +48,14 @@ class TestApiBranchViewKeyResponses(unittest.TestCase):
                 detail = 'Successfully.',
                 status = 56,
                 used_time = 1.337,
-                stayforge = openapi_client.models.stayforge.Stayforge(
+                stayforge = stayforge.models.stayforge.Stayforge(
                     ver = '1.0.0', )
             )
         else:
             return ApiBranchViewKeyResponses(
                 data = [
-                    openapi_client.models.key.Key(
-                        id = '674f5e7cbd127f5cafd0e810', 
+                    stayforge.models.key.Key(
+                        id = '674f6e36ae65a0dc1f51f26f', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '', 

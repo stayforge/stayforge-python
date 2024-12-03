@@ -1,4 +1,4 @@
-# openapi_client.OrdersApi
+# stayforge.OrdersApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,24 +22,24 @@ If the order number is None when creating, it will be automatically created and 
 
 
 ```python
-import openapi_client
-from openapi_client.models.order_input import OrderInput
-from openapi_client.models.order_responses import OrderResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.order_input import OrderInput
+from stayforge.models.order_responses import OrderResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.OrdersApi(api_client)
-    order_input = openapi_client.OrderInput() # OrderInput | 
+    api_instance = stayforge.OrdersApi(api_client)
+    order_input = stayforge.OrderInput() # OrderInput | 
 
     try:
         # Create Order
@@ -93,22 +93,22 @@ Delete Order
 
 
 ```python
-import openapi_client
-from openapi_client.models.order_responses import OrderResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.order_responses import OrderResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.OrdersApi(api_client)
+    api_instance = stayforge.OrdersApi(api_client)
     id = 'id_example' # str | 
 
     try:
@@ -160,22 +160,22 @@ Get Order By Id
 
 
 ```python
-import openapi_client
-from openapi_client.models.order_responses import OrderResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.order_responses import OrderResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.OrdersApi(api_client)
+    api_instance = stayforge.OrdersApi(api_client)
     id = 'id_example' # str | 
 
     try:
@@ -227,22 +227,22 @@ Get Order By Num
 
 
 ```python
-import openapi_client
-from openapi_client.models.order_responses import OrderResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.order_responses import OrderResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.OrdersApi(api_client)
+    api_instance = stayforge.OrdersApi(api_client)
     num = 'num_example' # str | 
     get_all = False # bool | Get all orders with the same order number. When it's `true`, This time all Orders are returned, otherwise `false` **only the latest Order will be returned**. (optional) (default to False)
 
@@ -298,21 +298,21 @@ Call this API or Click `Try it out` and `Execute` to see the order types you can
 
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.OrdersApi(api_client)
+    api_instance = stayforge.OrdersApi(api_client)
 
     try:
         # Get Order Types

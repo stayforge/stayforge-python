@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
+from stayforge.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
 
 class TestApiKeyManagerModelsKeyInput(unittest.TestCase):
     """ApiKeyManagerModelsKeyInput unit test stubs"""
@@ -37,8 +37,8 @@ class TestApiKeyManagerModelsKeyInput(unittest.TestCase):
             return ApiKeyManagerModelsKeyInput(
                 url = '',
                 num = '',
-                effective_at = '2024-12-03T19:39:40.927036Z',
-                ineffective_at = '2024-12-04T19:39:40.927068Z'
+                effective_at = '2024-12-03T20:46:46.590373Z',
+                ineffective_at = '2024-12-04T20:46:46.590405Z'
             )
         else:
             return ApiKeyManagerModelsKeyInput(

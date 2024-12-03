@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.webhooks_manager_responses import WebhooksManagerResponses
+from stayforge.models.webhooks_manager_responses import WebhooksManagerResponses
 
 class TestWebhooksManagerResponses(unittest.TestCase):
     """WebhooksManagerResponses unit test stubs"""
@@ -36,8 +36,8 @@ class TestWebhooksManagerResponses(unittest.TestCase):
         if include_optional:
             return WebhooksManagerResponses(
                 data = [
-                    openapi_client.models.webhooks_manager.WebhooksManager(
-                        id = '674f5e7cbd127f5cafd0e810', 
+                    stayforge.models.webhooks_manager.WebhooksManager(
+                        id = '674f6e36ae65a0dc1f51f26f', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         webhook_name = '', 
@@ -49,14 +49,14 @@ class TestWebhooksManagerResponses(unittest.TestCase):
                 detail = 'Successfully.',
                 status = 56,
                 used_time = 1.337,
-                stayforge = openapi_client.models.stayforge.Stayforge(
+                stayforge = stayforge.models.stayforge.Stayforge(
                     ver = '1.0.0', )
             )
         else:
             return WebhooksManagerResponses(
                 data = [
-                    openapi_client.models.webhooks_manager.WebhooksManager(
-                        id = '674f5e7cbd127f5cafd0e810', 
+                    stayforge.models.webhooks_manager.WebhooksManager(
+                        id = '674f6e36ae65a0dc1f51f26f', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         webhook_name = '', 

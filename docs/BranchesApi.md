@@ -1,4 +1,4 @@
-# openapi_client.BranchesApi
+# stayforge.BranchesApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,24 +20,24 @@ Create Key
 
 
 ```python
-import openapi_client
-from openapi_client.models.api_branch_models_key_input import ApiBranchModelsKeyInput
-from openapi_client.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.api_branch_models_key_input import ApiBranchModelsKeyInput
+from stayforge.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.BranchesApi(api_client)
-    api_branch_models_key_input = openapi_client.ApiBranchModelsKeyInput() # ApiBranchModelsKeyInput | 
+    api_instance = stayforge.BranchesApi(api_client)
+    api_branch_models_key_input = stayforge.ApiBranchModelsKeyInput() # ApiBranchModelsKeyInput | 
 
     try:
         # Create Key
@@ -89,22 +89,22 @@ Delete Key
 
 
 ```python
-import openapi_client
-from openapi_client.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.BranchesApi(api_client)
+    api_instance = stayforge.BranchesApi(api_client)
     id = 'id_example' # str | 
 
     try:
@@ -156,22 +156,22 @@ Get Key
 
 
 ```python
-import openapi_client
-from openapi_client.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.BranchesApi(api_client)
+    api_instance = stayforge.BranchesApi(api_client)
     id = 'id_example' # str | 
 
     try:
@@ -223,22 +223,22 @@ Get Keys
 
 
 ```python
-import openapi_client
-from openapi_client.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.BranchesApi(api_client)
+    api_instance = stayforge.BranchesApi(api_client)
     name = 'name_example' # str |  (optional)
     address = 'address_example' # str |  (optional)
     telephone = 'telephone_example' # str |  (optional)
@@ -294,25 +294,25 @@ Put Key
 
 
 ```python
-import openapi_client
-from openapi_client.models.api_branch_models_key_input import ApiBranchModelsKeyInput
-from openapi_client.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
-from openapi_client.rest import ApiException
+import stayforge
+from stayforge.models.api_branch_models_key_input import ApiBranchModelsKeyInput
+from stayforge.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
+from stayforge.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.BranchesApi(api_client)
+    api_instance = stayforge.BranchesApi(api_client)
     id = 'id_example' # str | 
-    api_branch_models_key_input = openapi_client.ApiBranchModelsKeyInput() # ApiBranchModelsKeyInput | 
+    api_branch_models_key_input = stayforge.ApiBranchModelsKeyInput() # ApiBranchModelsKeyInput | 
 
     try:
         # Put Key

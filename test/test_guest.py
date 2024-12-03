@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.guest import Guest
+from stayforge.models.guest import Guest
 
 class TestGuest(unittest.TestCase):
     """Guest unit test stubs"""
@@ -46,13 +46,13 @@ class TestGuest(unittest.TestCase):
                 address = '',
                 occupation = '',
                 passport_number = '',
-                id_document = openapi_client.models.id_document.IDDocument(
+                id_document = stayforge.models.id_document.IDDocument(
                     mrz = '', 
                     photocopy = null, )
             )
         else:
             return Guest(
-                id_document = openapi_client.models.id_document.IDDocument(
+                id_document = stayforge.models.id_document.IDDocument(
                     mrz = '', 
                     photocopy = null, ),
         )

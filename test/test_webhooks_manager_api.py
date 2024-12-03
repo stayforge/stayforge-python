@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.webhooks_manager_api import WebhooksManagerApi
+from apis.webhooks_manager_api import WebhooksManagerApi
 
 
 class TestWebhooksManagerApi(unittest.TestCase):

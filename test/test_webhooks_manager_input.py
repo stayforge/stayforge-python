@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.webhooks_manager_input import WebhooksManagerInput
+from stayforge.models.webhooks_manager_input import WebhooksManagerInput
 
 class TestWebhooksManagerInput(unittest.TestCase):
     """WebhooksManagerInput unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.price_max import PriceMax
+from stayforge.models.price_max import PriceMax
 
 class TestPriceMax(unittest.TestCase):
     """PriceMax unit test stubs"""

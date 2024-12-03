@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.id_document import IDDocument
+from stayforge.models.id_document import IDDocument
 
 class TestIDDocument(unittest.TestCase):
     """IDDocument unit test stubs"""

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
 
 # TODO update the JSON string below
 json = "{}"

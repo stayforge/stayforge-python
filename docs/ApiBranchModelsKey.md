@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '674f5e7cbd127f5cafd0e810']
+**id** | **str** | Reference ID of the key. | [optional] [default to '674f6e36ae65a0dc1f51f26f']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **name** | **str** | The name of the hotel key. By default, it combines a base name with a random town. | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.api_branch_models_key import ApiBranchModelsKey
+from stayforge.models.api_branch_models_key import ApiBranchModelsKey
 
 # TODO update the JSON string below
 json = "{}"

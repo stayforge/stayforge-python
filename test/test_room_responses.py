@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.room_responses import RoomResponses
+from stayforge.models.room_responses import RoomResponses
 
 class TestRoomResponses(unittest.TestCase):
     """RoomResponses unit test stubs"""
@@ -36,30 +36,30 @@ class TestRoomResponses(unittest.TestCase):
         if include_optional:
             return RoomResponses(
                 data = [
-                    openapi_client.models.room.Room(
-                        id = '674f5e7cbd127f5cafd0e810', 
+                    stayforge.models.room.Room(
+                        id = '674f6e36ae65a0dc1f51f26f', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        key_id = '674f5e7cbd127f5cafd0e813', 
-                        room_type_id = '674f5e7cbd127f5cafd0e814', 
+                        key_id = '674f6e36ae65a0dc1f51f272', 
+                        room_type_id = '674f6e36ae65a0dc1f51f273', 
                         number = '', 
                         priority = 56, )
                     ],
                 detail = 'Successfully.',
                 status = 56,
                 used_time = 1.337,
-                stayforge = openapi_client.models.stayforge.Stayforge(
+                stayforge = stayforge.models.stayforge.Stayforge(
                     ver = '1.0.0', )
             )
         else:
             return RoomResponses(
                 data = [
-                    openapi_client.models.room.Room(
-                        id = '674f5e7cbd127f5cafd0e810', 
+                    stayforge.models.room.Room(
+                        id = '674f6e36ae65a0dc1f51f26f', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        key_id = '674f5e7cbd127f5cafd0e813', 
-                        room_type_id = '674f5e7cbd127f5cafd0e814', 
+                        key_id = '674f6e36ae65a0dc1f51f272', 
+                        room_type_id = '674f6e36ae65a0dc1f51f273', 
                         number = '', 
                         priority = 56, )
                     ],

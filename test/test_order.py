@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.order import Order
+from stayforge.models.order import Order
 
 class TestOrder(unittest.TestCase):
     """Order unit test stubs"""
@@ -35,12 +35,12 @@ class TestOrder(unittest.TestCase):
         model = Order()
         if include_optional:
             return Order(
-                id = '674f5e7cbd127f5cafd0e810',
+                id = '674f6e36ae65a0dc1f51f26f',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 num = '',
                 room_id = '',
-                guest = openapi_client.models.guest.Guest(
+                guest = stayforge.models.guest.Guest(
                     first_name = '', 
                     middle_name = '', 
                     last_name = '', 
@@ -52,7 +52,7 @@ class TestOrder(unittest.TestCase):
                     address = '', 
                     occupation = '', 
                     passport_number = '', 
-                    id_document = openapi_client.models.id_document.IDDocument(
+                    id_document = stayforge.models.id_document.IDDocument(
                         mrz = '', 
                         photocopy = null, ), ),
                 type = '',
