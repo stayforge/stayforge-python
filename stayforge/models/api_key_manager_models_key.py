@@ -27,13 +27,13 @@ class ApiKeyManagerModelsKey(BaseModel):
     """
     ApiKeyManagerModelsKey
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='674f7e9786b73bc33dee5e4b', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='674f7eee58103c1ed7a444eb', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     url: StrictStr = Field(description="The name of the hotel key. By default, it combines a base name with a random town.")
     num: Optional[StrictStr] = Field(default='', description="Order number")
-    effective_at: Optional[StrictStr] = Field(default='2024-12-03T21:56:39.825128Z', description="Effective at")
-    ineffective_at: Optional[StrictStr] = Field(default='2024-12-04T21:56:39.825159Z', description="Ineffective at")
+    effective_at: Optional[StrictStr] = Field(default='2024-12-03T21:58:06.308548Z', description="Effective at")
+    ineffective_at: Optional[StrictStr] = Field(default='2024-12-04T21:58:06.308580Z', description="Ineffective at")
     __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "url", "num", "effective_at", "ineffective_at"]
 
     model_config = ConfigDict(
@@ -97,13 +97,13 @@ class ApiKeyManagerModelsKey(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '674f7e9786b73bc33dee5e4b',
+            "id": obj.get("id") if obj.get("id") is not None else '674f7eee58103c1ed7a444eb',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "url": obj.get("url"),
             "num": obj.get("num") if obj.get("num") is not None else '',
-            "effective_at": obj.get("effective_at") if obj.get("effective_at") is not None else '2024-12-03T21:56:39.825128Z',
-            "ineffective_at": obj.get("ineffective_at") if obj.get("ineffective_at") is not None else '2024-12-04T21:56:39.825159Z'
+            "effective_at": obj.get("effective_at") if obj.get("effective_at") is not None else '2024-12-03T21:58:06.308548Z',
+            "ineffective_at": obj.get("ineffective_at") if obj.get("ineffective_at") is not None else '2024-12-04T21:58:06.308580Z'
         })
         return _obj
 
