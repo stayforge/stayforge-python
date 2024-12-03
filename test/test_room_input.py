@@ -35,8 +35,8 @@ class TestRoomInput(unittest.TestCase):
         model = RoomInput()
         if include_optional:
             return RoomInput(
-                key_id = '674f6e36ae65a0dc1f51f272',
-                room_type_id = '674f6e36ae65a0dc1f51f273',
+                key_id = '674f73c8ed8b36cf287af006',
+                room_type_id = '674f73c8ed8b36cf287af007',
                 number = '',
                 priority = 56
             )

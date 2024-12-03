@@ -35,7 +35,7 @@ class TestRoomType(unittest.TestCase):
         model = RoomType()
         if include_optional:
             return RoomType(
-                id = '674f6e36ae65a0dc1f51f26f',
+                id = '674f73c8ed8b36cf287af003',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 name = '',
