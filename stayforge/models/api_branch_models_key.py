@@ -27,7 +27,7 @@ class ApiBranchModelsKey(BaseModel):
     """
     ApiBranchModelsKey
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='674f86e7c2810d36bf95e507', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='674f8943bf63ea47fb683891', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     name: StrictStr = Field(description="The name of the hotel key. By default, it combines a base name with a random town.")
@@ -97,7 +97,7 @@ class ApiBranchModelsKey(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '674f86e7c2810d36bf95e507',
+            "id": obj.get("id") if obj.get("id") is not None else '674f8943bf63ea47fb683891',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "name": obj.get("name"),
