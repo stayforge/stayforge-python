@@ -20,11 +20,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check if the push has a tag
+        run: |
+          if [ -z "$(git describe --tags --exact-match 2>/dev/null)" ]; then
+            echo "Push to 'main' is forbidden without a tag."
+            exit 1
+          fi
+    
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+          
+      - name: Set PACKAGE_VERSION
+        run: echo "PACKAGE_VERSION=$(git describe --tags --abbrev=0 || git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Build release distributions
         run: |
