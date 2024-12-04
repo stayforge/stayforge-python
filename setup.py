@@ -21,8 +21,8 @@ from setuptools import setup, find_packages  # noqa: H301
 #
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
-NAME = "StayForge SDK"
-VERSION = "1.0.0.dev3"
+NAME = "stayforge"
+VERSION = "1.0.0.dev6"
 PYTHON_REQUIRES = ">= 3.8"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 3.0.0",
@@ -37,7 +37,7 @@ setup(
     description="Stayforge API",
     author="StayForge Team",
     author_email="support@stayforge.io",
-    url="",
+    url="https://github.com/tokujun-t/stayforge-python",
     keywords=["OpenAPI", "OpenAPI-Generator", "Stayforge API"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),

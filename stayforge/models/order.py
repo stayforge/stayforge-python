@@ -29,7 +29,7 @@ class Order(BaseModel):
     """
     Order
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67501dea4d40e0efa2a6243f', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='675050f538682c43c9b61ee3', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     num: Optional[StrictStr] = Field(default=None, description="Order number")
@@ -104,7 +104,7 @@ class Order(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67501dea4d40e0efa2a6243f',
+            "id": obj.get("id") if obj.get("id") is not None else '675050f538682c43c9b61ee3',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "num": obj.get("num"),
