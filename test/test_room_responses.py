@@ -37,11 +37,11 @@ class TestRoomResponses(unittest.TestCase):
             return RoomResponses(
                 data = [
                     stayforge.models.room.Room(
-                        id = '67500d3d4416b539e256ed02', 
+                        id = '675012f213e02d3d0e9ca0a6', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        key_id = '67500d3d4416b539e256ed05', 
-                        room_type_id = '67500d3d4416b539e256ed06', 
+                        key_id = '675012f213e02d3d0e9ca0a9', 
+                        room_type_id = '675012f213e02d3d0e9ca0aa', 
                         number = '', 
                         priority = 56, )
                     ],
@@ -55,11 +55,11 @@ class TestRoomResponses(unittest.TestCase):
             return RoomResponses(
                 data = [
                     stayforge.models.room.Room(
-                        id = '67500d3d4416b539e256ed02', 
+                        id = '675012f213e02d3d0e9ca0a6', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        key_id = '67500d3d4416b539e256ed05', 
-                        room_type_id = '67500d3d4416b539e256ed06', 
+                        key_id = '675012f213e02d3d0e9ca0a9', 
+                        room_type_id = '675012f213e02d3d0e9ca0aa', 
                         number = '', 
                         priority = 56, )
                     ],

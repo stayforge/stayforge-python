@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "stayforge"
-version = "dev-8874084"
+version = "dev-ca4bb3f"
 description = "Stayforge API"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"

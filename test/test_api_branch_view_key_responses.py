@@ -37,7 +37,7 @@ class TestApiBranchViewKeyResponses(unittest.TestCase):
             return ApiBranchViewKeyResponses(
                 data = [
                     stayforge.models.key.Key(
-                        id = '67500d3d4416b539e256ed02', 
+                        id = '675012f213e02d3d0e9ca0a6', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '', 
@@ -55,7 +55,7 @@ class TestApiBranchViewKeyResponses(unittest.TestCase):
             return ApiBranchViewKeyResponses(
                 data = [
                     stayforge.models.key.Key(
-                        id = '67500d3d4416b539e256ed02', 
+                        id = '675012f213e02d3d0e9ca0a6', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '', 

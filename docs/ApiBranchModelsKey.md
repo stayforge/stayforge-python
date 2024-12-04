@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '67500d3d4416b539e256ed02']
+**id** | **str** | Reference ID of the key. | [optional] [default to '675012f213e02d3d0e9ca0a6']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **name** | **str** | The name of the hotel key. By default, it combines a base name with a random town. | 
