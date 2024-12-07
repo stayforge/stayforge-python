@@ -3,7 +3,7 @@
 """
     Stayforge API
 
-    ![Commit Activity](https://img.shields.io/github/commit-activity/m/tokujun-t/stayforge) ![Codecov](https://codecov.io/gh/tokujun-t/stayforge/branch/main/graph/badge.svg) ![PyPI Version](https://img.shields.io/pypi/v/stayforge) ![PyPI Downloads](https://img.shields.io/pypi/dm/stayforge) ![GitHub Workflow Status](https://github.com/tokujun-t/Stayforge/actions/workflows/python-sdk.yml/badge.svg) 
+    ![Commit Activity](https://img.shields.io/github/commit-activity/m/tokujun-t/stayforge) ![Codecov](https://codecov.io/gh/tokujun-t/stayforge/branch/main/graph/badge.svg) ![PyPI Version](https://img.shields.io/pypi/v/stayforge)  ### SDK  - [Python SDK](https://github.com/tokujun-t/stayforge-python)  We provided SDKs (currently only the Python version is provided). Before deciding to call the API directly, you may wish to try the SDK to speed up your development.  ![GitHub Workflow Status](https://github.com/tokujun-t/Stayforge/actions/workflows/python-sdk.yml/badge.svg)   ### About Healthcheck  Healthcheck at `/api/healthcheck`. curl to check if the service is working.  ```shell curl -I http://<your service>/api/healthcheck ``` ### Some Links  GitHub Repo [https://github.com/tokujun-t/Stayforge](https://github.com/tokujun-t/Stayforge)  Wiki [https://github.com/tokujun-t/Stayforge/wiki](https://github.com/tokujun-t/Stayforge/wiki) 
 
     The version of the OpenAPI document: 1.0.0
     Contact: support@stayforge.io
@@ -28,11 +28,11 @@ class Room(BaseModel):
     """
     Room
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='675050f538682c43c9b61ee3', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='675470026e0128e8b6821d06', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
-    key_id: Optional[StrictStr] = Field(default='675050f538682c43c9b61ee6', description="Reference ID of the key.")
-    room_type_id: Optional[StrictStr] = Field(default='675050f538682c43c9b61ee7', description="Reference ID of the RoomType.")
+    key_id: Optional[StrictStr] = Field(default='675470026e0128e8b6821d08', description="Reference ID of the key.")
+    room_type_id: Optional[StrictStr] = Field(default='675470026e0128e8b6821d09', description="Reference ID of the RoomType.")
     number: StrictStr = Field(description="The number of rooms, e.g., 203.")
     priority: StrictInt = Field(description="The OTA system will give priority to rooms with a higher value to guests. If the priorities are the same, then it is random.")
     __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "key_id", "room_type_id", "number", "priority"]
@@ -98,11 +98,11 @@ class Room(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '675050f538682c43c9b61ee3',
+            "id": obj.get("id") if obj.get("id") is not None else '675470026e0128e8b6821d06',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
-            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '675050f538682c43c9b61ee6',
-            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '675050f538682c43c9b61ee7',
+            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '675470026e0128e8b6821d08',
+            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '675470026e0128e8b6821d09',
             "number": obj.get("number"),
             "priority": obj.get("priority")
         })
