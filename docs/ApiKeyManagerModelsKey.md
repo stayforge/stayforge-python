@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '675470026e0128e8b6821d06']
+**id** | **str** | Reference ID of the key. | [optional] [default to '6755aba39ab187cd5abf50a9']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **url** | **str** | The name of the hotel key. By default, it combines a base name with a random town. | 
 **num** | **str** | Order number | [optional] [default to '']
-**effective_at** | **str** | Effective at | [optional] [default to '2024-12-07T15:55:46.966748Z']
-**ineffective_at** | **str** | Ineffective at | [optional] [default to '2024-12-08T15:55:46.966774Z']
+**effective_at** | **str** | Effective at | [optional] [default to '2024-12-08T14:22:27.976370Z']
+**ineffective_at** | **str** | Ineffective at | [optional] [default to '2024-12-09T14:22:27.976398Z']
 
 ## Example
 
