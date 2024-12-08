@@ -17,13 +17,16 @@ jobs:
 
     steps:
       - name: Check if the push has a tag
+        if: ${{ github.ref_name == 'main' }}
         run: |
-          if [ -z "$(git describe --tags --exact-match 2>/dev/null)" ] && [ "${GITHUB_REF_NAME}" == "main" ]; then
+          if [ -z "$(git describe --tags --exact-match 2>/dev/null)" ]; then
             echo "Push to 'main' is forbidden without a tag."
             exit 1
           fi
 
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 确保完整历史
 
       - uses: actions/setup-python@v5
         with:
@@ -35,18 +38,13 @@ jobs:
 
       - name: Set PACKAGE_VERSION
         run: |
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
-          
+          MAIN_LATEST_TAG=$(git describe --tags --abbrev=0 main 2>/dev/null || echo "0.0.0")
+
           if [ "${GITHUB_REF_NAME}" == "main" ]; then
-            if [ -z "$(git describe --tags --exact-match 2>/dev/null)" ]; then
-              PACKAGE_VERSION="0.0.0.dev$(TZ=UTC date +%Y%m%d%H%M%S)"
-            else
-              PACKAGE_VERSION=$LATEST_TAG
-            fi
+            PACKAGE_VERSION=${GITHUB_REF_NAME}
           else
-            BRANCH_NAME=$(echo "${GITHUB_REF_NAME}" | sed 's|/|_|g')  # 替换非法字符
-            DATE_TAG=$(TZ=UTC date +%Y%m%d%H%M%S)
-            PACKAGE_VERSION="${LATEST_TAG}.dev${DATE_TAG}"
+            TIMESTAMP=$(TZ=UTC date +%Y%m%d%H%M%S)
+            PACKAGE_VERSION="${MAIN_LATEST_TAG}.dev${TIMESTAMP}"
           fi
           
           echo "PACKAGE_VERSION=${PACKAGE_VERSION}" >> $GITHUB_ENV
@@ -56,7 +54,7 @@ jobs:
         run: |
           python -m pip install build
           python -m build
-
+      
       - name: Debug dist folder
         run: |
           echo "Contents of dist/:"
@@ -67,7 +65,7 @@ jobs:
         with:
           name: release-dists
           path: dist/
-      
+
   pypi-publish:
     runs-on: ubuntu-latest
     needs:
@@ -84,11 +82,6 @@ jobs:
         with:
           name: release-dists
           path: dist/
-
-      - name: Debug retrieved artifact
-        run: |
-          echo "Contents of dist/:"
-          ls -la dist/
 
       - name: Publish release distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
