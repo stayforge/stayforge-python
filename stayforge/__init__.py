@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.0-eb6e084"
+__version__ = "0.0.0-0f1c709"
 
 # import apis into sdk package
 from apis.branches_api import BranchesApi
