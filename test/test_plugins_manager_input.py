@@ -15,10 +15,10 @@
 
 import unittest
 
-from stayforge.models.webhooks_manager import WebhooksManager
+from stayforge.models.plugins_manager_input import PluginsManagerInput
 
-class TestWebhooksManager(unittest.TestCase):
-    """WebhooksManager unit test stubs"""
+class TestPluginsManagerInput(unittest.TestCase):
+    """PluginsManagerInput unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,37 +26,29 @@ class TestWebhooksManager(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> WebhooksManager:
-        """Test WebhooksManager
+    def make_instance(self, include_optional) -> PluginsManagerInput:
+        """Test PluginsManagerInput
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `WebhooksManager`
+        # uncomment below to create an instance of `PluginsManagerInput`
         """
-        model = WebhooksManager()
+        model = PluginsManagerInput()
         if include_optional:
-            return WebhooksManager(
-                id = '676058d36d32168ff91eb6df',
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                webhook_name = '',
-                endpoint = '',
-                catch_path = '',
-                catch_method = '',
-                catch_status = 56
+            return PluginsManagerInput(
+                plugin = '',
+                plugin_version = '',
+                permissions = stayforge.models.permissions.Permissions()
             )
         else:
-            return WebhooksManager(
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                webhook_name = '',
-                endpoint = '',
-                catch_path = '',
-                catch_method = '',
+            return PluginsManagerInput(
+                plugin = '',
+                plugin_version = '',
         )
         """
 
-    def testWebhooksManager(self):
-        """Test WebhooksManager"""
+    def testPluginsManagerInput(self):
+        """Test PluginsManagerInput"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

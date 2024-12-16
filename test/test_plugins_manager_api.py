@@ -15,42 +15,53 @@
 
 import unittest
 
-from stayforge.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
+from apis.plugins_manager_api import PluginsManagerApi
 
-class TestApiKeyManagerModelsKeyInput(unittest.TestCase):
-    """ApiKeyManagerModelsKeyInput unit test stubs"""
 
-    def setUp(self):
+class TestPluginsManagerApi(unittest.TestCase):
+    """PluginsManagerApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = PluginsManagerApi()
+
+    def tearDown(self) -> None:
         pass
 
-    def tearDown(self):
+    def test_create_plugins_profile_api_plugins_manager_post(self) -> None:
+        """Test case for create_plugins_profile_api_plugins_manager_post
+
+        Create Plugins Profile
+        """
         pass
 
-    def make_instance(self, include_optional) -> ApiKeyManagerModelsKeyInput:
-        """Test ApiKeyManagerModelsKeyInput
-            include_optional is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # uncomment below to create an instance of `ApiKeyManagerModelsKeyInput`
-        """
-        model = ApiKeyManagerModelsKeyInput()
-        if include_optional:
-            return ApiKeyManagerModelsKeyInput(
-                url = '',
-                num = '',
-                effective_at = '2024-12-16T16:44:03.561611Z',
-                ineffective_at = '2024-12-17T16:44:03.561636Z'
-            )
-        else:
-            return ApiKeyManagerModelsKeyInput(
-                url = '',
-        )
-        """
+    def test_delete_plugins_profile_api_plugins_manager_id_delete(self) -> None:
+        """Test case for delete_plugins_profile_api_plugins_manager_id_delete
 
-    def testApiKeyManagerModelsKeyInput(self):
-        """Test ApiKeyManagerModelsKeyInput"""
-        # inst_req_only = self.make_instance(include_optional=False)
-        # inst_req_and_optional = self.make_instance(include_optional=True)
+        Delete Plugins Profile
+        """
+        pass
+
+    def test_get_plugins_profile_api_plugins_manager_get(self) -> None:
+        """Test case for get_plugins_profile_api_plugins_manager_get
+
+        Get Plugins Profile
+        """
+        pass
+
+    def test_get_plugins_profile_api_plugins_manager_id_get(self) -> None:
+        """Test case for get_plugins_profile_api_plugins_manager_id_get
+
+        Get Plugins Profile
+        """
+        pass
+
+    def test_put_plugins_profile_api_plugins_manager_id_put(self) -> None:
+        """Test case for put_plugins_profile_api_plugins_manager_id_put
+
+        Put Plugins Profile
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

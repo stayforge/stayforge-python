@@ -18,24 +18,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from stayforge.models.plugins_manager import PluginsManager
+from stayforge.models.stayforge import Stayforge
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ApiBranchModelsKey(BaseModel):
+class PluginsManagerResponses(BaseModel):
     """
-    ApiBranchModelsKey
+    PluginsManagerResponses
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='676058d36d32168ff91eb6df', description="Reference ID of the key.")
-    create_at: Optional[datetime]
-    update_at: Optional[datetime] = None
-    name: StrictStr = Field(description="The name of the hotel key. By default, it combines a base name with a random town.")
-    postcode: Optional[StrictStr] = Field(default='000-0000', description="The postal code of the key location.")
-    address: Optional[StrictStr] = Field(default='000-0000', description="The full effective of the key, including administrative unit, city, town, and detailed location.")
-    telephone: StrictStr = Field(description="The contact telephone number for the key.")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "name", "postcode", "address", "telephone"]
+    data: Optional[List[PluginsManager]]
+    detail: Optional[StrictStr] = 'Successfully.'
+    status: Optional[StrictInt] = 200
+    used_time: Optional[Union[StrictFloat, StrictInt]] = None
+    stayforge: Optional[Stayforge] = None
+    __properties: ClassVar[List[str]] = ["data", "detail", "status", "used_time", "stayforge"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -55,7 +54,7 @@ class ApiBranchModelsKey(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiBranchModelsKey from a JSON string"""
+        """Create an instance of PluginsManagerResponses from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -76,21 +75,31 @@ class ApiBranchModelsKey(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if create_at (nullable) is None
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
+            _dict['data'] = _items
+        # override the default output from pydantic by calling `to_dict()` of stayforge
+        if self.stayforge:
+            _dict['stayforge'] = self.stayforge.to_dict()
+        # set to None if data (nullable) is None
         # and model_fields_set contains the field
-        if self.create_at is None and "create_at" in self.model_fields_set:
-            _dict['create_at'] = None
+        if self.data is None and "data" in self.model_fields_set:
+            _dict['data'] = None
 
-        # set to None if update_at (nullable) is None
+        # set to None if used_time (nullable) is None
         # and model_fields_set contains the field
-        if self.update_at is None and "update_at" in self.model_fields_set:
-            _dict['update_at'] = None
+        if self.used_time is None and "used_time" in self.model_fields_set:
+            _dict['used_time'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiBranchModelsKey from a dict"""
+        """Create an instance of PluginsManagerResponses from a dict"""
         if obj is None:
             return None
 
@@ -98,13 +107,11 @@ class ApiBranchModelsKey(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '676058d36d32168ff91eb6df',
-            "create_at": obj.get("create_at"),
-            "update_at": obj.get("update_at"),
-            "name": obj.get("name"),
-            "postcode": obj.get("postcode") if obj.get("postcode") is not None else '000-0000',
-            "address": obj.get("address") if obj.get("address") is not None else '000-0000',
-            "telephone": obj.get("telephone")
+            "data": [PluginsManager.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
+            "detail": obj.get("detail") if obj.get("detail") is not None else 'Successfully.',
+            "status": obj.get("status") if obj.get("status") is not None else 200,
+            "used_time": obj.get("used_time"),
+            "stayforge": Stayforge.from_dict(obj["stayforge"]) if obj.get("stayforge") is not None else None
         })
         return _obj
 

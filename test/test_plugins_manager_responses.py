@@ -15,10 +15,10 @@
 
 import unittest
 
-from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.models.plugins_manager_responses import PluginsManagerResponses
 
-class TestApiKeyManagerViewKeyResponses(unittest.TestCase):
-    """ApiKeyManagerViewKeyResponses unit test stubs"""
+class TestPluginsManagerResponses(unittest.TestCase):
+    """PluginsManagerResponses unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,25 +26,24 @@ class TestApiKeyManagerViewKeyResponses(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ApiKeyManagerViewKeyResponses:
-        """Test ApiKeyManagerViewKeyResponses
+    def make_instance(self, include_optional) -> PluginsManagerResponses:
+        """Test PluginsManagerResponses
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ApiKeyManagerViewKeyResponses`
+        # uncomment below to create an instance of `PluginsManagerResponses`
         """
-        model = ApiKeyManagerViewKeyResponses()
+        model = PluginsManagerResponses()
         if include_optional:
-            return ApiKeyManagerViewKeyResponses(
+            return PluginsManagerResponses(
                 data = [
-                    stayforge.models.key.Key(
+                    stayforge.models.plugins_manager.PluginsManager(
                         id = '676058d36d32168ff91eb6df', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        url = '', 
-                        num = '', 
-                        effective_at = '2024-12-16T16:44:03.561611Z', 
-                        ineffective_at = '2024-12-17T16:44:03.561636Z', )
+                        plugin = '', 
+                        plugin_version = '', 
+                        permissions = stayforge.models.permissions.Permissions(), )
                     ],
                 detail = 'Successfully.',
                 status = 56,
@@ -53,22 +52,21 @@ class TestApiKeyManagerViewKeyResponses(unittest.TestCase):
                     ver = '1.0.0', )
             )
         else:
-            return ApiKeyManagerViewKeyResponses(
+            return PluginsManagerResponses(
                 data = [
-                    stayforge.models.key.Key(
+                    stayforge.models.plugins_manager.PluginsManager(
                         id = '676058d36d32168ff91eb6df', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        url = '', 
-                        num = '', 
-                        effective_at = '2024-12-16T16:44:03.561611Z', 
-                        ineffective_at = '2024-12-17T16:44:03.561636Z', )
+                        plugin = '', 
+                        plugin_version = '', 
+                        permissions = stayforge.models.permissions.Permissions(), )
                     ],
         )
         """
 
-    def testApiKeyManagerViewKeyResponses(self):
-        """Test ApiKeyManagerViewKeyResponses"""
+    def testPluginsManagerResponses(self):
+        """Test PluginsManagerResponses"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

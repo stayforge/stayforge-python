@@ -18,24 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ApiBranchModelsKey(BaseModel):
+class PluginsManagerInput(BaseModel):
     """
-    ApiBranchModelsKey
+    PluginsManagerInput
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='676058d36d32168ff91eb6df', description="Reference ID of the key.")
-    create_at: Optional[datetime]
-    update_at: Optional[datetime] = None
-    name: StrictStr = Field(description="The name of the hotel key. By default, it combines a base name with a random town.")
-    postcode: Optional[StrictStr] = Field(default='000-0000', description="The postal code of the key location.")
-    address: Optional[StrictStr] = Field(default='000-0000', description="The full effective of the key, including administrative unit, city, town, and detailed location.")
-    telephone: StrictStr = Field(description="The contact telephone number for the key.")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "name", "postcode", "address", "telephone"]
+    plugin: StrictStr = Field(description="The host URL of the plugin. This is used to generate webhook URLs and other plugin-related paths.")
+    plugin_version: StrictStr = Field(description="The version of the plugin. This helps in tracking updates and ensuring compatibility.")
+    permissions: Optional[Dict[str, Any]] = Field(default=None, description="### Example  `String 'auto'` or `JSON Started dict`.  When the value is auto, the content in the plug-in configuration `permissions.json` is used.  Stayforge APIs that can be called by the plugin, starting with `_` are method names.  ```json {   \"room\": {     \"_methods\": {       \"_post\": {         \"_allow\": true,         \"_webhook\": true,         \"_webhook_path\": \"/webhook/room\"       }     }   } } ```  ### Key Elements  1. **API Name** (`<API Name>`):     - Represents the name of the API the plugin interacts with (e.g., `\"room\"`).  2. **_methods**:     - Defines the HTTP methods (e.g., `_post`, `_get`, `_put`, `_delete`) that the API supports.  3. **HTTP Method Configuration**:     - `_allow` (Required):         - A boolean indicating whether the method is allowed for plugins. If `False`, the plugin cannot use this method.     - `_webhook` (Optional):         - A boolean indicating whether webhook functionality is enabled for this method. If `True`, a `_webhook_path`           must be specified.     - `_webhook_path` (Required if `_webhook` is `True`):         - A string representing the webhook submission URL path. The full URL is constructed by concatenating the           `plugin_host` with `_webhook_path`. ")
+    __properties: ClassVar[List[str]] = ["plugin", "plugin_version", "permissions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -55,7 +50,7 @@ class ApiBranchModelsKey(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiBranchModelsKey from a JSON string"""
+        """Create an instance of PluginsManagerInput from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -76,21 +71,11 @@ class ApiBranchModelsKey(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if create_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.create_at is None and "create_at" in self.model_fields_set:
-            _dict['create_at'] = None
-
-        # set to None if update_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.update_at is None and "update_at" in self.model_fields_set:
-            _dict['update_at'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiBranchModelsKey from a dict"""
+        """Create an instance of PluginsManagerInput from a dict"""
         if obj is None:
             return None
 
@@ -98,13 +83,9 @@ class ApiBranchModelsKey(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '676058d36d32168ff91eb6df',
-            "create_at": obj.get("create_at"),
-            "update_at": obj.get("update_at"),
-            "name": obj.get("name"),
-            "postcode": obj.get("postcode") if obj.get("postcode") is not None else '000-0000',
-            "address": obj.get("address") if obj.get("address") is not None else '000-0000',
-            "telephone": obj.get("telephone")
+            "plugin": obj.get("plugin"),
+            "plugin_version": obj.get("plugin_version"),
+            "permissions": obj.get("permissions")
         })
         return _obj
 
