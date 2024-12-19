@@ -36,13 +36,13 @@ class TestApiKeyManagerModelsKey(unittest.TestCase):
         model = ApiKeyManagerModelsKey()
         if include_optional:
             return ApiKeyManagerModelsKey(
-                id = '6764290a6f43adec3ce4fedd',
+                id = '6764296424e87a8e05b788c1',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 url = '',
                 num = '',
-                effective_at = '2024-12-19T14:09:14.765272Z',
-                ineffective_at = '2024-12-20T14:09:14.765299Z'
+                effective_at = '2024-12-19T14:10:44.171042Z',
+                ineffective_at = '2024-12-20T14:10:44.171071Z'
             )
         else:
             return ApiKeyManagerModelsKey(
