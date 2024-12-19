@@ -28,13 +28,14 @@ class PluginsManager(BaseModel):
     """
     PluginsManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='676058d36d32168ff91eb6df', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='676427a817eae06509b80a45', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     plugin: StrictStr = Field(description="The host URL of the plugin. This is used to generate webhook URLs and other plugin-related paths.")
-    plugin_version: StrictStr = Field(description="The version of the plugin. This helps in tracking updates and ensuring compatibility.")
-    permissions: Optional[Dict[str, Any]] = Field(default=None, description="### Example  `String 'auto'` or `JSON Started dict`.  When the value is auto, the content in the plug-in configuration `permissions.json` is used.  Stayforge APIs that can be called by the plugin, starting with `_` are method names.  ```json {   \"room\": {     \"_methods\": {       \"_post\": {         \"_allow\": true,         \"_webhook\": true,         \"_webhook_path\": \"/webhook/room\"       }     }   } } ```  ### Key Elements  1. **API Name** (`<API Name>`):     - Represents the name of the API the plugin interacts with (e.g., `\"room\"`).  2. **_methods**:     - Defines the HTTP methods (e.g., `_post`, `_get`, `_put`, `_delete`) that the API supports.  3. **HTTP Method Configuration**:     - `_allow` (Required):         - A boolean indicating whether the method is allowed for plugins. If `False`, the plugin cannot use this method.     - `_webhook` (Optional):         - A boolean indicating whether webhook functionality is enabled for this method. If `True`, a `_webhook_path`           must be specified.     - `_webhook_path` (Required if `_webhook` is `True`):         - A string representing the webhook submission URL path. The full URL is constructed by concatenating the           `plugin_host` with `_webhook_path`. ")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "plugin", "plugin_version", "permissions"]
+    plugin_version: Optional[StrictStr] = Field(default='latest', description="The version of the plugin. This helps in tracking updates and ensuring compatibility.")
+    local_name: Optional[StrictStr] = None
+    permissions: Optional[Dict[str, Any]] = None
+    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "plugin", "plugin_version", "local_name", "permissions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,6 +86,16 @@ class PluginsManager(BaseModel):
         if self.update_at is None and "update_at" in self.model_fields_set:
             _dict['update_at'] = None
 
+        # set to None if local_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.local_name is None and "local_name" in self.model_fields_set:
+            _dict['local_name'] = None
+
+        # set to None if permissions (nullable) is None
+        # and model_fields_set contains the field
+        if self.permissions is None and "permissions" in self.model_fields_set:
+            _dict['permissions'] = None
+
         return _dict
 
     @classmethod
@@ -97,11 +108,12 @@ class PluginsManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '676058d36d32168ff91eb6df',
+            "id": obj.get("id") if obj.get("id") is not None else '676427a817eae06509b80a45',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "plugin": obj.get("plugin"),
-            "plugin_version": obj.get("plugin_version"),
+            "plugin_version": obj.get("plugin_version") if obj.get("plugin_version") is not None else 'latest',
+            "local_name": obj.get("local_name"),
             "permissions": obj.get("permissions")
         })
         return _obj

@@ -37,13 +37,13 @@ class TestPluginsManagerInput(unittest.TestCase):
         if include_optional:
             return PluginsManagerInput(
                 plugin = '',
-                plugin_version = '',
-                permissions = stayforge.models.permissions.Permissions()
+                plugin_version = 'latest',
+                local_name = '',
+                permissions = None
             )
         else:
             return PluginsManagerInput(
                 plugin = '',
-                plugin_version = '',
         )
         """
 

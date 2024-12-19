@@ -36,18 +36,18 @@ class TestPluginsManager(unittest.TestCase):
         model = PluginsManager()
         if include_optional:
             return PluginsManager(
-                id = '676058d36d32168ff91eb6df',
+                id = '676427a817eae06509b80a45',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 plugin = '',
-                plugin_version = '',
-                permissions = stayforge.models.permissions.Permissions()
+                plugin_version = 'latest',
+                local_name = '',
+                permissions = None
             )
         else:
             return PluginsManager(
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 plugin = '',
-                plugin_version = '',
         )
         """
 
