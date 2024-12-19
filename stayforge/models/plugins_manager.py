@@ -28,7 +28,7 @@ class PluginsManager(BaseModel):
     """
     PluginsManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67642b7db236e394e388e0fb', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='67642c2c2aa9be9f3cfd96f5', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     plugin: StrictStr = Field(description="The host URL of the plugin. This is used to generate webhook URLs and other plugin-related paths.")
@@ -108,7 +108,7 @@ class PluginsManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67642b7db236e394e388e0fb',
+            "id": obj.get("id") if obj.get("id") is not None else '67642c2c2aa9be9f3cfd96f5',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "plugin": obj.get("plugin"),

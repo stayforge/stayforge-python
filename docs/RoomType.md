@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '67642b7db236e394e388e0fb']
+**id** | **str** | Reference ID of the key. | [optional] [default to '67642c2c2aa9be9f3cfd96f5']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **name** | **str** | The Type of RoomType | 
