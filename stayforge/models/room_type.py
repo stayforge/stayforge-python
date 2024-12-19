@@ -28,7 +28,7 @@ class RoomType(BaseModel):
     """
     RoomType
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67642b6a0829d560d8101728', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='67642b7db236e394e388e0fb', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     name: StrictStr = Field(description="The Type of RoomType")
@@ -100,7 +100,7 @@ class RoomType(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67642b6a0829d560d8101728',
+            "id": obj.get("id") if obj.get("id") is not None else '67642b7db236e394e388e0fb',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "name": obj.get("name"),

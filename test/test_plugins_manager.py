@@ -36,7 +36,7 @@ class TestPluginsManager(unittest.TestCase):
         model = PluginsManager()
         if include_optional:
             return PluginsManager(
-                id = '67642b6a0829d560d8101728',
+                id = '67642b7db236e394e388e0fb',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 plugin = '',
