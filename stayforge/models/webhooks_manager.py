@@ -28,7 +28,7 @@ class WebhooksManager(BaseModel):
     """
     WebhooksManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='676811c686409f9940c3db47', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='6768137d4c756a140bd112e9', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     webhook_name: StrictStr = Field(description="The Type of WebhooksManager")
@@ -99,7 +99,7 @@ class WebhooksManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '676811c686409f9940c3db47',
+            "id": obj.get("id") if obj.get("id") is not None else '6768137d4c756a140bd112e9',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "webhook_name": obj.get("webhook_name"),
