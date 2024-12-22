@@ -38,7 +38,7 @@ class TestModelsManagerResponses(unittest.TestCase):
             return ModelsManagerResponses(
                 data = [
                     stayforge.models.models_manager.ModelsManager(
-                        id = '67681cc598013ee7d373806d', 
+                        id = '67681d6bd6b3ab5f4b5b077a', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         model = '', 
@@ -56,7 +56,7 @@ class TestModelsManagerResponses(unittest.TestCase):
             return ModelsManagerResponses(
                 data = [
                     stayforge.models.models_manager.ModelsManager(
-                        id = '67681cc598013ee7d373806d', 
+                        id = '67681d6bd6b3ab5f4b5b077a', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         model = '', 
