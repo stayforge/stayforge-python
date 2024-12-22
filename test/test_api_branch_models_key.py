@@ -36,7 +36,7 @@ class TestApiBranchModelsKey(unittest.TestCase):
         model = ApiBranchModelsKey()
         if include_optional:
             return ApiBranchModelsKey(
-                id = '67681bd2d65b3557ef503b2b',
+                id = '67681c784b752cf6fdd4f369',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 name = '',
