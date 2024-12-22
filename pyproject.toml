@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "stayforge"
-version = "0.0.0-ceeaf24"
+version = "0.0.0-29b7dde"
 description = "Stayforge API"
 authors = ["StayForge Team <support@stayforge.io>"]
 license = "NoLicense"
