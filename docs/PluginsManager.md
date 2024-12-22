@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '67680d1ddb24af6e7734e028']
+**id** | **str** | Reference ID of the key. | [optional] [default to '67680fb76630591791f94e1a']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **plugin** | **str** | The host URL of the plugin. This is used to generate webhook URLs and other plugin-related paths. | 
