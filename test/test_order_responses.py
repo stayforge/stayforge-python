@@ -38,7 +38,7 @@ class TestOrderResponses(unittest.TestCase):
             return OrderResponses(
                 data = [
                     stayforge.models.order.Order(
-                        id = '676434b5661b9ba0538888a7', 
+                        id = '67680c4c4523700d07c07135', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         num = '', 
@@ -72,7 +72,7 @@ class TestOrderResponses(unittest.TestCase):
             return OrderResponses(
                 data = [
                     stayforge.models.order.Order(
-                        id = '676434b5661b9ba0538888a7', 
+                        id = '67680c4c4523700d07c07135', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         num = '', 
