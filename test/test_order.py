@@ -36,7 +36,7 @@ class TestOrder(unittest.TestCase):
         model = Order()
         if include_optional:
             return Order(
-                id = '67681dd671c1f9c71e7c31e6',
+                id = '67683c2c72575c6578655097',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 num = '',
@@ -63,6 +63,7 @@ class TestOrder(unittest.TestCase):
         else:
             return Order(
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                num = '',
                 type = '',
         )
         """

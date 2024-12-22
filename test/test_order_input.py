@@ -59,6 +59,7 @@ class TestOrderInput(unittest.TestCase):
             )
         else:
             return OrderInput(
+                num = '',
                 type = '',
         )
         """

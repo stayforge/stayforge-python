@@ -29,7 +29,7 @@ class OrderInput(BaseModel):
     """
     OrderInput
     """ # noqa: E501
-    num: Optional[StrictStr] = Field(default=None, description="Order number")
+    num: StrictStr = Field(description="Order number")
     room_id: Optional[StrictStr] = Field(default=None, description="Room ID")
     guest: Optional[Guest] = Field(default=None, description="Guest information")
     type: StrictStr = Field(description="OrderType")
