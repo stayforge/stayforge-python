@@ -3,6 +3,7 @@
 # import apis into api package
 from apis.branches_api import BranchesApi
 from apis.key_manager_api import KeyManagerApi
+from apis.models_manager_api import ModelsManagerApi
 from apis.orders_api import OrdersApi
 from apis.room_types_api import RoomTypesApi
 from apis.rooms_api import RoomsApi

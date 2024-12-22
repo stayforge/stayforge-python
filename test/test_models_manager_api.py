@@ -15,43 +15,53 @@
 
 import unittest
 
-from stayforge.models.room_input import RoomInput
+from apis.models_manager_api import ModelsManagerApi
 
-class TestRoomInput(unittest.TestCase):
-    """RoomInput unit test stubs"""
 
-    def setUp(self):
+class TestModelsManagerApi(unittest.TestCase):
+    """ModelsManagerApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = ModelsManagerApi()
+
+    def tearDown(self) -> None:
         pass
 
-    def tearDown(self):
+    def test_create_models_profile_api_models_manager_post(self) -> None:
+        """Test case for create_models_profile_api_models_manager_post
+
+        Create Models Profile
+        """
         pass
 
-    def make_instance(self, include_optional) -> RoomInput:
-        """Test RoomInput
-            include_optional is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # uncomment below to create an instance of `RoomInput`
-        """
-        model = RoomInput()
-        if include_optional:
-            return RoomInput(
-                key_id = '67683e7808122b7fbc20ff36',
-                room_type_id = '67683e7808122b7fbc20ff37',
-                number = '',
-                priority = 56
-            )
-        else:
-            return RoomInput(
-                number = '',
-                priority = 56,
-        )
-        """
+    def test_delete_models_profile_api_models_manager_id_delete(self) -> None:
+        """Test case for delete_models_profile_api_models_manager_id_delete
 
-    def testRoomInput(self):
-        """Test RoomInput"""
-        # inst_req_only = self.make_instance(include_optional=False)
-        # inst_req_and_optional = self.make_instance(include_optional=True)
+        Delete Models Profile
+        """
+        pass
+
+    def test_get_models_profile_api_models_manager_get(self) -> None:
+        """Test case for get_models_profile_api_models_manager_get
+
+        Get Models Profile
+        """
+        pass
+
+    def test_get_models_profile_api_models_manager_id_get(self) -> None:
+        """Test case for get_models_profile_api_models_manager_id_get
+
+        Get Models Profile
+        """
+        pass
+
+    def test_put_models_profile_api_models_manager_id_put(self) -> None:
+        """Test case for put_models_profile_api_models_manager_id_put
+
+        Put Models Profile
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

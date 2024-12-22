@@ -15,10 +15,10 @@
 
 import unittest
 
-from stayforge.models.order_input import OrderInput
+from stayforge.models.models_manager import ModelsManager
 
-class TestOrderInput(unittest.TestCase):
-    """OrderInput unit test stubs"""
+class TestModelsManager(unittest.TestCase):
+    """ModelsManager unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,46 +26,33 @@ class TestOrderInput(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> OrderInput:
-        """Test OrderInput
+    def make_instance(self, include_optional) -> ModelsManager:
+        """Test ModelsManager
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `OrderInput`
+        # uncomment below to create an instance of `ModelsManager`
         """
-        model = OrderInput()
+        model = ModelsManager()
         if include_optional:
-            return OrderInput(
-                num = '',
-                room_id = '',
-                guest = stayforge.models.guest.Guest(
-                    first_name = '', 
-                    middle_name = '', 
-                    last_name = '', 
-                    gender = '', 
-                    birthday = '', 
-                    nationality = '', 
-                    email = '', 
-                    phone_number = '', 
-                    address = '', 
-                    occupation = '', 
-                    passport_number = '', 
-                    id_document = stayforge.models.id_document.IDDocument(
-                        mrz = '', 
-                        photocopy = null, ), ),
-                type = '',
-                scheduled_checkin_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                scheduled_checkout_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
+            return ModelsManager(
+                id = '67683e7808122b7fbc20ff34',
+                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                model = '',
+                model_version = 'latest',
+                local_name = '',
+                permissions = None
             )
         else:
-            return OrderInput(
-                num = '',
-                type = '',
+            return ModelsManager(
+                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                model = '',
         )
         """
 
-    def testOrderInput(self):
-        """Test OrderInput"""
+    def testModelsManager(self):
+        """Test ModelsManager"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

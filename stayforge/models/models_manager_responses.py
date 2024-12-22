@@ -18,24 +18,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from stayforge.models.models_manager import ModelsManager
+from stayforge.models.stayforge import Stayforge
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Room(BaseModel):
+class ModelsManagerResponses(BaseModel):
     """
-    Room
+    ModelsManagerResponses
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67683e7808122b7fbc20ff34', description="Reference ID of the key.")
-    create_at: Optional[datetime]
-    update_at: Optional[datetime] = None
-    key_id: Optional[StrictStr] = Field(default='67683e7808122b7fbc20ff36', description="Reference ID of the key.")
-    room_type_id: Optional[StrictStr] = Field(default='67683e7808122b7fbc20ff37', description="Reference ID of the RoomType.")
-    number: StrictStr = Field(description="The number of rooms, e.g., 203.")
-    priority: StrictInt = Field(description="The OTA system will give priority to rooms with a higher value to guests. If the priorities are the same, then it is random.")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "key_id", "room_type_id", "number", "priority"]
+    data: Optional[List[ModelsManager]]
+    detail: Optional[StrictStr] = 'Successfully.'
+    status: Optional[StrictInt] = 200
+    used_time: Optional[Union[StrictFloat, StrictInt]] = None
+    stayforge: Optional[Stayforge] = None
+    __properties: ClassVar[List[str]] = ["data", "detail", "status", "used_time", "stayforge"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -55,7 +54,7 @@ class Room(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Room from a JSON string"""
+        """Create an instance of ModelsManagerResponses from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -76,21 +75,31 @@ class Room(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if create_at (nullable) is None
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
+            _dict['data'] = _items
+        # override the default output from pydantic by calling `to_dict()` of stayforge
+        if self.stayforge:
+            _dict['stayforge'] = self.stayforge.to_dict()
+        # set to None if data (nullable) is None
         # and model_fields_set contains the field
-        if self.create_at is None and "create_at" in self.model_fields_set:
-            _dict['create_at'] = None
+        if self.data is None and "data" in self.model_fields_set:
+            _dict['data'] = None
 
-        # set to None if update_at (nullable) is None
+        # set to None if used_time (nullable) is None
         # and model_fields_set contains the field
-        if self.update_at is None and "update_at" in self.model_fields_set:
-            _dict['update_at'] = None
+        if self.used_time is None and "used_time" in self.model_fields_set:
+            _dict['used_time'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Room from a dict"""
+        """Create an instance of ModelsManagerResponses from a dict"""
         if obj is None:
             return None
 
@@ -98,13 +107,11 @@ class Room(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67683e7808122b7fbc20ff34',
-            "create_at": obj.get("create_at"),
-            "update_at": obj.get("update_at"),
-            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '67683e7808122b7fbc20ff36',
-            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '67683e7808122b7fbc20ff37',
-            "number": obj.get("number"),
-            "priority": obj.get("priority")
+            "data": [ModelsManager.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
+            "detail": obj.get("detail") if obj.get("detail") is not None else 'Successfully.',
+            "status": obj.get("status") if obj.get("status") is not None else 200,
+            "used_time": obj.get("used_time"),
+            "stayforge": Stayforge.from_dict(obj["stayforge"]) if obj.get("stayforge") is not None else None
         })
         return _obj
 

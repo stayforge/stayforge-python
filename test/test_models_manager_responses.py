@@ -15,10 +15,10 @@
 
 import unittest
 
-from stayforge.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
+from stayforge.models.models_manager_responses import ModelsManagerResponses
 
-class TestApiBranchViewKeyResponses(unittest.TestCase):
-    """ApiBranchViewKeyResponses unit test stubs"""
+class TestModelsManagerResponses(unittest.TestCase):
+    """ModelsManagerResponses unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,25 +26,25 @@ class TestApiBranchViewKeyResponses(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ApiBranchViewKeyResponses:
-        """Test ApiBranchViewKeyResponses
+    def make_instance(self, include_optional) -> ModelsManagerResponses:
+        """Test ModelsManagerResponses
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ApiBranchViewKeyResponses`
+        # uncomment below to create an instance of `ModelsManagerResponses`
         """
-        model = ApiBranchViewKeyResponses()
+        model = ModelsManagerResponses()
         if include_optional:
-            return ApiBranchViewKeyResponses(
+            return ModelsManagerResponses(
                 data = [
-                    stayforge.models.key.Key(
+                    stayforge.models.models_manager.ModelsManager(
                         id = '67683e7808122b7fbc20ff34', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        name = '', 
-                        postcode = '000-0000', 
-                        address = '000-0000', 
-                        telephone = '', )
+                        model = '', 
+                        model_version = 'latest', 
+                        local_name = '', 
+                        permissions = stayforge.models.permissions.permissions(), )
                     ],
                 detail = 'Successfully.',
                 status = 56,
@@ -53,22 +53,22 @@ class TestApiBranchViewKeyResponses(unittest.TestCase):
                     ver = '1.0.0', )
             )
         else:
-            return ApiBranchViewKeyResponses(
+            return ModelsManagerResponses(
                 data = [
-                    stayforge.models.key.Key(
+                    stayforge.models.models_manager.ModelsManager(
                         id = '67683e7808122b7fbc20ff34', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        name = '', 
-                        postcode = '000-0000', 
-                        address = '000-0000', 
-                        telephone = '', )
+                        model = '', 
+                        model_version = 'latest', 
+                        local_name = '', 
+                        permissions = stayforge.models.permissions.permissions(), )
                     ],
         )
         """
 
-    def testApiBranchViewKeyResponses(self):
-        """Test ApiBranchViewKeyResponses"""
+    def testModelsManagerResponses(self):
+        """Test ModelsManagerResponses"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

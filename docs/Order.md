@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '6755ae889eed24efaa80d0c1']
+**id** | **str** | Reference ID of the key. | [optional] [default to '67683e7808122b7fbc20ff34']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
-**num** | **str** | Order number | [optional] 
+**num** | **str** | Order number | 
 **room_id** | **str** | Room ID | [optional] 
 **guest** | [**Guest**](Guest.md) | Guest information | [optional] 
 **type** | **str** | OrderType | 

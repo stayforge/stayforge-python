@@ -15,11 +15,12 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.0-fa01ff3"
+__version__ = "0.0.0-c753004"
 
 # import apis into sdk package
 from apis.branches_api import BranchesApi
 from apis.key_manager_api import KeyManagerApi
+from apis.models_manager_api import ModelsManagerApi
 from apis.orders_api import OrdersApi
 from apis.room_types_api import RoomTypesApi
 from apis.rooms_api import RoomsApi
@@ -46,6 +47,9 @@ from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerVie
 from stayforge.models.guest import Guest
 from stayforge.models.http_validation_error import HTTPValidationError
 from stayforge.models.id_document import IDDocument
+from stayforge.models.models_manager import ModelsManager
+from stayforge.models.models_manager_input import ModelsManagerInput
+from stayforge.models.models_manager_responses import ModelsManagerResponses
 from stayforge.models.order import Order
 from stayforge.models.order_input import OrderInput
 from stayforge.models.order_responses import OrderResponses

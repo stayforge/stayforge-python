@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**num** | **str** | Order number | [optional] 
+**num** | **str** | Order number | 
 **room_id** | **str** | Room ID | [optional] 
 **guest** | [**Guest**](Guest.md) | Guest information | [optional] 
 **type** | **str** | OrderType | 
