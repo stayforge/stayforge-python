@@ -28,11 +28,11 @@ class Room(BaseModel):
     """
     Room
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='6768190908a17372522e1134', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='676819f00fc550cc28644ffc', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
-    key_id: Optional[StrictStr] = Field(default='6768190908a17372522e1136', description="Reference ID of the key.")
-    room_type_id: Optional[StrictStr] = Field(default='6768190908a17372522e1137', description="Reference ID of the RoomType.")
+    key_id: Optional[StrictStr] = Field(default='676819f00fc550cc28644ffe', description="Reference ID of the key.")
+    room_type_id: Optional[StrictStr] = Field(default='676819f00fc550cc28644fff', description="Reference ID of the RoomType.")
     number: StrictStr = Field(description="The number of rooms, e.g., 203.")
     priority: StrictInt = Field(description="The OTA system will give priority to rooms with a higher value to guests. If the priorities are the same, then it is random.")
     __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "key_id", "room_type_id", "number", "priority"]
@@ -98,11 +98,11 @@ class Room(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '6768190908a17372522e1134',
+            "id": obj.get("id") if obj.get("id") is not None else '676819f00fc550cc28644ffc',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
-            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '6768190908a17372522e1136',
-            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '6768190908a17372522e1137',
+            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '676819f00fc550cc28644ffe',
+            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '676819f00fc550cc28644fff',
             "number": obj.get("number"),
             "priority": obj.get("priority")
         })
