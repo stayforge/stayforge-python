@@ -38,8 +38,8 @@ class TestApiKeyManagerModelsKeyInput(unittest.TestCase):
             return ApiKeyManagerModelsKeyInput(
                 url = '',
                 num = '',
-                effective_at = '2024-12-22T14:00:55.977209Z',
-                ineffective_at = '2024-12-23T14:00:55.977236Z'
+                effective_at = '2024-12-22T14:01:54.487686Z',
+                ineffective_at = '2024-12-23T14:01:54.487714Z'
             )
         else:
             return ApiKeyManagerModelsKeyInput(
