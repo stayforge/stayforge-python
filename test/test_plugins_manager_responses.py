@@ -38,7 +38,7 @@ class TestPluginsManagerResponses(unittest.TestCase):
             return PluginsManagerResponses(
                 data = [
                     stayforge.models.plugins_manager.PluginsManager(
-                        id = '67680c4c4523700d07c07135', 
+                        id = '67680d1ddb24af6e7734e028', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         plugin = '', 
@@ -56,7 +56,7 @@ class TestPluginsManagerResponses(unittest.TestCase):
             return PluginsManagerResponses(
                 data = [
                     stayforge.models.plugins_manager.PluginsManager(
-                        id = '67680c4c4523700d07c07135', 
+                        id = '67680d1ddb24af6e7734e028', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         plugin = '', 
