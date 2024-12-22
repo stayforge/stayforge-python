@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key_id** | **str** | Reference ID of the key. | [optional] [default to '67681b5262e033840e13bbff']
-**room_type_id** | **str** | Reference ID of the RoomType. | [optional] [default to '67681b5262e033840e13bc00']
+**key_id** | **str** | Reference ID of the key. | [optional] [default to '67681b97fe8ddd4eb425070a']
+**room_type_id** | **str** | Reference ID of the RoomType. | [optional] [default to '67681b97fe8ddd4eb425070b']
 **number** | **str** | The number of rooms, e.g., 203. | 
 **priority** | **int** | The OTA system will give priority to rooms with a higher value to guests. If the priorities are the same, then it is random. | 
 
