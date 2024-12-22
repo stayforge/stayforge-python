@@ -24,13 +24,13 @@ from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerVie
 from stayforge.models.guest import Guest
 from stayforge.models.http_validation_error import HTTPValidationError
 from stayforge.models.id_document import IDDocument
+from stayforge.models.models_manager import ModelsManager
+from stayforge.models.models_manager_input import ModelsManagerInput
+from stayforge.models.models_manager_responses import ModelsManagerResponses
 from stayforge.models.order import Order
 from stayforge.models.order_input import OrderInput
 from stayforge.models.order_responses import OrderResponses
 from stayforge.models.photocopy import Photocopy
-from stayforge.models.plugins_manager import PluginsManager
-from stayforge.models.plugins_manager_input import PluginsManagerInput
-from stayforge.models.plugins_manager_responses import PluginsManagerResponses
 from stayforge.models.price import Price
 from stayforge.models.price_max import PriceMax
 from stayforge.models.price_min import PriceMin

@@ -15,10 +15,10 @@
 
 import unittest
 
-from stayforge.models.room_responses import RoomResponses
+from stayforge.models.models_manager_responses import ModelsManagerResponses
 
-class TestRoomResponses(unittest.TestCase):
-    """RoomResponses unit test stubs"""
+class TestModelsManagerResponses(unittest.TestCase):
+    """ModelsManagerResponses unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,25 +26,25 @@ class TestRoomResponses(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RoomResponses:
-        """Test RoomResponses
+    def make_instance(self, include_optional) -> ModelsManagerResponses:
+        """Test ModelsManagerResponses
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RoomResponses`
+        # uncomment below to create an instance of `ModelsManagerResponses`
         """
-        model = RoomResponses()
+        model = ModelsManagerResponses()
         if include_optional:
-            return RoomResponses(
+            return ModelsManagerResponses(
                 data = [
-                    stayforge.models.room.Room(
+                    stayforge.models.models_manager.ModelsManager(
                         id = '676811c686409f9940c3db47', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        key_id = '676811c686409f9940c3db49', 
-                        room_type_id = '676811c686409f9940c3db4a', 
-                        number = '', 
-                        priority = 56, )
+                        model = '', 
+                        model_version = 'latest', 
+                        local_name = '', 
+                        permissions = stayforge.models.permissions.permissions(), )
                     ],
                 detail = 'Successfully.',
                 status = 56,
@@ -53,22 +53,22 @@ class TestRoomResponses(unittest.TestCase):
                     ver = '1.0.0', )
             )
         else:
-            return RoomResponses(
+            return ModelsManagerResponses(
                 data = [
-                    stayforge.models.room.Room(
+                    stayforge.models.models_manager.ModelsManager(
                         id = '676811c686409f9940c3db47', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        key_id = '676811c686409f9940c3db49', 
-                        room_type_id = '676811c686409f9940c3db4a', 
-                        number = '', 
-                        priority = 56, )
+                        model = '', 
+                        model_version = 'latest', 
+                        local_name = '', 
+                        permissions = stayforge.models.permissions.permissions(), )
                     ],
         )
         """
 
-    def testRoomResponses(self):
-        """Test RoomResponses"""
+    def testModelsManagerResponses(self):
+        """Test ModelsManagerResponses"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

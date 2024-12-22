@@ -18,24 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ApiKeyManagerModelsKey(BaseModel):
+class ModelsManagerInput(BaseModel):
     """
-    ApiKeyManagerModelsKey
+    ModelsManagerInput
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='676811c686409f9940c3db47', description="Reference ID of the key.")
-    create_at: Optional[datetime]
-    update_at: Optional[datetime] = None
-    url: StrictStr = Field(description="The name of the hotel key. By default, it combines a base name with a random town.")
-    num: Optional[StrictStr] = Field(default='', description="Order number")
-    effective_at: Optional[StrictStr] = Field(default='2024-12-22T13:19:02.436439Z', description="Effective at")
-    ineffective_at: Optional[StrictStr] = Field(default='2024-12-23T13:19:02.436467Z', description="Ineffective at")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "url", "num", "effective_at", "ineffective_at"]
+    model: StrictStr = Field(description="The host URL of the model. This is used to generate webhook URLs and other model-related paths.")
+    model_version: Optional[StrictStr] = Field(default='latest', description="The version of the model. This helps in tracking updates and ensuring compatibility.")
+    local_name: Optional[StrictStr] = None
+    permissions: Optional[Dict[str, Any]] = None
+    __properties: ClassVar[List[str]] = ["model", "model_version", "local_name", "permissions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -55,7 +51,7 @@ class ApiKeyManagerModelsKey(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiKeyManagerModelsKey from a JSON string"""
+        """Create an instance of ModelsManagerInput from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -76,21 +72,21 @@ class ApiKeyManagerModelsKey(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if create_at (nullable) is None
+        # set to None if local_name (nullable) is None
         # and model_fields_set contains the field
-        if self.create_at is None and "create_at" in self.model_fields_set:
-            _dict['create_at'] = None
+        if self.local_name is None and "local_name" in self.model_fields_set:
+            _dict['local_name'] = None
 
-        # set to None if update_at (nullable) is None
+        # set to None if permissions (nullable) is None
         # and model_fields_set contains the field
-        if self.update_at is None and "update_at" in self.model_fields_set:
-            _dict['update_at'] = None
+        if self.permissions is None and "permissions" in self.model_fields_set:
+            _dict['permissions'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiKeyManagerModelsKey from a dict"""
+        """Create an instance of ModelsManagerInput from a dict"""
         if obj is None:
             return None
 
@@ -98,13 +94,10 @@ class ApiKeyManagerModelsKey(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '676811c686409f9940c3db47',
-            "create_at": obj.get("create_at"),
-            "update_at": obj.get("update_at"),
-            "url": obj.get("url"),
-            "num": obj.get("num") if obj.get("num") is not None else '',
-            "effective_at": obj.get("effective_at") if obj.get("effective_at") is not None else '2024-12-22T13:19:02.436439Z',
-            "ineffective_at": obj.get("ineffective_at") if obj.get("ineffective_at") is not None else '2024-12-23T13:19:02.436467Z'
+            "model": obj.get("model"),
+            "model_version": obj.get("model_version") if obj.get("model_version") is not None else 'latest',
+            "local_name": obj.get("local_name"),
+            "permissions": obj.get("permissions")
         })
         return _obj
 
