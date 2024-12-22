@@ -28,7 +28,7 @@ class ModelsManager(BaseModel):
     """
     ModelsManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67681b2e3f420d6e59c168b8', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='67681b5262e033840e13bbfd', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     model: StrictStr = Field(description="The host URL of the model. This is used to generate webhook URLs and other model-related paths.")
@@ -108,7 +108,7 @@ class ModelsManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67681b2e3f420d6e59c168b8',
+            "id": obj.get("id") if obj.get("id") is not None else '67681b5262e033840e13bbfd',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "model": obj.get("model"),
