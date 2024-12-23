@@ -5,10 +5,10 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_webhooks_profile_api_webhooks_manager_post**](WebhooksManagerApi.md#create_webhooks_profile_api_webhooks_manager_post) | **POST** /api/webhooks_manager/ | Create Webhooks Profile
-[**delete_webhooks_profile_api_webhooks_manager_id_delete**](WebhooksManagerApi.md#delete_webhooks_profile_api_webhooks_manager_id_delete) | **DELETE** /api/webhooks_manager/&lt;id&gt; | Delete Webhooks Profile
+[**delete_webhooks_profile_api_webhooks_manager_id_delete**](WebhooksManagerApi.md#delete_webhooks_profile_api_webhooks_manager_id_delete) | **DELETE** /api/webhooks_manager/{id} | Delete Webhooks Profile
 [**get_webhooks_profile_api_webhooks_manager_get**](WebhooksManagerApi.md#get_webhooks_profile_api_webhooks_manager_get) | **GET** /api/webhooks_manager/ | Get Webhooks Profile
-[**get_webhooks_profile_api_webhooks_manager_id_get**](WebhooksManagerApi.md#get_webhooks_profile_api_webhooks_manager_id_get) | **GET** /api/webhooks_manager/&lt;id&gt; | Get Webhooks Profile
-[**put_webhooks_profile_api_webhooks_manager_id_put**](WebhooksManagerApi.md#put_webhooks_profile_api_webhooks_manager_id_put) | **PUT** /api/webhooks_manager/&lt;id&gt; | Put Webhooks Profile
+[**get_webhooks_profile_api_webhooks_manager_id_get**](WebhooksManagerApi.md#get_webhooks_profile_api_webhooks_manager_id_get) | **GET** /api/webhooks_manager/{id} | Get Webhooks Profile
+[**put_webhooks_profile_api_webhooks_manager_id_put**](WebhooksManagerApi.md#put_webhooks_profile_api_webhooks_manager_id_put) | **PUT** /api/webhooks_manager/{id} | Put Webhooks Profile
 
 
 # **create_webhooks_profile_api_webhooks_manager_post**

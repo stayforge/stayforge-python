@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**webhook_name** | **str** | The Type of WebhooksManager | 
-**endpoint** | **str** | Description of the room type. | 
-**catch_path** | **str** | Current price. If you deploy a price controller, this value will be updated automatically. | 
+**webhook_name** | **str** | The name of the webhook configuration. | 
+**endpoint** | **str** | The URL where webhook events will be sent. | 
+**catch_path** | **str** | The path to monitor for webhook events. | 
 **catch_method** | **str** | HTTP method to be captured. | 
-**catch_status** | **int** | HTTP status to be captured. | [optional] [default to 200]
+**catch_status** | **int** |  | [optional] 
 
 ## Example
 

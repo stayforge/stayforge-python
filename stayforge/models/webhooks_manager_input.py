@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,12 +28,19 @@ class WebhooksManagerInput(BaseModel):
     """
     WebhooksManagerInput
     """ # noqa: E501
-    webhook_name: StrictStr = Field(description="The Type of WebhooksManager")
-    endpoint: StrictStr = Field(description="Description of the room type.")
-    catch_path: StrictStr = Field(description="Current price. If you deploy a price controller, this value will be updated automatically.")
+    webhook_name: StrictStr = Field(description="The name of the webhook configuration.")
+    endpoint: Annotated[str, Field(min_length=1, strict=True, max_length=2083)] = Field(description="The URL where webhook events will be sent.")
+    catch_path: StrictStr = Field(description="The path to monitor for webhook events.")
     catch_method: StrictStr = Field(description="HTTP method to be captured.")
-    catch_status: Optional[StrictInt] = Field(default=200, description="HTTP status to be captured.")
+    catch_status: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ["webhook_name", "endpoint", "catch_path", "catch_method", "catch_status"]
+
+    @field_validator('catch_method')
+    def catch_method_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['POST', 'GET', 'PUT', 'DELETE']):
+            raise ValueError("must be one of enum values ('POST', 'GET', 'PUT', 'DELETE')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,6 +81,11 @@ class WebhooksManagerInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if catch_status (nullable) is None
+        # and model_fields_set contains the field
+        if self.catch_status is None and "catch_status" in self.model_fields_set:
+            _dict['catch_status'] = None
+
         return _dict
 
     @classmethod
@@ -89,7 +102,7 @@ class WebhooksManagerInput(BaseModel):
             "endpoint": obj.get("endpoint"),
             "catch_path": obj.get("catch_path"),
             "catch_method": obj.get("catch_method"),
-            "catch_status": obj.get("catch_status") if obj.get("catch_status") is not None else 200
+            "catch_status": obj.get("catch_status")
         })
         return _obj
 

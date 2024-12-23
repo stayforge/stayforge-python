@@ -5,10 +5,10 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_models_profile_api_models_manager_post**](ModelsManagerApi.md#create_models_profile_api_models_manager_post) | **POST** /api/models_manager/ | Create Models Profile
-[**delete_models_profile_api_models_manager_id_delete**](ModelsManagerApi.md#delete_models_profile_api_models_manager_id_delete) | **DELETE** /api/models_manager/&lt;id&gt; | Delete Models Profile
+[**delete_models_profile_api_models_manager_id_delete**](ModelsManagerApi.md#delete_models_profile_api_models_manager_id_delete) | **DELETE** /api/models_manager/{id} | Delete Models Profile
 [**get_models_profile_api_models_manager_get**](ModelsManagerApi.md#get_models_profile_api_models_manager_get) | **GET** /api/models_manager/ | Get Models Profile
-[**get_models_profile_api_models_manager_id_get**](ModelsManagerApi.md#get_models_profile_api_models_manager_id_get) | **GET** /api/models_manager/&lt;id&gt; | Get Models Profile
-[**put_models_profile_api_models_manager_id_put**](ModelsManagerApi.md#put_models_profile_api_models_manager_id_put) | **PUT** /api/models_manager/&lt;id&gt; | Put Models Profile
+[**get_models_profile_api_models_manager_id_get**](ModelsManagerApi.md#get_models_profile_api_models_manager_id_get) | **GET** /api/models_manager/{id} | Get Models Profile
+[**put_models_profile_api_models_manager_id_put**](ModelsManagerApi.md#put_models_profile_api_models_manager_id_put) | **PUT** /api/models_manager/{id} | Put Models Profile
 
 
 # **create_models_profile_api_models_manager_post**

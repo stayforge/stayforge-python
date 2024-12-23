@@ -544,11 +544,9 @@ class OrdersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        # process the query parameters
         if id is not None:
-            
-            _query_params.append(('id', id))
-            
+            _path_params['id'] = id
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -569,7 +567,7 @@ class OrdersApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/api/order/_delete/<id>',
+            resource_path='/api/order/_delete/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -806,11 +804,9 @@ class OrdersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        # process the query parameters
         if id is not None:
-            
-            _query_params.append(('id', id))
-            
+            _path_params['id'] = id
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -831,7 +827,7 @@ class OrdersApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/order/<id>',
+            resource_path='/api/order/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1081,11 +1077,9 @@ class OrdersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        # process the query parameters
         if num is not None:
-            
-            _query_params.append(('num', num))
-            
+            _path_params['num'] = num
+        # process the query parameters
         if get_all is not None:
             
             _query_params.append(('get_all', get_all))
@@ -1110,7 +1104,7 @@ class OrdersApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/order/num/<num>',
+            resource_path='/api/order/num/{num}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

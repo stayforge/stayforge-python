@@ -5,10 +5,10 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_room_api_room_post**](RoomsApi.md#create_room_api_room_post) | **POST** /api/room/ | Create Room
-[**delete_room_api_room_id_delete**](RoomsApi.md#delete_room_api_room_id_delete) | **DELETE** /api/room/&lt;id&gt; | Delete Room
-[**get_room_api_room_id_get**](RoomsApi.md#get_room_api_room_id_get) | **GET** /api/room/&lt;id&gt; | Get Room
+[**delete_room_api_room_id_delete**](RoomsApi.md#delete_room_api_room_id_delete) | **DELETE** /api/room/{id} | Delete Room
+[**get_room_api_room_id_get**](RoomsApi.md#get_room_api_room_id_get) | **GET** /api/room/{id} | Get Room
 [**get_rooms_api_room_get**](RoomsApi.md#get_rooms_api_room_get) | **GET** /api/room/ | Get Rooms
-[**put_room_api_room_id_put**](RoomsApi.md#put_room_api_room_id_put) | **PUT** /api/room/&lt;id&gt; | Put Room
+[**put_room_api_room_id_put**](RoomsApi.md#put_room_api_room_id_put) | **PUT** /api/room/{id} | Put Room
 
 
 # **create_room_api_room_post**

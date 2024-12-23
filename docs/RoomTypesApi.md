@@ -5,10 +5,10 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_room_type_api_room_type_post**](RoomTypesApi.md#create_room_type_api_room_type_post) | **POST** /api/room_type/ | Create Room Type
-[**delete_room_type_api_room_type_id_delete**](RoomTypesApi.md#delete_room_type_api_room_type_id_delete) | **DELETE** /api/room_type/&lt;id&gt; | Delete Room Type
-[**get_room_type_api_room_type_id_get**](RoomTypesApi.md#get_room_type_api_room_type_id_get) | **GET** /api/room_type/&lt;id&gt; | Get Room Type
+[**delete_room_type_api_room_type_id_delete**](RoomTypesApi.md#delete_room_type_api_room_type_id_delete) | **DELETE** /api/room_type/{id} | Delete Room Type
+[**get_room_type_api_room_type_id_get**](RoomTypesApi.md#get_room_type_api_room_type_id_get) | **GET** /api/room_type/{id} | Get Room Type
 [**get_room_types_api_room_type_get**](RoomTypesApi.md#get_room_types_api_room_type_get) | **GET** /api/room_type/ | Get Room Types
-[**put_room_type_api_room_type_id_put**](RoomTypesApi.md#put_room_type_api_room_type_id_put) | **PUT** /api/room_type/&lt;id&gt; | Put Room Type
+[**put_room_type_api_room_type_id_put**](RoomTypesApi.md#put_room_type_api_room_type_id_put) | **PUT** /api/room_type/{id} | Put Room Type
 
 
 # **create_room_type_api_room_type_post**

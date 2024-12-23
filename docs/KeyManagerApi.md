@@ -5,10 +5,10 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_key_api_key_post**](KeyManagerApi.md#create_key_api_key_post) | **POST** /api/key/ | Create Key
-[**delete_key_api_key_id_delete**](KeyManagerApi.md#delete_key_api_key_id_delete) | **DELETE** /api/key/&lt;id&gt; | Delete Key
-[**get_key_api_key_id_get**](KeyManagerApi.md#get_key_api_key_id_get) | **GET** /api/key/&lt;id&gt; | Get Key
-[**get_key_by_num_api_key_num_num_get**](KeyManagerApi.md#get_key_by_num_api_key_num_num_get) | **GET** /api/key/num/&lt;num&gt; | Get Key By Num
-[**put_key_api_key_id_put**](KeyManagerApi.md#put_key_api_key_id_put) | **PUT** /api/key/&lt;id&gt; | Put Key
+[**delete_key_api_key_id_delete**](KeyManagerApi.md#delete_key_api_key_id_delete) | **DELETE** /api/key/{id} | Delete Key
+[**get_key_api_key_id_get**](KeyManagerApi.md#get_key_api_key_id_get) | **GET** /api/key/{id} | Get Key
+[**get_key_by_num_api_key_num_num_get**](KeyManagerApi.md#get_key_by_num_api_key_num_num_get) | **GET** /api/key/num/{num} | Get Key By Num
+[**put_key_api_key_id_put**](KeyManagerApi.md#put_key_api_key_id_put) | **PUT** /api/key/{id} | Put Key
 
 
 # **create_key_api_key_post**
@@ -215,7 +215,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_key_by_num_api_key_num_num_get**
-> ApiKeyManagerViewKeyResponses get_key_by_num_api_key_num_num_get(num=num)
+> ApiKeyManagerViewKeyResponses get_key_by_num_api_key_num_num_get(num)
 
 Get Key By Num
 
@@ -239,11 +239,11 @@ configuration = stayforge.Configuration(
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.KeyManagerApi(api_client)
-    num = 'num_example' # str |  (optional)
+    num = 'num_example' # str | Order Num
 
     try:
         # Get Key By Num
-        api_response = api_instance.get_key_by_num_api_key_num_num_get(num=num)
+        api_response = api_instance.get_key_by_num_api_key_num_num_get(num)
         print("The response of KeyManagerApi->get_key_by_num_api_key_num_num_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -257,7 +257,7 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **num** | **str**|  | [optional] 
+ **num** | **str**| Order Num | 
 
 ### Return type
 

@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '67683fc80e6a6899b6afd34d']
+**id** | **str** | Reference ID of the key. | [optional] [default to '67692f8161aa52a624d64ef7']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
-**webhook_name** | **str** | The Type of WebhooksManager | 
-**endpoint** | **str** | Description of the room type. | 
-**catch_path** | **str** | Current price. If you deploy a price controller, this value will be updated automatically. | 
+**webhook_name** | **str** | The name of the webhook configuration. | 
+**endpoint** | **str** | The URL where webhook events will be sent. | 
+**catch_path** | **str** | The path to monitor for webhook events. | 
 **catch_method** | **str** | HTTP method to be captured. | 
-**catch_status** | **int** | HTTP status to be captured. | [optional] [default to 200]
+**catch_status** | **int** |  | [optional] 
 
 ## Example
 

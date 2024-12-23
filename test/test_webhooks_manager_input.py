@@ -37,17 +37,17 @@ class TestWebhooksManagerInput(unittest.TestCase):
         if include_optional:
             return WebhooksManagerInput(
                 webhook_name = '',
-                endpoint = '',
+                endpoint = '0',
                 catch_path = '',
-                catch_method = '',
+                catch_method = 'POST',
                 catch_status = 56
             )
         else:
             return WebhooksManagerInput(
                 webhook_name = '',
-                endpoint = '',
+                endpoint = '0',
                 catch_path = '',
-                catch_method = '',
+                catch_method = 'POST',
         )
         """
 

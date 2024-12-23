@@ -17,8 +17,8 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import StrictStr
-from typing import Optional
+from pydantic import Field, StrictStr
+from typing_extensions import Annotated
 from stayforge.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
 from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
 
@@ -537,11 +537,9 @@ class KeyManagerApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        # process the query parameters
         if id is not None:
-            
-            _query_params.append(('id', id))
-            
+            _path_params['id'] = id
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -562,7 +560,7 @@ class KeyManagerApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/api/key/<id>',
+            resource_path='/api/key/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -799,11 +797,9 @@ class KeyManagerApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        # process the query parameters
         if id is not None:
-            
-            _query_params.append(('id', id))
-            
+            _path_params['id'] = id
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -824,7 +820,7 @@ class KeyManagerApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/key/<id>',
+            resource_path='/api/key/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -843,7 +839,7 @@ class KeyManagerApi:
     @validate_call
     def get_key_by_num_api_key_num_num_get(
         self,
-        num: Optional[StrictStr] = None,
+        num: Annotated[StrictStr, Field(description="Order Num")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -860,7 +856,7 @@ class KeyManagerApi:
         """Get Key By Num
 
 
-        :param num:
+        :param num: Order Num (required)
         :type num: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -910,7 +906,7 @@ class KeyManagerApi:
     @validate_call
     def get_key_by_num_api_key_num_num_get_with_http_info(
         self,
-        num: Optional[StrictStr] = None,
+        num: Annotated[StrictStr, Field(description="Order Num")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -927,7 +923,7 @@ class KeyManagerApi:
         """Get Key By Num
 
 
-        :param num:
+        :param num: Order Num (required)
         :type num: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -977,7 +973,7 @@ class KeyManagerApi:
     @validate_call
     def get_key_by_num_api_key_num_num_get_without_preload_content(
         self,
-        num: Optional[StrictStr] = None,
+        num: Annotated[StrictStr, Field(description="Order Num")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -994,7 +990,7 @@ class KeyManagerApi:
         """Get Key By Num
 
 
-        :param num:
+        :param num: Order Num (required)
         :type num: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1061,11 +1057,9 @@ class KeyManagerApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        # process the query parameters
         if num is not None:
-            
-            _query_params.append(('num', num))
-            
+            _path_params['num'] = num
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1086,7 +1080,7 @@ class KeyManagerApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/key/num/<num>',
+            resource_path='/api/key/num/{num}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1339,11 +1333,9 @@ class KeyManagerApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        # process the query parameters
         if id is not None:
-            
-            _query_params.append(('id', id))
-            
+            _path_params['id'] = id
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1379,7 +1371,7 @@ class KeyManagerApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/api/key/<id>',
+            resource_path='/api/key/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -5,9 +5,9 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_order_api_order_post**](OrdersApi.md#create_order_api_order_post) | **POST** /api/order/ | Create Order
-[**delete_order_api_order_delete_id_delete**](OrdersApi.md#delete_order_api_order_delete_id_delete) | **DELETE** /api/order/_delete/&lt;id&gt; | Delete Order
-[**get_order_by_id_api_order_id_get**](OrdersApi.md#get_order_by_id_api_order_id_get) | **GET** /api/order/&lt;id&gt; | Get Order By Id
-[**get_order_by_num_api_order_num_num_get**](OrdersApi.md#get_order_by_num_api_order_num_num_get) | **GET** /api/order/num/&lt;num&gt; | Get Order By Num
+[**delete_order_api_order_delete_id_delete**](OrdersApi.md#delete_order_api_order_delete_id_delete) | **DELETE** /api/order/_delete/{id} | Delete Order
+[**get_order_by_id_api_order_id_get**](OrdersApi.md#get_order_by_id_api_order_id_get) | **GET** /api/order/{id} | Get Order By Id
+[**get_order_by_num_api_order_num_num_get**](OrdersApi.md#get_order_by_num_api_order_num_num_get) | **GET** /api/order/num/{num} | Get Order By Num
 [**get_order_types_api_order_order_types_get**](OrdersApi.md#get_order_types_api_order_order_types_get) | **GET** /api/order/order_types | Get Order Types
 
 

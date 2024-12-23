@@ -5,10 +5,10 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_key_api_branch_post**](BranchesApi.md#create_key_api_branch_post) | **POST** /api/branch/ | Create Key
-[**delete_key_api_branch_id_delete**](BranchesApi.md#delete_key_api_branch_id_delete) | **DELETE** /api/branch/&lt;id&gt; | Delete Key
-[**get_key_api_branch_id_get**](BranchesApi.md#get_key_api_branch_id_get) | **GET** /api/branch/&lt;id&gt; | Get Key
+[**delete_key_api_branch_id_delete**](BranchesApi.md#delete_key_api_branch_id_delete) | **DELETE** /api/branch/{id} | Delete Key
+[**get_key_api_branch_id_get**](BranchesApi.md#get_key_api_branch_id_get) | **GET** /api/branch/{id} | Get Key
 [**get_keys_api_branch_get**](BranchesApi.md#get_keys_api_branch_get) | **GET** /api/branch/ | Get Keys
-[**put_key_api_branch_id_put**](BranchesApi.md#put_key_api_branch_id_put) | **PUT** /api/branch/&lt;id&gt; | Put Key
+[**put_key_api_branch_id_put**](BranchesApi.md#put_key_api_branch_id_put) | **PUT** /api/branch/{id} | Put Key
 
 
 # **create_key_api_branch_post**

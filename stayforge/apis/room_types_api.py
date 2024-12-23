@@ -538,11 +538,9 @@ class RoomTypesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        # process the query parameters
         if id is not None:
-            
-            _query_params.append(('id', id))
-            
+            _path_params['id'] = id
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -563,7 +561,7 @@ class RoomTypesApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/api/room_type/<id>',
+            resource_path='/api/room_type/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -800,11 +798,9 @@ class RoomTypesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        # process the query parameters
         if id is not None:
-            
-            _query_params.append(('id', id))
-            
+            _path_params['id'] = id
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -825,7 +821,7 @@ class RoomTypesApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/room_type/<id>',
+            resource_path='/api/room_type/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1425,11 +1421,9 @@ class RoomTypesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        # process the query parameters
         if id is not None:
-            
-            _query_params.append(('id', id))
-            
+            _path_params['id'] = id
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1465,7 +1459,7 @@ class RoomTypesApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/api/room_type/<id>',
+            resource_path='/api/room_type/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

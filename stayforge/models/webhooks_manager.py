@@ -19,8 +19,9 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,15 +29,22 @@ class WebhooksManager(BaseModel):
     """
     WebhooksManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67683fc80e6a6899b6afd34d', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='67692f8161aa52a624d64ef7', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
-    webhook_name: StrictStr = Field(description="The Type of WebhooksManager")
-    endpoint: StrictStr = Field(description="Description of the room type.")
-    catch_path: StrictStr = Field(description="Current price. If you deploy a price controller, this value will be updated automatically.")
+    webhook_name: StrictStr = Field(description="The name of the webhook configuration.")
+    endpoint: Annotated[str, Field(min_length=1, strict=True, max_length=2083)] = Field(description="The URL where webhook events will be sent.")
+    catch_path: StrictStr = Field(description="The path to monitor for webhook events.")
     catch_method: StrictStr = Field(description="HTTP method to be captured.")
-    catch_status: Optional[StrictInt] = Field(default=200, description="HTTP status to be captured.")
+    catch_status: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "webhook_name", "endpoint", "catch_path", "catch_method", "catch_status"]
+
+    @field_validator('catch_method')
+    def catch_method_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['POST', 'GET', 'PUT', 'DELETE']):
+            raise ValueError("must be one of enum values ('POST', 'GET', 'PUT', 'DELETE')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,6 +95,11 @@ class WebhooksManager(BaseModel):
         if self.update_at is None and "update_at" in self.model_fields_set:
             _dict['update_at'] = None
 
+        # set to None if catch_status (nullable) is None
+        # and model_fields_set contains the field
+        if self.catch_status is None and "catch_status" in self.model_fields_set:
+            _dict['catch_status'] = None
+
         return _dict
 
     @classmethod
@@ -99,14 +112,14 @@ class WebhooksManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67683fc80e6a6899b6afd34d',
+            "id": obj.get("id") if obj.get("id") is not None else '67692f8161aa52a624d64ef7',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "webhook_name": obj.get("webhook_name"),
             "endpoint": obj.get("endpoint"),
             "catch_path": obj.get("catch_path"),
             "catch_method": obj.get("catch_method"),
-            "catch_status": obj.get("catch_status") if obj.get("catch_status") is not None else 200
+            "catch_status": obj.get("catch_status")
         })
         return _obj
 
