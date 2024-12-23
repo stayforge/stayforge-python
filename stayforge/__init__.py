@@ -18,13 +18,13 @@
 __version__ = "0.0.0-d2c0e07"
 
 # import apis into sdk package
-from apis.branches_api import BranchesApi
-from apis.key_manager_api import KeyManagerApi
-from apis.models_manager_api import ModelsManagerApi
-from apis.orders_api import OrdersApi
-from apis.room_types_api import RoomTypesApi
-from apis.rooms_api import RoomsApi
-from apis.webhooks_manager_api import WebhooksManagerApi
+from .apis.branches_api import BranchesApi
+from .apis.key_manager_api import KeyManagerApi
+from .apis.models_manager_api import ModelsManagerApi
+from .apis.orders_api import OrdersApi
+from .apis.room_types_api import RoomTypesApi
+from .apis.rooms_api import RoomsApi
+from .apis.webhooks_manager_api import WebhooksManagerApi
 
 # import ApiClient
 from stayforge.api_response import ApiResponse
