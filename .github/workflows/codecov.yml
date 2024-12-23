@@ -1,0 +1,41 @@
+name: Run codecov tests and upload coverage
+
+on:
+  push:
+
+jobs:
+  test:
+    name: Run tests and collect coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+
+      - name: Install dependencies
+        run: |
+
+          pip install pytest pytest-cov codecov flask
+          pip install -r requirements-dev.txt
+
+
+      - name: Run tests
+        run: pytest --cov --cov-report=xml --junitxml=test-results/results.xml
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: tokujun-t/Stayforge
+
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: test-results/results.xml
+
