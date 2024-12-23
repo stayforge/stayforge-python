@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.0-0aee370"
+__version__ = "0.0.0-cd92999"
 
 # import apis into sdk package
 from stayforge.api.branches_api import BranchesApi

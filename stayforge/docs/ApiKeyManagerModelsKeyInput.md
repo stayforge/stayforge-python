@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **str** | The name of the hotel key. By default, it combines a base name with a random town. | 
 **num** | **str** | Order number | [optional] [default to '']
-**effective_at** | **str** | Effective at | [optional] [default to '2024-12-23T11:11:15.257067Z']
-**ineffective_at** | **str** | Ineffective at | [optional] [default to '2024-12-24T11:11:15.257092Z']
+**effective_at** | **str** | Effective at | [optional] [default to '2024-12-23T11:14:52.369841Z']
+**ineffective_at** | **str** | Ineffective at | [optional] [default to '2024-12-24T11:14:52.369866Z']
 
 ## Example
 
