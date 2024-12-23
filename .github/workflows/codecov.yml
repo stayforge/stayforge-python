@@ -19,8 +19,8 @@ jobs:
       - name: Install dependencies
         run: |
 
-          pip install pytest pytest-cov codecov flask
-          pip install -r requirements-dev.txt
+          pip install pytest pytest-cov codecov
+          pip install -r requirements.txt
 
 
       - name: Run tests

@@ -1,0 +1,4 @@
+pydantic
+typing_extensions
+urllib3
+python-dateutil
