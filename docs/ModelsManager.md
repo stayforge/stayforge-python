@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '67692f8161aa52a624d64ef7']
+**id** | **str** | Reference ID of the key. | [optional] [default to '67693050241ea1a76ef550b5']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **model** | **str** | The host URL of the model. This is used to generate webhook URLs and other model-related paths. | 
