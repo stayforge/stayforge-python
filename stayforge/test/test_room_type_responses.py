@@ -37,7 +37,7 @@ class TestRoomTypeResponses(unittest.TestCase):
             return RoomTypeResponses(
                 data = [
                     stayforge.models.room_type.RoomType(
-                        id = '676be1afc2c5af4e110899a8', 
+                        id = '676c2799cabb04bdf96759f9', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '', 
@@ -57,7 +57,7 @@ class TestRoomTypeResponses(unittest.TestCase):
             return RoomTypeResponses(
                 data = [
                     stayforge.models.room_type.RoomType(
-                        id = '676be1afc2c5af4e110899a8', 
+                        id = '676c2799cabb04bdf96759f9', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '', 

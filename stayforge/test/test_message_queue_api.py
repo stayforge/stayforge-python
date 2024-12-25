@@ -14,42 +14,53 @@
 
 import unittest
 
-from stayforge.models.key_input import KeyInput
+from stayforge.api.message_queue_api import MessageQueueApi
 
-class TestKeyInput(unittest.TestCase):
-    """KeyInput unit test stubs"""
 
-    def setUp(self):
+class TestMessageQueueApi(unittest.TestCase):
+    """MessageQueueApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = MessageQueueApi()
+
+    def tearDown(self) -> None:
         pass
 
-    def tearDown(self):
+    def test_dequeue_api_mq_stream_get(self) -> None:
+        """Test case for dequeue_api_mq_stream_get
+
+        Dequeue
+        """
         pass
 
-    def make_instance(self, include_optional) -> KeyInput:
-        """Test KeyInput
-            include_optional is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # uncomment below to create an instance of `KeyInput`
-        """
-        model = KeyInput()
-        if include_optional:
-            return KeyInput(
-                url = '',
-                num = '',
-                effective_at = '2024-12-25T15:41:13.178342Z',
-                ineffective_at = '2024-12-26T15:41:13.178398Z'
-            )
-        else:
-            return KeyInput(
-                url = '',
-        )
-        """
+    def test_enqueue_api_mq_stream_post(self) -> None:
+        """Test case for enqueue_api_mq_stream_post
 
-    def testKeyInput(self):
-        """Test KeyInput"""
-        # inst_req_only = self.make_instance(include_optional=False)
-        # inst_req_and_optional = self.make_instance(include_optional=True)
+        Enqueue
+        """
+        pass
+
+    def test_messages_api_mq_messages_stream_get(self) -> None:
+        """Test case for messages_api_mq_messages_stream_get
+
+        Messages
+        """
+        pass
+
+    def test_sized_api_mq_sized_stream_get(self) -> None:
+        """Test case for sized_api_mq_sized_stream_get
+
+        Sized
+        """
+        pass
+
+    def test_streams_api_mq_streams_get(self) -> None:
+        """Test case for streams_api_mq_streams_get
+
+        Streams
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -14,10 +14,10 @@
 
 import unittest
 
-from stayforge.models.key_input import KeyInput
+from stayforge.models.mq_enqueue import MQEnqueue
 
-class TestKeyInput(unittest.TestCase):
-    """KeyInput unit test stubs"""
+class TestMQEnqueue(unittest.TestCase):
+    """MQEnqueue unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,29 +25,25 @@ class TestKeyInput(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> KeyInput:
-        """Test KeyInput
+    def make_instance(self, include_optional) -> MQEnqueue:
+        """Test MQEnqueue
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `KeyInput`
+        # uncomment below to create an instance of `MQEnqueue`
         """
-        model = KeyInput()
+        model = MQEnqueue()
         if include_optional:
-            return KeyInput(
-                url = '',
-                num = '',
-                effective_at = '2024-12-25T15:41:13.178342Z',
-                ineffective_at = '2024-12-26T15:41:13.178398Z'
+            return MQEnqueue(
+                message = ''
             )
         else:
-            return KeyInput(
-                url = '',
+            return MQEnqueue(
         )
         """
 
-    def testKeyInput(self):
-        """Test KeyInput"""
+    def testMQEnqueue(self):
+        """Test MQEnqueue"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -22,15 +22,12 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class KeyInput(BaseModel):
+class MQEnqueue(BaseModel):
     """
-    KeyInput
+    MQEnqueue
     """ # noqa: E501
-    url: StrictStr = Field(description="The name of the hotel key. By default, it combines a base name with a random town.")
-    num: Optional[StrictStr] = Field(default='', description="Order number")
-    effective_at: Optional[StrictStr] = Field(default='2024-12-25T15:41:13.178342Z', description="Effective at")
-    ineffective_at: Optional[StrictStr] = Field(default='2024-12-26T15:41:13.178398Z', description="Ineffective at")
-    __properties: ClassVar[List[str]] = ["url", "num", "effective_at", "ineffective_at"]
+    message: Optional[StrictStr] = Field(default=None, description="The content of the message to be enqueued.")
+    __properties: ClassVar[List[str]] = ["message"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +47,7 @@ class KeyInput(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of KeyInput from a JSON string"""
+        """Create an instance of MQEnqueue from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +72,7 @@ class KeyInput(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of KeyInput from a dict"""
+        """Create an instance of MQEnqueue from a dict"""
         if obj is None:
             return None
 
@@ -83,10 +80,7 @@ class KeyInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "url": obj.get("url"),
-            "num": obj.get("num") if obj.get("num") is not None else '',
-            "effective_at": obj.get("effective_at") if obj.get("effective_at") is not None else '2024-12-25T15:41:13.178342Z',
-            "ineffective_at": obj.get("ineffective_at") if obj.get("ineffective_at") is not None else '2024-12-26T15:41:13.178398Z'
+            "message": obj.get("message")
         })
         return _obj
 
