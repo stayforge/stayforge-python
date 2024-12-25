@@ -18,8 +18,8 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from stayforge.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
-from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.models.key_input import KeyInput
+from stayforge.models.key_responses import KeyResponses
 
 from stayforge.api_client import ApiClient, RequestSerialized
 from stayforge.api_response import ApiResponse
@@ -42,7 +42,7 @@ class KeyManagerApi:
     @validate_call
     def create_key_api_key_post(
         self,
-        api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput,
+        key_input: KeyInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -55,12 +55,12 @@ class KeyManagerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiKeyManagerViewKeyResponses:
+    ) -> KeyResponses:
         """Create Key
 
 
-        :param api_key_manager_models_key_input: (required)
-        :type api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput
+        :param key_input: (required)
+        :type key_input: KeyInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -84,7 +84,7 @@ class KeyManagerApi:
         """ # noqa: E501
 
         _param = self._create_key_api_key_post_serialize(
-            api_key_manager_models_key_input=api_key_manager_models_key_input,
+            key_input=key_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -92,7 +92,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -110,7 +110,7 @@ class KeyManagerApi:
     @validate_call
     def create_key_api_key_post_with_http_info(
         self,
-        api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput,
+        key_input: KeyInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -123,12 +123,12 @@ class KeyManagerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ApiKeyManagerViewKeyResponses]:
+    ) -> ApiResponse[KeyResponses]:
         """Create Key
 
 
-        :param api_key_manager_models_key_input: (required)
-        :type api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput
+        :param key_input: (required)
+        :type key_input: KeyInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -152,7 +152,7 @@ class KeyManagerApi:
         """ # noqa: E501
 
         _param = self._create_key_api_key_post_serialize(
-            api_key_manager_models_key_input=api_key_manager_models_key_input,
+            key_input=key_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -160,7 +160,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -178,7 +178,7 @@ class KeyManagerApi:
     @validate_call
     def create_key_api_key_post_without_preload_content(
         self,
-        api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput,
+        key_input: KeyInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -195,8 +195,8 @@ class KeyManagerApi:
         """Create Key
 
 
-        :param api_key_manager_models_key_input: (required)
-        :type api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput
+        :param key_input: (required)
+        :type key_input: KeyInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -220,7 +220,7 @@ class KeyManagerApi:
         """ # noqa: E501
 
         _param = self._create_key_api_key_post_serialize(
-            api_key_manager_models_key_input=api_key_manager_models_key_input,
+            key_input=key_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -228,7 +228,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -241,7 +241,7 @@ class KeyManagerApi:
 
     def _create_key_api_key_post_serialize(
         self,
-        api_key_manager_models_key_input,
+        key_input,
         _request_auth,
         _content_type,
         _headers,
@@ -267,8 +267,8 @@ class KeyManagerApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if api_key_manager_models_key_input is not None:
-            _body_params = api_key_manager_models_key_input
+        if key_input is not None:
+            _body_params = key_input
 
 
         # set the HTTP header `Accept`
@@ -331,7 +331,7 @@ class KeyManagerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiKeyManagerViewKeyResponses:
+    ) -> KeyResponses:
         """Delete Key
 
 
@@ -368,7 +368,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -398,7 +398,7 @@ class KeyManagerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ApiKeyManagerViewKeyResponses]:
+    ) -> ApiResponse[KeyResponses]:
         """Delete Key
 
 
@@ -435,7 +435,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -502,7 +502,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -591,7 +591,7 @@ class KeyManagerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiKeyManagerViewKeyResponses:
+    ) -> KeyResponses:
         """Get Key
 
 
@@ -628,7 +628,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -658,7 +658,7 @@ class KeyManagerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ApiKeyManagerViewKeyResponses]:
+    ) -> ApiResponse[KeyResponses]:
         """Get Key
 
 
@@ -695,7 +695,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -762,7 +762,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -851,7 +851,7 @@ class KeyManagerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiKeyManagerViewKeyResponses:
+    ) -> KeyResponses:
         """Get Key By Num
 
 
@@ -888,7 +888,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -918,7 +918,7 @@ class KeyManagerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ApiKeyManagerViewKeyResponses]:
+    ) -> ApiResponse[KeyResponses]:
         """Get Key By Num
 
 
@@ -955,7 +955,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1022,7 +1022,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1099,7 +1099,7 @@ class KeyManagerApi:
     def put_key_api_key_id_put(
         self,
         id: StrictStr,
-        api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput,
+        key_input: KeyInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1112,14 +1112,14 @@ class KeyManagerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiKeyManagerViewKeyResponses:
+    ) -> KeyResponses:
         """Put Key
 
 
         :param id: (required)
         :type id: str
-        :param api_key_manager_models_key_input: (required)
-        :type api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput
+        :param key_input: (required)
+        :type key_input: KeyInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1144,7 +1144,7 @@ class KeyManagerApi:
 
         _param = self._put_key_api_key_id_put_serialize(
             id=id,
-            api_key_manager_models_key_input=api_key_manager_models_key_input,
+            key_input=key_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1152,7 +1152,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -1171,7 +1171,7 @@ class KeyManagerApi:
     def put_key_api_key_id_put_with_http_info(
         self,
         id: StrictStr,
-        api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput,
+        key_input: KeyInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1184,14 +1184,14 @@ class KeyManagerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ApiKeyManagerViewKeyResponses]:
+    ) -> ApiResponse[KeyResponses]:
         """Put Key
 
 
         :param id: (required)
         :type id: str
-        :param api_key_manager_models_key_input: (required)
-        :type api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput
+        :param key_input: (required)
+        :type key_input: KeyInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1216,7 +1216,7 @@ class KeyManagerApi:
 
         _param = self._put_key_api_key_id_put_serialize(
             id=id,
-            api_key_manager_models_key_input=api_key_manager_models_key_input,
+            key_input=key_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1224,7 +1224,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -1243,7 +1243,7 @@ class KeyManagerApi:
     def put_key_api_key_id_put_without_preload_content(
         self,
         id: StrictStr,
-        api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput,
+        key_input: KeyInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1262,8 +1262,8 @@ class KeyManagerApi:
 
         :param id: (required)
         :type id: str
-        :param api_key_manager_models_key_input: (required)
-        :type api_key_manager_models_key_input: ApiKeyManagerModelsKeyInput
+        :param key_input: (required)
+        :type key_input: KeyInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1288,7 +1288,7 @@ class KeyManagerApi:
 
         _param = self._put_key_api_key_id_put_serialize(
             id=id,
-            api_key_manager_models_key_input=api_key_manager_models_key_input,
+            key_input=key_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1296,7 +1296,7 @@ class KeyManagerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiKeyManagerViewKeyResponses",
+            '200': "KeyResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -1310,7 +1310,7 @@ class KeyManagerApi:
     def _put_key_api_key_id_put_serialize(
         self,
         id,
-        api_key_manager_models_key_input,
+        key_input,
         _request_auth,
         _content_type,
         _headers,
@@ -1338,8 +1338,8 @@ class KeyManagerApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if api_key_manager_models_key_input is not None:
-            _body_params = api_key_manager_models_key_input
+        if key_input is not None:
+            _body_params = key_input
 
 
         # set the HTTP header `Accept`

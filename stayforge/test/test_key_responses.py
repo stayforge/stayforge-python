@@ -14,10 +14,10 @@
 
 import unittest
 
-from stayforge.models.room_responses import RoomResponses
+from stayforge.models.key_responses import KeyResponses
 
-class TestRoomResponses(unittest.TestCase):
-    """RoomResponses unit test stubs"""
+class TestKeyResponses(unittest.TestCase):
+    """KeyResponses unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,25 +25,25 @@ class TestRoomResponses(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RoomResponses:
-        """Test RoomResponses
+    def make_instance(self, include_optional) -> KeyResponses:
+        """Test KeyResponses
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RoomResponses`
+        # uncomment below to create an instance of `KeyResponses`
         """
-        model = RoomResponses()
+        model = KeyResponses()
         if include_optional:
-            return RoomResponses(
+            return KeyResponses(
                 data = [
-                    stayforge.models.room.Room(
+                    stayforge.models.key.Key(
                         id = '676be1afc2c5af4e110899a8', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        key_id = '676be1b0c2c5af4e110899aa', 
-                        room_type_id = '676be1b0c2c5af4e110899ab', 
-                        number = '', 
-                        priority = 56, )
+                        url = '', 
+                        num = '', 
+                        effective_at = '2024-12-25T10:42:56.038547Z', 
+                        ineffective_at = '2024-12-26T10:42:56.038575Z', )
                     ],
                 detail = 'Successfully.',
                 status = 56,
@@ -52,22 +52,22 @@ class TestRoomResponses(unittest.TestCase):
                     ver = '1.0.0', )
             )
         else:
-            return RoomResponses(
+            return KeyResponses(
                 data = [
-                    stayforge.models.room.Room(
+                    stayforge.models.key.Key(
                         id = '676be1afc2c5af4e110899a8', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        key_id = '676be1b0c2c5af4e110899aa', 
-                        room_type_id = '676be1b0c2c5af4e110899ab', 
-                        number = '', 
-                        priority = 56, )
+                        url = '', 
+                        num = '', 
+                        effective_at = '2024-12-25T10:42:56.038547Z', 
+                        ineffective_at = '2024-12-26T10:42:56.038575Z', )
                     ],
         )
         """
 
-    def testRoomResponses(self):
-        """Test RoomResponses"""
+    def testKeyResponses(self):
+        """Test KeyResponses"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

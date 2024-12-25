@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_key_api_key_post**
-> ApiKeyManagerViewKeyResponses create_key_api_key_post(api_key_manager_models_key_input)
+> KeyResponses create_key_api_key_post(key_input)
 
 Create Key
 
@@ -21,8 +21,8 @@ Create Key
 
 ```python
 import stayforge
-from stayforge.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
-from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.models.key_input import KeyInput
+from stayforge.models.key_responses import KeyResponses
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -37,11 +37,11 @@ configuration = stayforge.Configuration(
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.KeyManagerApi(api_client)
-    api_key_manager_models_key_input = stayforge.ApiKeyManagerModelsKeyInput() # ApiKeyManagerModelsKeyInput | 
+    key_input = stayforge.KeyInput() # KeyInput | 
 
     try:
         # Create Key
-        api_response = api_instance.create_key_api_key_post(api_key_manager_models_key_input)
+        api_response = api_instance.create_key_api_key_post(key_input)
         print("The response of KeyManagerApi->create_key_api_key_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -55,11 +55,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key_manager_models_key_input** | [**ApiKeyManagerModelsKeyInput**](ApiKeyManagerModelsKeyInput.md)|  | 
+ **key_input** | [**KeyInput**](KeyInput.md)|  | 
 
 ### Return type
 
-[**ApiKeyManagerViewKeyResponses**](ApiKeyManagerViewKeyResponses.md)
+[**KeyResponses**](KeyResponses.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_key_api_key_id_delete**
-> ApiKeyManagerViewKeyResponses delete_key_api_key_id_delete(id)
+> KeyResponses delete_key_api_key_id_delete(id)
 
 Delete Key
 
@@ -90,7 +90,7 @@ Delete Key
 
 ```python
 import stayforge
-from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.models.key_responses import KeyResponses
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiKeyManagerViewKeyResponses**](ApiKeyManagerViewKeyResponses.md)
+[**KeyResponses**](KeyResponses.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_key_api_key_id_get**
-> ApiKeyManagerViewKeyResponses get_key_api_key_id_get(id)
+> KeyResponses get_key_api_key_id_get(id)
 
 Get Key
 
@@ -157,7 +157,7 @@ Get Key
 
 ```python
 import stayforge
-from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.models.key_responses import KeyResponses
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiKeyManagerViewKeyResponses**](ApiKeyManagerViewKeyResponses.md)
+[**KeyResponses**](KeyResponses.md)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_key_by_num_api_key_num_num_get**
-> ApiKeyManagerViewKeyResponses get_key_by_num_api_key_num_num_get(num)
+> KeyResponses get_key_by_num_api_key_num_num_get(num)
 
 Get Key By Num
 
@@ -224,7 +224,7 @@ Get Key By Num
 
 ```python
 import stayforge
-from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.models.key_responses import KeyResponses
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiKeyManagerViewKeyResponses**](ApiKeyManagerViewKeyResponses.md)
+[**KeyResponses**](KeyResponses.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **put_key_api_key_id_put**
-> ApiKeyManagerViewKeyResponses put_key_api_key_id_put(id, api_key_manager_models_key_input)
+> KeyResponses put_key_api_key_id_put(id, key_input)
 
 Put Key
 
@@ -291,8 +291,8 @@ Put Key
 
 ```python
 import stayforge
-from stayforge.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
-from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.models.key_input import KeyInput
+from stayforge.models.key_responses import KeyResponses
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -308,11 +308,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.KeyManagerApi(api_client)
     id = 'id_example' # str | 
-    api_key_manager_models_key_input = stayforge.ApiKeyManagerModelsKeyInput() # ApiKeyManagerModelsKeyInput | 
+    key_input = stayforge.KeyInput() # KeyInput | 
 
     try:
         # Put Key
-        api_response = api_instance.put_key_api_key_id_put(id, api_key_manager_models_key_input)
+        api_response = api_instance.put_key_api_key_id_put(id, key_input)
         print("The response of KeyManagerApi->put_key_api_key_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -327,11 +327,11 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **api_key_manager_models_key_input** | [**ApiKeyManagerModelsKeyInput**](ApiKeyManagerModelsKeyInput.md)|  | 
+ **key_input** | [**KeyInput**](KeyInput.md)|  | 
 
 ### Return type
 
-[**ApiKeyManagerViewKeyResponses**](ApiKeyManagerViewKeyResponses.md)
+[**KeyResponses**](KeyResponses.md)
 
 ### Authorization
 

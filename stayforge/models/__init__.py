@@ -14,15 +14,15 @@
 
 
 # import models into model package
-from stayforge.models.api_branch_models_key import ApiBranchModelsKey
-from stayforge.models.api_branch_models_key_input import ApiBranchModelsKeyInput
-from stayforge.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
-from stayforge.models.api_key_manager_models_key import ApiKeyManagerModelsKey
-from stayforge.models.api_key_manager_models_key_input import ApiKeyManagerModelsKeyInput
-from stayforge.models.api_key_manager_view_key_responses import ApiKeyManagerViewKeyResponses
+from stayforge.models.branch import Branch
+from stayforge.models.branch_input import BranchInput
+from stayforge.models.branch_responses import BranchResponses
 from stayforge.models.guest import Guest
 from stayforge.models.http_validation_error import HTTPValidationError
 from stayforge.models.id_document import IDDocument
+from stayforge.models.key import Key
+from stayforge.models.key_input import KeyInput
+from stayforge.models.key_responses import KeyResponses
 from stayforge.models.models_manager import ModelsManager
 from stayforge.models.models_manager_input import ModelsManagerInput
 from stayforge.models.models_manager_responses import ModelsManagerResponses

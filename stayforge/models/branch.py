@@ -20,24 +20,21 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from stayforge.models.guest import Guest
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Order(BaseModel):
+class Branch(BaseModel):
     """
-    Order
+    Branch
     """ # noqa: E501
     id: Optional[StrictStr] = Field(default='676be1afc2c5af4e110899a8', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
-    num: StrictStr = Field(description="Order number")
-    room_id: Optional[StrictStr] = Field(default=None, description="Room ID")
-    guest: Optional[Guest] = Field(default=None, description="Guest information")
-    type: StrictStr = Field(description="OrderType")
-    scheduled_checkin_at: Optional[datetime] = Field(default=None, description="Creation timestamp")
-    scheduled_checkout_at: Optional[datetime] = Field(default=None, description="Creation timestamp")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "num", "room_id", "guest", "type", "scheduled_checkin_at", "scheduled_checkout_at"]
+    name: StrictStr = Field(description="The name of the hotel branch. By default, it combines a base name with a random town.")
+    postcode: Optional[StrictStr] = Field(default='000-0000', description="The postal code of the branch location.")
+    address: Optional[StrictStr] = Field(default='000-0000', description="The full effective of the branch, including administrative unit, city, town, and detailed location.")
+    telephone: StrictStr = Field(description="The contact telephone number for the branch.")
+    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "name", "postcode", "address", "telephone"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -57,7 +54,7 @@ class Order(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Order from a JSON string"""
+        """Create an instance of Branch from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -78,9 +75,6 @@ class Order(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of guest
-        if self.guest:
-            _dict['guest'] = self.guest.to_dict()
         # set to None if create_at (nullable) is None
         # and model_fields_set contains the field
         if self.create_at is None and "create_at" in self.model_fields_set:
@@ -95,7 +89,7 @@ class Order(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Order from a dict"""
+        """Create an instance of Branch from a dict"""
         if obj is None:
             return None
 
@@ -106,12 +100,10 @@ class Order(BaseModel):
             "id": obj.get("id") if obj.get("id") is not None else '676be1afc2c5af4e110899a8',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
-            "num": obj.get("num"),
-            "room_id": obj.get("room_id"),
-            "guest": Guest.from_dict(obj["guest"]) if obj.get("guest") is not None else None,
-            "type": obj.get("type"),
-            "scheduled_checkin_at": obj.get("scheduled_checkin_at"),
-            "scheduled_checkout_at": obj.get("scheduled_checkout_at")
+            "name": obj.get("name"),
+            "postcode": obj.get("postcode") if obj.get("postcode") is not None else '000-0000',
+            "address": obj.get("address") if obj.get("address") is not None else '000-0000',
+            "telephone": obj.get("telephone")
         })
         return _obj
 

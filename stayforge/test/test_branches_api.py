@@ -26,38 +26,38 @@ class TestBranchesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_create_key_api_branch_post(self) -> None:
-        """Test case for create_key_api_branch_post
+    def test_create_branch_api_branch_post(self) -> None:
+        """Test case for create_branch_api_branch_post
 
-        Create Key
+        Create Branch
         """
         pass
 
-    def test_delete_key_api_branch_id_delete(self) -> None:
-        """Test case for delete_key_api_branch_id_delete
+    def test_delete_branch_api_branch_id_delete(self) -> None:
+        """Test case for delete_branch_api_branch_id_delete
 
-        Delete Key
+        Delete Branch
         """
         pass
 
-    def test_get_key_api_branch_id_get(self) -> None:
-        """Test case for get_key_api_branch_id_get
+    def test_get_branch_api_branch_id_get(self) -> None:
+        """Test case for get_branch_api_branch_id_get
 
-        Get Key
+        Get Branch
         """
         pass
 
-    def test_get_keys_api_branch_get(self) -> None:
-        """Test case for get_keys_api_branch_get
+    def test_get_branches_api_branch_get(self) -> None:
+        """Test case for get_branches_api_branch_get
 
-        Get Keys
+        Get Branches
         """
         pass
 
-    def test_put_key_api_branch_id_put(self) -> None:
-        """Test case for put_key_api_branch_id_put
+    def test_put_branch_api_branch_id_put(self) -> None:
+        """Test case for put_branch_api_branch_id_put
 
-        Put Key
+        Put Branch
         """
         pass
 

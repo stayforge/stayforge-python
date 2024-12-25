@@ -14,10 +14,10 @@
 
 import unittest
 
-from stayforge.models.webhooks_manager import WebhooksManager
+from stayforge.models.key import Key
 
-class TestWebhooksManager(unittest.TestCase):
-    """WebhooksManager unit test stubs"""
+class TestKey(unittest.TestCase):
+    """Key unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,37 +25,33 @@ class TestWebhooksManager(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> WebhooksManager:
-        """Test WebhooksManager
+    def make_instance(self, include_optional) -> Key:
+        """Test Key
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `WebhooksManager`
+        # uncomment below to create an instance of `Key`
         """
-        model = WebhooksManager()
+        model = Key()
         if include_optional:
-            return WebhooksManager(
+            return Key(
                 id = '676be1afc2c5af4e110899a8',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                webhook_name = '',
-                endpoint = '0',
-                catch_path = '',
-                catch_method = 'POST',
-                catch_status = 56
+                url = '',
+                num = '',
+                effective_at = '2024-12-25T10:42:56.038547Z',
+                ineffective_at = '2024-12-26T10:42:56.038575Z'
             )
         else:
-            return WebhooksManager(
+            return Key(
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                webhook_name = '',
-                endpoint = '0',
-                catch_path = '',
-                catch_method = 'POST',
+                url = '',
         )
         """
 
-    def testWebhooksManager(self):
-        """Test WebhooksManager"""
+    def testKey(self):
+        """Test Key"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

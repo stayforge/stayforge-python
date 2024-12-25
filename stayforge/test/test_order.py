@@ -35,7 +35,7 @@ class TestOrder(unittest.TestCase):
         model = Order()
         if include_optional:
             return Order(
-                id = '676be0d3357c763ba0b19366',
+                id = '676be1afc2c5af4e110899a8',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 num = '',

@@ -18,8 +18,8 @@ from typing_extensions import Annotated
 
 from pydantic import StrictStr
 from typing import Optional
-from stayforge.models.api_branch_models_key_input import ApiBranchModelsKeyInput
-from stayforge.models.api_branch_view_key_responses import ApiBranchViewKeyResponses
+from stayforge.models.branch_input import BranchInput
+from stayforge.models.branch_responses import BranchResponses
 
 from stayforge.api_client import ApiClient, RequestSerialized
 from stayforge.api_response import ApiResponse
@@ -40,9 +40,9 @@ class BranchesApi:
 
 
     @validate_call
-    def create_key_api_branch_post(
+    def create_branch_api_branch_post(
         self,
-        api_branch_models_key_input: ApiBranchModelsKeyInput,
+        branch_input: BranchInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -55,12 +55,12 @@ class BranchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiBranchViewKeyResponses:
-        """Create Key
+    ) -> BranchResponses:
+        """Create Branch
 
 
-        :param api_branch_models_key_input: (required)
-        :type api_branch_models_key_input: ApiBranchModelsKeyInput
+        :param branch_input: (required)
+        :type branch_input: BranchInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -83,8 +83,8 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_key_api_branch_post_serialize(
-            api_branch_models_key_input=api_branch_models_key_input,
+        _param = self._create_branch_api_branch_post_serialize(
+            branch_input=branch_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -92,7 +92,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -108,9 +108,9 @@ class BranchesApi:
 
 
     @validate_call
-    def create_key_api_branch_post_with_http_info(
+    def create_branch_api_branch_post_with_http_info(
         self,
-        api_branch_models_key_input: ApiBranchModelsKeyInput,
+        branch_input: BranchInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -123,12 +123,12 @@ class BranchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ApiBranchViewKeyResponses]:
-        """Create Key
+    ) -> ApiResponse[BranchResponses]:
+        """Create Branch
 
 
-        :param api_branch_models_key_input: (required)
-        :type api_branch_models_key_input: ApiBranchModelsKeyInput
+        :param branch_input: (required)
+        :type branch_input: BranchInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -151,8 +151,8 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_key_api_branch_post_serialize(
-            api_branch_models_key_input=api_branch_models_key_input,
+        _param = self._create_branch_api_branch_post_serialize(
+            branch_input=branch_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -160,7 +160,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -176,9 +176,9 @@ class BranchesApi:
 
 
     @validate_call
-    def create_key_api_branch_post_without_preload_content(
+    def create_branch_api_branch_post_without_preload_content(
         self,
-        api_branch_models_key_input: ApiBranchModelsKeyInput,
+        branch_input: BranchInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -192,11 +192,11 @@ class BranchesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Key
+        """Create Branch
 
 
-        :param api_branch_models_key_input: (required)
-        :type api_branch_models_key_input: ApiBranchModelsKeyInput
+        :param branch_input: (required)
+        :type branch_input: BranchInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -219,8 +219,8 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_key_api_branch_post_serialize(
-            api_branch_models_key_input=api_branch_models_key_input,
+        _param = self._create_branch_api_branch_post_serialize(
+            branch_input=branch_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -228,7 +228,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -239,9 +239,9 @@ class BranchesApi:
         return response_data.response
 
 
-    def _create_key_api_branch_post_serialize(
+    def _create_branch_api_branch_post_serialize(
         self,
-        api_branch_models_key_input,
+        branch_input,
         _request_auth,
         _content_type,
         _headers,
@@ -267,8 +267,8 @@ class BranchesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if api_branch_models_key_input is not None:
-            _body_params = api_branch_models_key_input
+        if branch_input is not None:
+            _body_params = branch_input
 
 
         # set the HTTP header `Accept`
@@ -316,7 +316,7 @@ class BranchesApi:
 
 
     @validate_call
-    def delete_key_api_branch_id_delete(
+    def delete_branch_api_branch_id_delete(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -331,8 +331,8 @@ class BranchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiBranchViewKeyResponses:
-        """Delete Key
+    ) -> BranchResponses:
+        """Delete Branch
 
 
         :param id: (required)
@@ -359,7 +359,7 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_key_api_branch_id_delete_serialize(
+        _param = self._delete_branch_api_branch_id_delete_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -368,7 +368,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -383,7 +383,7 @@ class BranchesApi:
 
 
     @validate_call
-    def delete_key_api_branch_id_delete_with_http_info(
+    def delete_branch_api_branch_id_delete_with_http_info(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -398,8 +398,8 @@ class BranchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ApiBranchViewKeyResponses]:
-        """Delete Key
+    ) -> ApiResponse[BranchResponses]:
+        """Delete Branch
 
 
         :param id: (required)
@@ -426,7 +426,7 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_key_api_branch_id_delete_serialize(
+        _param = self._delete_branch_api_branch_id_delete_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -435,7 +435,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -450,7 +450,7 @@ class BranchesApi:
 
 
     @validate_call
-    def delete_key_api_branch_id_delete_without_preload_content(
+    def delete_branch_api_branch_id_delete_without_preload_content(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -466,7 +466,7 @@ class BranchesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete Key
+        """Delete Branch
 
 
         :param id: (required)
@@ -493,7 +493,7 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_key_api_branch_id_delete_serialize(
+        _param = self._delete_branch_api_branch_id_delete_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -502,7 +502,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -512,7 +512,7 @@ class BranchesApi:
         return response_data.response
 
 
-    def _delete_key_api_branch_id_delete_serialize(
+    def _delete_branch_api_branch_id_delete_serialize(
         self,
         id,
         _request_auth,
@@ -576,7 +576,7 @@ class BranchesApi:
 
 
     @validate_call
-    def get_key_api_branch_id_get(
+    def get_branch_api_branch_id_get(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -591,8 +591,8 @@ class BranchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiBranchViewKeyResponses:
-        """Get Key
+    ) -> BranchResponses:
+        """Get Branch
 
 
         :param id: (required)
@@ -619,7 +619,7 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_key_api_branch_id_get_serialize(
+        _param = self._get_branch_api_branch_id_get_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -628,7 +628,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -643,7 +643,7 @@ class BranchesApi:
 
 
     @validate_call
-    def get_key_api_branch_id_get_with_http_info(
+    def get_branch_api_branch_id_get_with_http_info(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -658,8 +658,8 @@ class BranchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ApiBranchViewKeyResponses]:
-        """Get Key
+    ) -> ApiResponse[BranchResponses]:
+        """Get Branch
 
 
         :param id: (required)
@@ -686,7 +686,7 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_key_api_branch_id_get_serialize(
+        _param = self._get_branch_api_branch_id_get_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -695,7 +695,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -710,7 +710,7 @@ class BranchesApi:
 
 
     @validate_call
-    def get_key_api_branch_id_get_without_preload_content(
+    def get_branch_api_branch_id_get_without_preload_content(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -726,7 +726,7 @@ class BranchesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Key
+        """Get Branch
 
 
         :param id: (required)
@@ -753,7 +753,7 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_key_api_branch_id_get_serialize(
+        _param = self._get_branch_api_branch_id_get_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -762,7 +762,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -772,7 +772,7 @@ class BranchesApi:
         return response_data.response
 
 
-    def _get_key_api_branch_id_get_serialize(
+    def _get_branch_api_branch_id_get_serialize(
         self,
         id,
         _request_auth,
@@ -836,7 +836,7 @@ class BranchesApi:
 
 
     @validate_call
-    def get_keys_api_branch_get(
+    def get_branches_api_branch_get(
         self,
         name: Optional[StrictStr] = None,
         address: Optional[StrictStr] = None,
@@ -853,8 +853,8 @@ class BranchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiBranchViewKeyResponses:
-        """Get Keys
+    ) -> BranchResponses:
+        """Get Branches
 
 
         :param name:
@@ -885,7 +885,7 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_keys_api_branch_get_serialize(
+        _param = self._get_branches_api_branch_get_serialize(
             name=name,
             address=address,
             telephone=telephone,
@@ -896,7 +896,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -911,7 +911,7 @@ class BranchesApi:
 
 
     @validate_call
-    def get_keys_api_branch_get_with_http_info(
+    def get_branches_api_branch_get_with_http_info(
         self,
         name: Optional[StrictStr] = None,
         address: Optional[StrictStr] = None,
@@ -928,8 +928,8 @@ class BranchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ApiBranchViewKeyResponses]:
-        """Get Keys
+    ) -> ApiResponse[BranchResponses]:
+        """Get Branches
 
 
         :param name:
@@ -960,7 +960,7 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_keys_api_branch_get_serialize(
+        _param = self._get_branches_api_branch_get_serialize(
             name=name,
             address=address,
             telephone=telephone,
@@ -971,7 +971,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -986,7 +986,7 @@ class BranchesApi:
 
 
     @validate_call
-    def get_keys_api_branch_get_without_preload_content(
+    def get_branches_api_branch_get_without_preload_content(
         self,
         name: Optional[StrictStr] = None,
         address: Optional[StrictStr] = None,
@@ -1004,7 +1004,7 @@ class BranchesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Keys
+        """Get Branches
 
 
         :param name:
@@ -1035,7 +1035,7 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_keys_api_branch_get_serialize(
+        _param = self._get_branches_api_branch_get_serialize(
             name=name,
             address=address,
             telephone=telephone,
@@ -1046,7 +1046,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1056,7 +1056,7 @@ class BranchesApi:
         return response_data.response
 
 
-    def _get_keys_api_branch_get_serialize(
+    def _get_branches_api_branch_get_serialize(
         self,
         name,
         address,
@@ -1132,10 +1132,10 @@ class BranchesApi:
 
 
     @validate_call
-    def put_key_api_branch_id_put(
+    def put_branch_api_branch_id_put(
         self,
         id: StrictStr,
-        api_branch_models_key_input: ApiBranchModelsKeyInput,
+        branch_input: BranchInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1148,14 +1148,14 @@ class BranchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiBranchViewKeyResponses:
-        """Put Key
+    ) -> BranchResponses:
+        """Put Branch
 
 
         :param id: (required)
         :type id: str
-        :param api_branch_models_key_input: (required)
-        :type api_branch_models_key_input: ApiBranchModelsKeyInput
+        :param branch_input: (required)
+        :type branch_input: BranchInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1178,9 +1178,9 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_key_api_branch_id_put_serialize(
+        _param = self._put_branch_api_branch_id_put_serialize(
             id=id,
-            api_branch_models_key_input=api_branch_models_key_input,
+            branch_input=branch_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1188,7 +1188,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -1204,10 +1204,10 @@ class BranchesApi:
 
 
     @validate_call
-    def put_key_api_branch_id_put_with_http_info(
+    def put_branch_api_branch_id_put_with_http_info(
         self,
         id: StrictStr,
-        api_branch_models_key_input: ApiBranchModelsKeyInput,
+        branch_input: BranchInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1220,14 +1220,14 @@ class BranchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ApiBranchViewKeyResponses]:
-        """Put Key
+    ) -> ApiResponse[BranchResponses]:
+        """Put Branch
 
 
         :param id: (required)
         :type id: str
-        :param api_branch_models_key_input: (required)
-        :type api_branch_models_key_input: ApiBranchModelsKeyInput
+        :param branch_input: (required)
+        :type branch_input: BranchInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1250,9 +1250,9 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_key_api_branch_id_put_serialize(
+        _param = self._put_branch_api_branch_id_put_serialize(
             id=id,
-            api_branch_models_key_input=api_branch_models_key_input,
+            branch_input=branch_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1260,7 +1260,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -1276,10 +1276,10 @@ class BranchesApi:
 
 
     @validate_call
-    def put_key_api_branch_id_put_without_preload_content(
+    def put_branch_api_branch_id_put_without_preload_content(
         self,
         id: StrictStr,
-        api_branch_models_key_input: ApiBranchModelsKeyInput,
+        branch_input: BranchInput,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1293,13 +1293,13 @@ class BranchesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Put Key
+        """Put Branch
 
 
         :param id: (required)
         :type id: str
-        :param api_branch_models_key_input: (required)
-        :type api_branch_models_key_input: ApiBranchModelsKeyInput
+        :param branch_input: (required)
+        :type branch_input: BranchInput
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1322,9 +1322,9 @@ class BranchesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_key_api_branch_id_put_serialize(
+        _param = self._put_branch_api_branch_id_put_serialize(
             id=id,
-            api_branch_models_key_input=api_branch_models_key_input,
+            branch_input=branch_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1332,7 +1332,7 @@ class BranchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ApiBranchViewKeyResponses",
+            '200': "BranchResponses",
             '409': None,
             '422': "HTTPValidationError",
         }
@@ -1343,10 +1343,10 @@ class BranchesApi:
         return response_data.response
 
 
-    def _put_key_api_branch_id_put_serialize(
+    def _put_branch_api_branch_id_put_serialize(
         self,
         id,
-        api_branch_models_key_input,
+        branch_input,
         _request_auth,
         _content_type,
         _headers,
@@ -1374,8 +1374,8 @@ class BranchesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if api_branch_models_key_input is not None:
-            _body_params = api_branch_models_key_input
+        if branch_input is not None:
+            _body_params = branch_input
 
 
         # set the HTTP header `Accept`
