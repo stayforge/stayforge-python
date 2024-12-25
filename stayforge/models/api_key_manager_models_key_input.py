@@ -28,8 +28,8 @@ class ApiKeyManagerModelsKeyInput(BaseModel):
     """ # noqa: E501
     url: StrictStr = Field(description="The name of the hotel key. By default, it combines a base name with a random town.")
     num: Optional[StrictStr] = Field(default='', description="Order number")
-    effective_at: Optional[StrictStr] = Field(default='2024-12-24T22:14:31.976272Z', description="Effective at")
-    ineffective_at: Optional[StrictStr] = Field(default='2024-12-25T22:14:31.976299Z', description="Ineffective at")
+    effective_at: Optional[StrictStr] = Field(default='2024-12-25T10:39:15.796593Z', description="Effective at")
+    ineffective_at: Optional[StrictStr] = Field(default='2024-12-26T10:39:15.796620Z', description="Ineffective at")
     __properties: ClassVar[List[str]] = ["url", "num", "effective_at", "ineffective_at"]
 
     model_config = ConfigDict(
@@ -85,8 +85,8 @@ class ApiKeyManagerModelsKeyInput(BaseModel):
         _obj = cls.model_validate({
             "url": obj.get("url"),
             "num": obj.get("num") if obj.get("num") is not None else '',
-            "effective_at": obj.get("effective_at") if obj.get("effective_at") is not None else '2024-12-24T22:14:31.976272Z',
-            "ineffective_at": obj.get("ineffective_at") if obj.get("ineffective_at") is not None else '2024-12-25T22:14:31.976299Z'
+            "effective_at": obj.get("effective_at") if obj.get("effective_at") is not None else '2024-12-25T10:39:15.796593Z',
+            "ineffective_at": obj.get("ineffective_at") if obj.get("ineffective_at") is not None else '2024-12-26T10:39:15.796620Z'
         })
         return _obj
 

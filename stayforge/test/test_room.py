@@ -35,11 +35,11 @@ class TestRoom(unittest.TestCase):
         model = Room()
         if include_optional:
             return Room(
-                id = '676b3247868770ac5f209f0d',
+                id = '676be0d3357c763ba0b19366',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                key_id = '676b3247868770ac5f209f0f',
-                room_type_id = '676b3247868770ac5f209f10',
+                key_id = '676be0d3357c763ba0b19368',
+                room_type_id = '676be0d3357c763ba0b19369',
                 number = '',
                 priority = 56
             )
