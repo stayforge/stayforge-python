@@ -27,7 +27,7 @@ class Branch(BaseModel):
     """
     Branch
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='678b211480076d32a7bb2d32', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='678b3b07b8c6eb9f79697bbf', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     name: StrictStr = Field(description="The name of the hotel branch. By default, it combines a base name with a random town.")
@@ -97,7 +97,7 @@ class Branch(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '678b211480076d32a7bb2d32',
+            "id": obj.get("id") if obj.get("id") is not None else '678b3b07b8c6eb9f79697bbf',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "name": obj.get("name"),
