@@ -4,81 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**dequeue_api_mq_stream_get**](MessageQueueApi.md#dequeue_api_mq_stream_get) | **GET** /api/mq/{stream} | Dequeue
 [**enqueue_api_mq_stream_post**](MessageQueueApi.md#enqueue_api_mq_stream_post) | **POST** /api/mq/{stream} | Enqueue
 [**messages_api_mq_messages_stream_get**](MessageQueueApi.md#messages_api_mq_messages_stream_get) | **GET** /api/mq/messages/{stream} | Messages
 [**sized_api_mq_sized_stream_get**](MessageQueueApi.md#sized_api_mq_sized_stream_get) | **GET** /api/mq/sized/{stream} | Sized
 [**streams_api_mq_streams_get**](MessageQueueApi.md#streams_api_mq_streams_get) | **GET** /api/mq/streams | Streams
 
 
-# **dequeue_api_mq_stream_get**
-> object dequeue_api_mq_stream_get(stream)
-
-Dequeue
-
-### Example
-
-
-```python
-import stayforge
-from stayforge.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = stayforge.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with stayforge.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = stayforge.MessageQueueApi(api_client)
-    stream = 'stream_example' # str | 
-
-    try:
-        # Dequeue
-        api_response = api_instance.dequeue_api_mq_stream_get(stream)
-        print("The response of MessageQueueApi->dequeue_api_mq_stream_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling MessageQueueApi->dequeue_api_mq_stream_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **stream** | **str**|  | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**422** | Validation Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **enqueue_api_mq_stream_post**
-> object enqueue_api_mq_stream_post(stream, mq_enqueue)
+> object enqueue_api_mq_stream_post(stream, mq_enqueue, ttl=ttl)
 
 Enqueue
 
@@ -104,10 +37,11 @@ with stayforge.ApiClient(configuration) as api_client:
     api_instance = stayforge.MessageQueueApi(api_client)
     stream = 'stream_example' # str | 
     mq_enqueue = stayforge.MQEnqueue() # MQEnqueue | 
+    ttl = -1 # int |  (optional) (default to -1)
 
     try:
         # Enqueue
-        api_response = api_instance.enqueue_api_mq_stream_post(stream, mq_enqueue)
+        api_response = api_instance.enqueue_api_mq_stream_post(stream, mq_enqueue, ttl=ttl)
         print("The response of MessageQueueApi->enqueue_api_mq_stream_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -123,6 +57,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stream** | **str**|  | 
  **mq_enqueue** | [**MQEnqueue**](MQEnqueue.md)|  | 
+ **ttl** | **int**|  | [optional] [default to -1]
 
 ### Return type
 

@@ -26,13 +26,6 @@ class TestMessageQueueApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_dequeue_api_mq_stream_get(self) -> None:
-        """Test case for dequeue_api_mq_stream_get
-
-        Dequeue
-        """
-        pass
-
     def test_enqueue_api_mq_stream_post(self) -> None:
         """Test case for enqueue_api_mq_stream_post
 

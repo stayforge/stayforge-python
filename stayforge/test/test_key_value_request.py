@@ -14,53 +14,40 @@
 
 import unittest
 
-from stayforge.api.webhooks_manager_api import WebhooksManagerApi
+from stayforge.models.key_value_request import KeyValueRequest
 
+class TestKeyValueRequest(unittest.TestCase):
+    """KeyValueRequest unit test stubs"""
 
-class TestWebhooksManagerApi(unittest.TestCase):
-    """WebhooksManagerApi unit test stubs"""
-
-    def setUp(self) -> None:
-        self.api = WebhooksManagerApi()
-
-    def tearDown(self) -> None:
+    def setUp(self):
         pass
 
-    def test_create_webhooks_profile_api_webhooks_post(self) -> None:
-        """Test case for create_webhooks_profile_api_webhooks_post
+    def tearDown(self):
+        pass
 
-        Create Webhooks Profile
+    def make_instance(self, include_optional) -> KeyValueRequest:
+        """Test KeyValueRequest
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `KeyValueRequest`
         """
-        pass
-
-    def test_delete_webhooks_profile_api_webhooks_id_delete(self) -> None:
-        """Test case for delete_webhooks_profile_api_webhooks_id_delete
-
-        Delete Webhooks Profile
+        model = KeyValueRequest()
+        if include_optional:
+            return KeyValueRequest(
+                key = '',
+                value = ''
+            )
+        else:
+            return KeyValueRequest(
+                key = '',
+        )
         """
-        pass
 
-    def test_get_webhooks_profile_api_webhooks_get(self) -> None:
-        """Test case for get_webhooks_profile_api_webhooks_get
-
-        Get Webhooks Profile
-        """
-        pass
-
-    def test_get_webhooks_profile_api_webhooks_id_get(self) -> None:
-        """Test case for get_webhooks_profile_api_webhooks_id_get
-
-        Get Webhooks Profile
-        """
-        pass
-
-    def test_put_webhooks_profile_api_webhooks_id_put(self) -> None:
-        """Test case for put_webhooks_profile_api_webhooks_id_put
-
-        Put Webhooks Profile
-        """
-        pass
-
+    def testKeyValueRequest(self):
+        """Test KeyValueRequest"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
 
 if __name__ == '__main__':
     unittest.main()

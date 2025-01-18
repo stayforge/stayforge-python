@@ -17,20 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class RoomInput(BaseModel):
+class KeyValueRequest(BaseModel):
     """
-    RoomInput
+    KeyValueRequest
     """ # noqa: E501
-    key_id: Optional[StrictStr] = Field(default='678b99563ba2fc9a277480f5', description="Reference ID of the key.")
-    room_type_id: Optional[StrictStr] = Field(default='678b99563ba2fc9a277480f6', description="Reference ID of the RoomType.")
-    number: StrictStr = Field(description="The number of rooms, e.g., 203.")
-    priority: StrictInt = Field(description="The OTA system will give priority to rooms with a higher value to guests. If the priorities are the same, then it is random.")
-    __properties: ClassVar[List[str]] = ["key_id", "room_type_id", "number", "priority"]
+    key: StrictStr
+    value: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["key", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +48,7 @@ class RoomInput(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RoomInput from a JSON string"""
+        """Create an instance of KeyValueRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +73,7 @@ class RoomInput(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RoomInput from a dict"""
+        """Create an instance of KeyValueRequest from a dict"""
         if obj is None:
             return None
 
@@ -83,10 +81,8 @@ class RoomInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '678b99563ba2fc9a277480f5',
-            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '678b99563ba2fc9a277480f6',
-            "number": obj.get("number"),
-            "priority": obj.get("priority")
+            "key": obj.get("key"),
+            "value": obj.get("value")
         })
         return _obj
 

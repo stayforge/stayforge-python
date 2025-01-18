@@ -5,13 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '678b3b07b8c6eb9f79697bbf']
+**id** | **str** | Reference ID of the key. | [optional] [default to '678b99563ba2fc9a277480f3']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **model** | **str** | The host URL of the model. This is used to generate webhook URLs and other model-related paths. | 
 **model_version** | **str** | The version of the model. This helps in tracking updates and ensuring compatibility. | [optional] [default to 'latest']
 **local_name** | **str** |  | [optional] 
 **permissions** | **object** |  | [optional] 
+**etcd_host** | **str** |  | 
+**etcd_port** | **int** |  | [optional] [default to 2379]
+**etcd_user** | **str** |  | 
+**etcd_password** | **str** |  | 
 
 ## Example
 

@@ -35,18 +35,25 @@ class TestModelsManager(unittest.TestCase):
         model = ModelsManager()
         if include_optional:
             return ModelsManager(
-                id = '678b3b07b8c6eb9f79697bbf',
+                id = '678b99563ba2fc9a277480f3',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 model = '',
                 model_version = 'latest',
                 local_name = '',
-                permissions = None
+                permissions = None,
+                etcd_host = '',
+                etcd_port = 56,
+                etcd_user = '',
+                etcd_password = ''
             )
         else:
             return ModelsManager(
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 model = '',
+                etcd_host = '',
+                etcd_user = '',
+                etcd_password = '',
         )
         """
 

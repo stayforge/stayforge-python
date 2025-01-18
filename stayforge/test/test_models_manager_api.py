@@ -26,36 +26,36 @@ class TestModelsManagerApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_create_models_profile_api_models_manager_post(self) -> None:
-        """Test case for create_models_profile_api_models_manager_post
+    def test_create_models_profile_api_models_post(self) -> None:
+        """Test case for create_models_profile_api_models_post
 
         Create Models Profile
         """
         pass
 
-    def test_delete_models_profile_api_models_manager_id_delete(self) -> None:
-        """Test case for delete_models_profile_api_models_manager_id_delete
+    def test_delete_models_profile_api_models_id_delete(self) -> None:
+        """Test case for delete_models_profile_api_models_id_delete
 
         Delete Models Profile
         """
         pass
 
-    def test_get_models_profile_api_models_manager_get(self) -> None:
-        """Test case for get_models_profile_api_models_manager_get
+    def test_get_models_profile_api_models_get(self) -> None:
+        """Test case for get_models_profile_api_models_get
 
         Get Models Profile
         """
         pass
 
-    def test_get_models_profile_api_models_manager_id_get(self) -> None:
-        """Test case for get_models_profile_api_models_manager_id_get
+    def test_get_models_profile_api_models_id_get(self) -> None:
+        """Test case for get_models_profile_api_models_id_get
 
         Get Models Profile
         """
         pass
 
-    def test_put_models_profile_api_models_manager_id_put(self) -> None:
-        """Test case for put_models_profile_api_models_manager_id_put
+    def test_put_models_profile_api_models_id_put(self) -> None:
+        """Test case for put_models_profile_api_models_id_put
 
         Put Models Profile
         """

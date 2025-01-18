@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_models_profile_api_models_manager_post**](ModelsManagerApi.md#create_models_profile_api_models_manager_post) | **POST** /api/models_manager/ | Create Models Profile
-[**delete_models_profile_api_models_manager_id_delete**](ModelsManagerApi.md#delete_models_profile_api_models_manager_id_delete) | **DELETE** /api/models_manager/{id} | Delete Models Profile
-[**get_models_profile_api_models_manager_get**](ModelsManagerApi.md#get_models_profile_api_models_manager_get) | **GET** /api/models_manager/ | Get Models Profile
-[**get_models_profile_api_models_manager_id_get**](ModelsManagerApi.md#get_models_profile_api_models_manager_id_get) | **GET** /api/models_manager/{id} | Get Models Profile
-[**put_models_profile_api_models_manager_id_put**](ModelsManagerApi.md#put_models_profile_api_models_manager_id_put) | **PUT** /api/models_manager/{id} | Put Models Profile
+[**create_models_profile_api_models_post**](ModelsManagerApi.md#create_models_profile_api_models_post) | **POST** /api/models/ | Create Models Profile
+[**delete_models_profile_api_models_id_delete**](ModelsManagerApi.md#delete_models_profile_api_models_id_delete) | **DELETE** /api/models/{id} | Delete Models Profile
+[**get_models_profile_api_models_get**](ModelsManagerApi.md#get_models_profile_api_models_get) | **GET** /api/models/ | Get Models Profile
+[**get_models_profile_api_models_id_get**](ModelsManagerApi.md#get_models_profile_api_models_id_get) | **GET** /api/models/{id} | Get Models Profile
+[**put_models_profile_api_models_id_put**](ModelsManagerApi.md#put_models_profile_api_models_id_put) | **PUT** /api/models/{id} | Put Models Profile
 
 
-# **create_models_profile_api_models_manager_post**
-> ModelsManagerResponses create_models_profile_api_models_manager_post(models_manager_input)
+# **create_models_profile_api_models_post**
+> ModelsManagerResponses create_models_profile_api_models_post(models_manager_input)
 
 Create Models Profile
 
@@ -41,11 +41,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
     try:
         # Create Models Profile
-        api_response = api_instance.create_models_profile_api_models_manager_post(models_manager_input)
-        print("The response of ModelsManagerApi->create_models_profile_api_models_manager_post:\n")
+        api_response = api_instance.create_models_profile_api_models_post(models_manager_input)
+        print("The response of ModelsManagerApi->create_models_profile_api_models_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModelsManagerApi->create_models_profile_api_models_manager_post: %s\n" % e)
+        print("Exception when calling ModelsManagerApi->create_models_profile_api_models_post: %s\n" % e)
 ```
 
 
@@ -80,8 +80,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_models_profile_api_models_manager_id_delete**
-> ModelsManagerResponses delete_models_profile_api_models_manager_id_delete(id)
+# **delete_models_profile_api_models_id_delete**
+> ModelsManagerResponses delete_models_profile_api_models_id_delete(id)
 
 Delete Models Profile
 
@@ -109,11 +109,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
     try:
         # Delete Models Profile
-        api_response = api_instance.delete_models_profile_api_models_manager_id_delete(id)
-        print("The response of ModelsManagerApi->delete_models_profile_api_models_manager_id_delete:\n")
+        api_response = api_instance.delete_models_profile_api_models_id_delete(id)
+        print("The response of ModelsManagerApi->delete_models_profile_api_models_id_delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModelsManagerApi->delete_models_profile_api_models_manager_id_delete: %s\n" % e)
+        print("Exception when calling ModelsManagerApi->delete_models_profile_api_models_id_delete: %s\n" % e)
 ```
 
 
@@ -147,8 +147,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_models_profile_api_models_manager_get**
-> ModelsManagerResponses get_models_profile_api_models_manager_get(model_name=model_name, endpoint=endpoint, catch_path=catch_path, catch_method=catch_method, catch_status=catch_status)
+# **get_models_profile_api_models_get**
+> ModelsManagerResponses get_models_profile_api_models_get(model_name=model_name, endpoint=endpoint, catch_path=catch_path, catch_method=catch_method, catch_status=catch_status)
 
 Get Models Profile
 
@@ -180,11 +180,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
     try:
         # Get Models Profile
-        api_response = api_instance.get_models_profile_api_models_manager_get(model_name=model_name, endpoint=endpoint, catch_path=catch_path, catch_method=catch_method, catch_status=catch_status)
-        print("The response of ModelsManagerApi->get_models_profile_api_models_manager_get:\n")
+        api_response = api_instance.get_models_profile_api_models_get(model_name=model_name, endpoint=endpoint, catch_path=catch_path, catch_method=catch_method, catch_status=catch_status)
+        print("The response of ModelsManagerApi->get_models_profile_api_models_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModelsManagerApi->get_models_profile_api_models_manager_get: %s\n" % e)
+        print("Exception when calling ModelsManagerApi->get_models_profile_api_models_get: %s\n" % e)
 ```
 
 
@@ -222,8 +222,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_models_profile_api_models_manager_id_get**
-> ModelsManagerResponses get_models_profile_api_models_manager_id_get(id)
+# **get_models_profile_api_models_id_get**
+> ModelsManagerResponses get_models_profile_api_models_id_get(id)
 
 Get Models Profile
 
@@ -251,11 +251,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
     try:
         # Get Models Profile
-        api_response = api_instance.get_models_profile_api_models_manager_id_get(id)
-        print("The response of ModelsManagerApi->get_models_profile_api_models_manager_id_get:\n")
+        api_response = api_instance.get_models_profile_api_models_id_get(id)
+        print("The response of ModelsManagerApi->get_models_profile_api_models_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModelsManagerApi->get_models_profile_api_models_manager_id_get: %s\n" % e)
+        print("Exception when calling ModelsManagerApi->get_models_profile_api_models_id_get: %s\n" % e)
 ```
 
 
@@ -289,8 +289,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **put_models_profile_api_models_manager_id_put**
-> ModelsManagerResponses put_models_profile_api_models_manager_id_put(id, models_manager_input)
+# **put_models_profile_api_models_id_put**
+> ModelsManagerResponses put_models_profile_api_models_id_put(id, models_manager_input)
 
 Put Models Profile
 
@@ -320,11 +320,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
     try:
         # Put Models Profile
-        api_response = api_instance.put_models_profile_api_models_manager_id_put(id, models_manager_input)
-        print("The response of ModelsManagerApi->put_models_profile_api_models_manager_id_put:\n")
+        api_response = api_instance.put_models_profile_api_models_id_put(id, models_manager_input)
+        print("The response of ModelsManagerApi->put_models_profile_api_models_id_put:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModelsManagerApi->put_models_profile_api_models_manager_id_put: %s\n" % e)
+        print("Exception when calling ModelsManagerApi->put_models_profile_api_models_id_put: %s\n" % e)
 ```
 
 

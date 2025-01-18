@@ -41,7 +41,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def create_webhooks_profile_api_webhooks_manager_post(
+    def create_webhooks_profile_api_webhooks_post(
         self,
         webhooks_manager_input: WebhooksManagerInput,
         _request_timeout: Union[
@@ -84,7 +84,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_webhooks_profile_api_webhooks_manager_post_serialize(
+        _param = self._create_webhooks_profile_api_webhooks_post_serialize(
             webhooks_manager_input=webhooks_manager_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -109,7 +109,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def create_webhooks_profile_api_webhooks_manager_post_with_http_info(
+    def create_webhooks_profile_api_webhooks_post_with_http_info(
         self,
         webhooks_manager_input: WebhooksManagerInput,
         _request_timeout: Union[
@@ -152,7 +152,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_webhooks_profile_api_webhooks_manager_post_serialize(
+        _param = self._create_webhooks_profile_api_webhooks_post_serialize(
             webhooks_manager_input=webhooks_manager_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -177,7 +177,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def create_webhooks_profile_api_webhooks_manager_post_without_preload_content(
+    def create_webhooks_profile_api_webhooks_post_without_preload_content(
         self,
         webhooks_manager_input: WebhooksManagerInput,
         _request_timeout: Union[
@@ -220,7 +220,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_webhooks_profile_api_webhooks_manager_post_serialize(
+        _param = self._create_webhooks_profile_api_webhooks_post_serialize(
             webhooks_manager_input=webhooks_manager_input,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -240,7 +240,7 @@ class WebhooksManagerApi:
         return response_data.response
 
 
-    def _create_webhooks_profile_api_webhooks_manager_post_serialize(
+    def _create_webhooks_profile_api_webhooks_post_serialize(
         self,
         webhooks_manager_input,
         _request_auth,
@@ -300,7 +300,7 @@ class WebhooksManagerApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/webhooks_manager/',
+            resource_path='/api/webhooks/',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -317,7 +317,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def delete_webhooks_profile_api_webhooks_manager_id_delete(
+    def delete_webhooks_profile_api_webhooks_id_delete(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -360,7 +360,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_webhooks_profile_api_webhooks_manager_id_delete_serialize(
+        _param = self._delete_webhooks_profile_api_webhooks_id_delete_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -384,7 +384,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def delete_webhooks_profile_api_webhooks_manager_id_delete_with_http_info(
+    def delete_webhooks_profile_api_webhooks_id_delete_with_http_info(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -427,7 +427,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_webhooks_profile_api_webhooks_manager_id_delete_serialize(
+        _param = self._delete_webhooks_profile_api_webhooks_id_delete_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -451,7 +451,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def delete_webhooks_profile_api_webhooks_manager_id_delete_without_preload_content(
+    def delete_webhooks_profile_api_webhooks_id_delete_without_preload_content(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -494,7 +494,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_webhooks_profile_api_webhooks_manager_id_delete_serialize(
+        _param = self._delete_webhooks_profile_api_webhooks_id_delete_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -513,7 +513,7 @@ class WebhooksManagerApi:
         return response_data.response
 
 
-    def _delete_webhooks_profile_api_webhooks_manager_id_delete_serialize(
+    def _delete_webhooks_profile_api_webhooks_id_delete_serialize(
         self,
         id,
         _request_auth,
@@ -560,7 +560,7 @@ class WebhooksManagerApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/api/webhooks_manager/{id}',
+            resource_path='/api/webhooks/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -577,7 +577,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def get_webhooks_profile_api_webhooks_manager_get(
+    def get_webhooks_profile_api_webhooks_get(
         self,
         webhook_name: Annotated[Optional[StrictStr], Field(description="A friendly name you can remember.")] = None,
         endpoint: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="The URL endpoint where the webhook is to be sent, e.g., `https://youapplocation/webhook/endpoint`.")] = None,
@@ -632,7 +632,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_webhooks_profile_api_webhooks_manager_get_serialize(
+        _param = self._get_webhooks_profile_api_webhooks_get_serialize(
             webhook_name=webhook_name,
             endpoint=endpoint,
             catch_path=catch_path,
@@ -660,7 +660,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def get_webhooks_profile_api_webhooks_manager_get_with_http_info(
+    def get_webhooks_profile_api_webhooks_get_with_http_info(
         self,
         webhook_name: Annotated[Optional[StrictStr], Field(description="A friendly name you can remember.")] = None,
         endpoint: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="The URL endpoint where the webhook is to be sent, e.g., `https://youapplocation/webhook/endpoint`.")] = None,
@@ -715,7 +715,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_webhooks_profile_api_webhooks_manager_get_serialize(
+        _param = self._get_webhooks_profile_api_webhooks_get_serialize(
             webhook_name=webhook_name,
             endpoint=endpoint,
             catch_path=catch_path,
@@ -743,7 +743,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def get_webhooks_profile_api_webhooks_manager_get_without_preload_content(
+    def get_webhooks_profile_api_webhooks_get_without_preload_content(
         self,
         webhook_name: Annotated[Optional[StrictStr], Field(description="A friendly name you can remember.")] = None,
         endpoint: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="The URL endpoint where the webhook is to be sent, e.g., `https://youapplocation/webhook/endpoint`.")] = None,
@@ -798,7 +798,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_webhooks_profile_api_webhooks_manager_get_serialize(
+        _param = self._get_webhooks_profile_api_webhooks_get_serialize(
             webhook_name=webhook_name,
             endpoint=endpoint,
             catch_path=catch_path,
@@ -821,7 +821,7 @@ class WebhooksManagerApi:
         return response_data.response
 
 
-    def _get_webhooks_profile_api_webhooks_manager_get_serialize(
+    def _get_webhooks_profile_api_webhooks_get_serialize(
         self,
         webhook_name,
         endpoint,
@@ -890,7 +890,7 @@ class WebhooksManagerApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/webhooks_manager/',
+            resource_path='/api/webhooks/',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -907,7 +907,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def get_webhooks_profile_api_webhooks_manager_id_get(
+    def get_webhooks_profile_api_webhooks_id_get(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -950,7 +950,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_webhooks_profile_api_webhooks_manager_id_get_serialize(
+        _param = self._get_webhooks_profile_api_webhooks_id_get_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -974,7 +974,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def get_webhooks_profile_api_webhooks_manager_id_get_with_http_info(
+    def get_webhooks_profile_api_webhooks_id_get_with_http_info(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -1017,7 +1017,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_webhooks_profile_api_webhooks_manager_id_get_serialize(
+        _param = self._get_webhooks_profile_api_webhooks_id_get_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1041,7 +1041,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def get_webhooks_profile_api_webhooks_manager_id_get_without_preload_content(
+    def get_webhooks_profile_api_webhooks_id_get_without_preload_content(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -1084,7 +1084,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_webhooks_profile_api_webhooks_manager_id_get_serialize(
+        _param = self._get_webhooks_profile_api_webhooks_id_get_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1103,7 +1103,7 @@ class WebhooksManagerApi:
         return response_data.response
 
 
-    def _get_webhooks_profile_api_webhooks_manager_id_get_serialize(
+    def _get_webhooks_profile_api_webhooks_id_get_serialize(
         self,
         id,
         _request_auth,
@@ -1150,7 +1150,7 @@ class WebhooksManagerApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/webhooks_manager/{id}',
+            resource_path='/api/webhooks/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1167,7 +1167,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def put_webhooks_profile_api_webhooks_manager_id_put(
+    def put_webhooks_profile_api_webhooks_id_put(
         self,
         id: StrictStr,
         webhooks_manager_input: WebhooksManagerInput,
@@ -1213,7 +1213,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_webhooks_profile_api_webhooks_manager_id_put_serialize(
+        _param = self._put_webhooks_profile_api_webhooks_id_put_serialize(
             id=id,
             webhooks_manager_input=webhooks_manager_input,
             _request_auth=_request_auth,
@@ -1239,7 +1239,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def put_webhooks_profile_api_webhooks_manager_id_put_with_http_info(
+    def put_webhooks_profile_api_webhooks_id_put_with_http_info(
         self,
         id: StrictStr,
         webhooks_manager_input: WebhooksManagerInput,
@@ -1285,7 +1285,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_webhooks_profile_api_webhooks_manager_id_put_serialize(
+        _param = self._put_webhooks_profile_api_webhooks_id_put_serialize(
             id=id,
             webhooks_manager_input=webhooks_manager_input,
             _request_auth=_request_auth,
@@ -1311,7 +1311,7 @@ class WebhooksManagerApi:
 
 
     @validate_call
-    def put_webhooks_profile_api_webhooks_manager_id_put_without_preload_content(
+    def put_webhooks_profile_api_webhooks_id_put_without_preload_content(
         self,
         id: StrictStr,
         webhooks_manager_input: WebhooksManagerInput,
@@ -1357,7 +1357,7 @@ class WebhooksManagerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_webhooks_profile_api_webhooks_manager_id_put_serialize(
+        _param = self._put_webhooks_profile_api_webhooks_id_put_serialize(
             id=id,
             webhooks_manager_input=webhooks_manager_input,
             _request_auth=_request_auth,
@@ -1378,7 +1378,7 @@ class WebhooksManagerApi:
         return response_data.response
 
 
-    def _put_webhooks_profile_api_webhooks_manager_id_put_serialize(
+    def _put_webhooks_profile_api_webhooks_id_put_serialize(
         self,
         id,
         webhooks_manager_input,
@@ -1441,7 +1441,7 @@ class WebhooksManagerApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/api/webhooks_manager/{id}',
+            resource_path='/api/webhooks/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

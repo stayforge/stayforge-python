@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,14 +27,18 @@ class ModelsManager(BaseModel):
     """
     ModelsManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='678b3b07b8c6eb9f79697bbf', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='678b99563ba2fc9a277480f3', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     model: StrictStr = Field(description="The host URL of the model. This is used to generate webhook URLs and other model-related paths.")
     model_version: Optional[StrictStr] = Field(default='latest', description="The version of the model. This helps in tracking updates and ensuring compatibility.")
     local_name: Optional[StrictStr] = None
     permissions: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "model", "model_version", "local_name", "permissions"]
+    etcd_host: StrictStr
+    etcd_port: Optional[StrictInt] = 2379
+    etcd_user: StrictStr
+    etcd_password: StrictStr
+    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "model", "model_version", "local_name", "permissions", "etcd_host", "etcd_port", "etcd_user", "etcd_password"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,13 +111,17 @@ class ModelsManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '678b3b07b8c6eb9f79697bbf',
+            "id": obj.get("id") if obj.get("id") is not None else '678b99563ba2fc9a277480f3',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "model": obj.get("model"),
             "model_version": obj.get("model_version") if obj.get("model_version") is not None else 'latest',
             "local_name": obj.get("local_name"),
-            "permissions": obj.get("permissions")
+            "permissions": obj.get("permissions"),
+            "etcd_host": obj.get("etcd_host"),
+            "etcd_port": obj.get("etcd_port") if obj.get("etcd_port") is not None else 2379,
+            "etcd_user": obj.get("etcd_user"),
+            "etcd_password": obj.get("etcd_password")
         })
         return _obj
 

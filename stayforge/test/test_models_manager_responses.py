@@ -37,13 +37,17 @@ class TestModelsManagerResponses(unittest.TestCase):
             return ModelsManagerResponses(
                 data = [
                     stayforge.models.models_manager.ModelsManager(
-                        id = '678b3b07b8c6eb9f79697bbf', 
+                        id = '678b99563ba2fc9a277480f3', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         model = '', 
                         model_version = 'latest', 
                         local_name = '', 
-                        permissions = stayforge.models.permissions.permissions(), )
+                        permissions = stayforge.models.permissions.permissions(), 
+                        etcd_host = '', 
+                        etcd_port = 56, 
+                        etcd_user = '', 
+                        etcd_password = '', )
                     ],
                 detail = 'Successfully.',
                 status = 56,
@@ -55,13 +59,17 @@ class TestModelsManagerResponses(unittest.TestCase):
             return ModelsManagerResponses(
                 data = [
                     stayforge.models.models_manager.ModelsManager(
-                        id = '678b3b07b8c6eb9f79697bbf', 
+                        id = '678b99563ba2fc9a277480f3', 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         model = '', 
                         model_version = 'latest', 
                         local_name = '', 
-                        permissions = stayforge.models.permissions.permissions(), )
+                        permissions = stayforge.models.permissions.permissions(), 
+                        etcd_host = '', 
+                        etcd_port = 56, 
+                        etcd_user = '', 
+                        etcd_password = '', )
                     ],
         )
         """

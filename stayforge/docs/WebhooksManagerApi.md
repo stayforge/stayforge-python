@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_webhooks_profile_api_webhooks_manager_post**](WebhooksManagerApi.md#create_webhooks_profile_api_webhooks_manager_post) | **POST** /api/webhooks_manager/ | Create Webhooks Profile
-[**delete_webhooks_profile_api_webhooks_manager_id_delete**](WebhooksManagerApi.md#delete_webhooks_profile_api_webhooks_manager_id_delete) | **DELETE** /api/webhooks_manager/{id} | Delete Webhooks Profile
-[**get_webhooks_profile_api_webhooks_manager_get**](WebhooksManagerApi.md#get_webhooks_profile_api_webhooks_manager_get) | **GET** /api/webhooks_manager/ | Get Webhooks Profile
-[**get_webhooks_profile_api_webhooks_manager_id_get**](WebhooksManagerApi.md#get_webhooks_profile_api_webhooks_manager_id_get) | **GET** /api/webhooks_manager/{id} | Get Webhooks Profile
-[**put_webhooks_profile_api_webhooks_manager_id_put**](WebhooksManagerApi.md#put_webhooks_profile_api_webhooks_manager_id_put) | **PUT** /api/webhooks_manager/{id} | Put Webhooks Profile
+[**create_webhooks_profile_api_webhooks_post**](WebhooksManagerApi.md#create_webhooks_profile_api_webhooks_post) | **POST** /api/webhooks/ | Create Webhooks Profile
+[**delete_webhooks_profile_api_webhooks_id_delete**](WebhooksManagerApi.md#delete_webhooks_profile_api_webhooks_id_delete) | **DELETE** /api/webhooks/{id} | Delete Webhooks Profile
+[**get_webhooks_profile_api_webhooks_get**](WebhooksManagerApi.md#get_webhooks_profile_api_webhooks_get) | **GET** /api/webhooks/ | Get Webhooks Profile
+[**get_webhooks_profile_api_webhooks_id_get**](WebhooksManagerApi.md#get_webhooks_profile_api_webhooks_id_get) | **GET** /api/webhooks/{id} | Get Webhooks Profile
+[**put_webhooks_profile_api_webhooks_id_put**](WebhooksManagerApi.md#put_webhooks_profile_api_webhooks_id_put) | **PUT** /api/webhooks/{id} | Put Webhooks Profile
 
 
-# **create_webhooks_profile_api_webhooks_manager_post**
-> WebhooksManagerResponses create_webhooks_profile_api_webhooks_manager_post(webhooks_manager_input)
+# **create_webhooks_profile_api_webhooks_post**
+> WebhooksManagerResponses create_webhooks_profile_api_webhooks_post(webhooks_manager_input)
 
 Create Webhooks Profile
 
@@ -41,11 +41,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
     try:
         # Create Webhooks Profile
-        api_response = api_instance.create_webhooks_profile_api_webhooks_manager_post(webhooks_manager_input)
-        print("The response of WebhooksManagerApi->create_webhooks_profile_api_webhooks_manager_post:\n")
+        api_response = api_instance.create_webhooks_profile_api_webhooks_post(webhooks_manager_input)
+        print("The response of WebhooksManagerApi->create_webhooks_profile_api_webhooks_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksManagerApi->create_webhooks_profile_api_webhooks_manager_post: %s\n" % e)
+        print("Exception when calling WebhooksManagerApi->create_webhooks_profile_api_webhooks_post: %s\n" % e)
 ```
 
 
@@ -80,8 +80,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_webhooks_profile_api_webhooks_manager_id_delete**
-> WebhooksManagerResponses delete_webhooks_profile_api_webhooks_manager_id_delete(id)
+# **delete_webhooks_profile_api_webhooks_id_delete**
+> WebhooksManagerResponses delete_webhooks_profile_api_webhooks_id_delete(id)
 
 Delete Webhooks Profile
 
@@ -109,11 +109,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
     try:
         # Delete Webhooks Profile
-        api_response = api_instance.delete_webhooks_profile_api_webhooks_manager_id_delete(id)
-        print("The response of WebhooksManagerApi->delete_webhooks_profile_api_webhooks_manager_id_delete:\n")
+        api_response = api_instance.delete_webhooks_profile_api_webhooks_id_delete(id)
+        print("The response of WebhooksManagerApi->delete_webhooks_profile_api_webhooks_id_delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksManagerApi->delete_webhooks_profile_api_webhooks_manager_id_delete: %s\n" % e)
+        print("Exception when calling WebhooksManagerApi->delete_webhooks_profile_api_webhooks_id_delete: %s\n" % e)
 ```
 
 
@@ -147,8 +147,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_webhooks_profile_api_webhooks_manager_get**
-> WebhooksManagerResponses get_webhooks_profile_api_webhooks_manager_get(webhook_name=webhook_name, endpoint=endpoint, catch_path=catch_path, catch_method=catch_method, catch_status=catch_status)
+# **get_webhooks_profile_api_webhooks_get**
+> WebhooksManagerResponses get_webhooks_profile_api_webhooks_get(webhook_name=webhook_name, endpoint=endpoint, catch_path=catch_path, catch_method=catch_method, catch_status=catch_status)
 
 Get Webhooks Profile
 
@@ -180,11 +180,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
     try:
         # Get Webhooks Profile
-        api_response = api_instance.get_webhooks_profile_api_webhooks_manager_get(webhook_name=webhook_name, endpoint=endpoint, catch_path=catch_path, catch_method=catch_method, catch_status=catch_status)
-        print("The response of WebhooksManagerApi->get_webhooks_profile_api_webhooks_manager_get:\n")
+        api_response = api_instance.get_webhooks_profile_api_webhooks_get(webhook_name=webhook_name, endpoint=endpoint, catch_path=catch_path, catch_method=catch_method, catch_status=catch_status)
+        print("The response of WebhooksManagerApi->get_webhooks_profile_api_webhooks_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksManagerApi->get_webhooks_profile_api_webhooks_manager_get: %s\n" % e)
+        print("Exception when calling WebhooksManagerApi->get_webhooks_profile_api_webhooks_get: %s\n" % e)
 ```
 
 
@@ -222,8 +222,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_webhooks_profile_api_webhooks_manager_id_get**
-> WebhooksManagerResponses get_webhooks_profile_api_webhooks_manager_id_get(id)
+# **get_webhooks_profile_api_webhooks_id_get**
+> WebhooksManagerResponses get_webhooks_profile_api_webhooks_id_get(id)
 
 Get Webhooks Profile
 
@@ -251,11 +251,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
     try:
         # Get Webhooks Profile
-        api_response = api_instance.get_webhooks_profile_api_webhooks_manager_id_get(id)
-        print("The response of WebhooksManagerApi->get_webhooks_profile_api_webhooks_manager_id_get:\n")
+        api_response = api_instance.get_webhooks_profile_api_webhooks_id_get(id)
+        print("The response of WebhooksManagerApi->get_webhooks_profile_api_webhooks_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksManagerApi->get_webhooks_profile_api_webhooks_manager_id_get: %s\n" % e)
+        print("Exception when calling WebhooksManagerApi->get_webhooks_profile_api_webhooks_id_get: %s\n" % e)
 ```
 
 
@@ -289,8 +289,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **put_webhooks_profile_api_webhooks_manager_id_put**
-> WebhooksManagerResponses put_webhooks_profile_api_webhooks_manager_id_put(id, webhooks_manager_input)
+# **put_webhooks_profile_api_webhooks_id_put**
+> WebhooksManagerResponses put_webhooks_profile_api_webhooks_id_put(id, webhooks_manager_input)
 
 Put Webhooks Profile
 
@@ -320,11 +320,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
     try:
         # Put Webhooks Profile
-        api_response = api_instance.put_webhooks_profile_api_webhooks_manager_id_put(id, webhooks_manager_input)
-        print("The response of WebhooksManagerApi->put_webhooks_profile_api_webhooks_manager_id_put:\n")
+        api_response = api_instance.put_webhooks_profile_api_webhooks_id_put(id, webhooks_manager_input)
+        print("The response of WebhooksManagerApi->put_webhooks_profile_api_webhooks_id_put:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksManagerApi->put_webhooks_profile_api_webhooks_manager_id_put: %s\n" % e)
+        print("Exception when calling WebhooksManagerApi->put_webhooks_profile_api_webhooks_id_put: %s\n" % e)
 ```
 
 

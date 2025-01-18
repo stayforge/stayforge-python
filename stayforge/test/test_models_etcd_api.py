@@ -14,50 +14,36 @@
 
 import unittest
 
-from stayforge.api.webhooks_manager_api import WebhooksManagerApi
+from stayforge.api.models_etcd_api import ModelsEtcdApi
 
 
-class TestWebhooksManagerApi(unittest.TestCase):
-    """WebhooksManagerApi unit test stubs"""
+class TestModelsEtcdApi(unittest.TestCase):
+    """ModelsEtcdApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = WebhooksManagerApi()
+        self.api = ModelsEtcdApi()
 
     def tearDown(self) -> None:
         pass
 
-    def test_create_webhooks_profile_api_webhooks_post(self) -> None:
-        """Test case for create_webhooks_profile_api_webhooks_post
+    def test_delete_data_api_models_model_etcd_delete_key_delete(self) -> None:
+        """Test case for delete_data_api_models_model_etcd_delete_key_delete
 
-        Create Webhooks Profile
+        Delete Data
         """
         pass
 
-    def test_delete_webhooks_profile_api_webhooks_id_delete(self) -> None:
-        """Test case for delete_webhooks_profile_api_webhooks_id_delete
+    def test_get_data_api_models_model_etcd_get_key_get(self) -> None:
+        """Test case for get_data_api_models_model_etcd_get_key_get
 
-        Delete Webhooks Profile
+        Get Data
         """
         pass
 
-    def test_get_webhooks_profile_api_webhooks_get(self) -> None:
-        """Test case for get_webhooks_profile_api_webhooks_get
+    def test_put_data_api_models_model_etcd_put_post(self) -> None:
+        """Test case for put_data_api_models_model_etcd_put_post
 
-        Get Webhooks Profile
-        """
-        pass
-
-    def test_get_webhooks_profile_api_webhooks_id_get(self) -> None:
-        """Test case for get_webhooks_profile_api_webhooks_id_get
-
-        Get Webhooks Profile
-        """
-        pass
-
-    def test_put_webhooks_profile_api_webhooks_id_put(self) -> None:
-        """Test case for put_webhooks_profile_api_webhooks_id_put
-
-        Put Webhooks Profile
+        Put Data
         """
         pass
 
