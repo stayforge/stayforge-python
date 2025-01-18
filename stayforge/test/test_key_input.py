@@ -37,8 +37,8 @@ class TestKeyInput(unittest.TestCase):
             return KeyInput(
                 url = '',
                 num = '',
-                effective_at = '2024-12-25T15:41:13.178342Z',
-                ineffective_at = '2024-12-26T15:41:13.178398Z'
+                effective_at = '2025-01-18T03:33:40.305775Z',
+                ineffective_at = '2025-01-19T03:33:40.305803Z'
             )
         else:
             return KeyInput(

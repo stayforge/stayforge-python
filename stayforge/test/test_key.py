@@ -35,13 +35,13 @@ class TestKey(unittest.TestCase):
         model = Key()
         if include_optional:
             return Key(
-                id = '676c2799cabb04bdf96759f9',
+                id = '678b211480076d32a7bb2d32',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 url = '',
                 num = '',
-                effective_at = '2024-12-25T15:41:13.178342Z',
-                ineffective_at = '2024-12-26T15:41:13.178398Z'
+                effective_at = '2025-01-18T03:33:40.305775Z',
+                ineffective_at = '2025-01-19T03:33:40.305803Z'
             )
         else:
             return Key(
