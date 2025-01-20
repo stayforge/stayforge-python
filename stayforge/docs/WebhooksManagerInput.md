@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **catch_path** | **str** | The path to monitor for webhook events. | 
 **catch_method** | **str** | HTTP method to be captured. | 
 **catch_status** | **int** |  | [optional] 
+**retry_status_code** | **List[str]** |  | [optional] 
+**retry_times** | [**RetryTimes**](RetryTimes.md) |  | [optional] 
 
 ## Example
 

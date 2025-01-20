@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '678b9e3638df7c91598cf548']
+**id** | **str** | Reference ID of the key. | [optional] [default to '678dfb74eab6bd78287dc426']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **webhook_name** | **str** | The name of the webhook configuration. | 
@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **catch_path** | **str** | The path to monitor for webhook events. | 
 **catch_method** | **str** | HTTP method to be captured. | 
 **catch_status** | **int** |  | [optional] 
+**retry_status_code** | **List[str]** |  | [optional] 
+**retry_times** | [**RetryTimes**](RetryTimes.md) |  | [optional] 
 
 ## Example
 

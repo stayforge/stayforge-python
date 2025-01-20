@@ -21,6 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from stayforge.models.retry_times import RetryTimes
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class WebhooksManager(BaseModel):
     """
     WebhooksManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='678b9e3638df7c91598cf548', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='678dfb74eab6bd78287dc426', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
     webhook_name: StrictStr = Field(description="The name of the webhook configuration.")
@@ -36,7 +37,9 @@ class WebhooksManager(BaseModel):
     catch_path: StrictStr = Field(description="The path to monitor for webhook events.")
     catch_method: StrictStr = Field(description="HTTP method to be captured.")
     catch_status: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "webhook_name", "endpoint", "catch_path", "catch_method", "catch_status"]
+    retry_status_code: Optional[List[StrictStr]] = None
+    retry_times: Optional[RetryTimes] = None
+    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "webhook_name", "endpoint", "catch_path", "catch_method", "catch_status", "retry_status_code", "retry_times"]
 
     @field_validator('catch_method')
     def catch_method_validate_enum(cls, value):
@@ -84,6 +87,9 @@ class WebhooksManager(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of retry_times
+        if self.retry_times:
+            _dict['retry_times'] = self.retry_times.to_dict()
         # set to None if create_at (nullable) is None
         # and model_fields_set contains the field
         if self.create_at is None and "create_at" in self.model_fields_set:
@@ -99,6 +105,16 @@ class WebhooksManager(BaseModel):
         if self.catch_status is None and "catch_status" in self.model_fields_set:
             _dict['catch_status'] = None
 
+        # set to None if retry_status_code (nullable) is None
+        # and model_fields_set contains the field
+        if self.retry_status_code is None and "retry_status_code" in self.model_fields_set:
+            _dict['retry_status_code'] = None
+
+        # set to None if retry_times (nullable) is None
+        # and model_fields_set contains the field
+        if self.retry_times is None and "retry_times" in self.model_fields_set:
+            _dict['retry_times'] = None
+
         return _dict
 
     @classmethod
@@ -111,14 +127,16 @@ class WebhooksManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '678b9e3638df7c91598cf548',
+            "id": obj.get("id") if obj.get("id") is not None else '678dfb74eab6bd78287dc426',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "webhook_name": obj.get("webhook_name"),
             "endpoint": obj.get("endpoint"),
             "catch_path": obj.get("catch_path"),
             "catch_method": obj.get("catch_method"),
-            "catch_status": obj.get("catch_status")
+            "catch_status": obj.get("catch_status"),
+            "retry_status_code": obj.get("retry_status_code"),
+            "retry_times": RetryTimes.from_dict(obj["retry_times"]) if obj.get("retry_times") is not None else None
         })
         return _obj
 

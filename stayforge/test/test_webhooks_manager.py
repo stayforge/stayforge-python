@@ -35,14 +35,18 @@ class TestWebhooksManager(unittest.TestCase):
         model = WebhooksManager()
         if include_optional:
             return WebhooksManager(
-                id = '678b9e3638df7c91598cf548',
+                id = '678dfb74eab6bd78287dc426',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 webhook_name = '',
                 endpoint = '0',
                 catch_path = '',
                 catch_method = 'POST',
-                catch_status = 56
+                catch_status = 56,
+                retry_status_code = [
+                    ''
+                    ],
+                retry_times = None
             )
         else:
             return WebhooksManager(

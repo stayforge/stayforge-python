@@ -32,6 +32,7 @@ from stayforge.models.photocopy import Photocopy
 from stayforge.models.price import Price
 from stayforge.models.price_max import PriceMax
 from stayforge.models.price_min import PriceMin
+from stayforge.models.retry_times import RetryTimes
 from stayforge.models.room import Room
 from stayforge.models.room_input import RoomInput
 from stayforge.models.room_responses import RoomResponses

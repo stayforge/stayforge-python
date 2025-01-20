@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '678b9e3638df7c91598cf548']
+**id** | **str** | Reference ID of the key. | [optional] [default to '678dfb74eab6bd78287dc426']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **name** | **str** | The name of the hotel branch. By default, it combines a base name with a random town. | 

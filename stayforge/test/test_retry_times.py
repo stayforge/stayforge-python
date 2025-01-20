@@ -14,10 +14,10 @@
 
 import unittest
 
-from stayforge.models.webhooks_manager_input import WebhooksManagerInput
+from stayforge.models.retry_times import RetryTimes
 
-class TestWebhooksManagerInput(unittest.TestCase):
-    """WebhooksManagerInput unit test stubs"""
+class TestRetryTimes(unittest.TestCase):
+    """RetryTimes unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,37 +25,24 @@ class TestWebhooksManagerInput(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> WebhooksManagerInput:
-        """Test WebhooksManagerInput
+    def make_instance(self, include_optional) -> RetryTimes:
+        """Test RetryTimes
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `WebhooksManagerInput`
+        # uncomment below to create an instance of `RetryTimes`
         """
-        model = WebhooksManagerInput()
+        model = RetryTimes()
         if include_optional:
-            return WebhooksManagerInput(
-                webhook_name = '',
-                endpoint = '0',
-                catch_path = '',
-                catch_method = 'POST',
-                catch_status = 56,
-                retry_status_code = [
-                    ''
-                    ],
-                retry_times = None
+            return RetryTimes(
             )
         else:
-            return WebhooksManagerInput(
-                webhook_name = '',
-                endpoint = '0',
-                catch_path = '',
-                catch_method = 'POST',
+            return RetryTimes(
         )
         """
 
-    def testWebhooksManagerInput(self):
-        """Test WebhooksManagerInput"""
+    def testRetryTimes(self):
+        """Test RetryTimes"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
