@@ -5,9 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '67d36ad2047a5c2885906e9d']
+**id** | **str** | The unique ID of this object. | [optional] [default to '67d36d23674daab20d1e0df7']
+**metadata** | **object** |  | [optional] 
 **create_at** | **datetime** |  | 
-**update_at** | **datetime** |  | [optional] 
+**update_at** | **datetime** |  | 
 **num** | **str** | Order number | 
 **room_id** | **str** | Room ID | [optional] 
 **guest** | [**Guest**](Guest.md) | Guest information | [optional] 

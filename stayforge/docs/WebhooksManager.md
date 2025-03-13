@@ -5,9 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '67d36ad2047a5c2885906e9d']
+**id** | **str** | The unique ID of this object. | [optional] [default to '67d36d23674daab20d1e0df7']
+**metadata** | **object** |  | [optional] 
 **create_at** | **datetime** |  | 
-**update_at** | **datetime** |  | [optional] 
+**update_at** | **datetime** |  | 
 **webhook_name** | **str** | The name of the webhook configuration. | 
 **endpoint** | **str** | The URL where webhook events will be sent. | 
 **catch_path** | **str** | The path to monitor for webhook events. | 

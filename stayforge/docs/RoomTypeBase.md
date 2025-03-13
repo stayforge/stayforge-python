@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**parent** | **str** | Parent room type&#39;s name. When it is None,  | [optional] 
-**name** | **str** | Unique name of RoomType | 
+**parent** | **str** | Parent room type’s name. If set to None, it will be considered a top-level room type. | [optional] 
+**name** | **str** | Unique name of RoomType. | 
 **name_visible** | **str** | A visible name of the room type. | 
 **description** | **str** | Description of the room type. | [optional] 
 **branch** | **List[str]** | Branch names that this type is available. If None, it will follow the parent settings or allow all branches by default. | [optional] 

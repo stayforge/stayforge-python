@@ -27,14 +27,15 @@ class Branch(BaseModel):
     """
     Branch
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906e9d', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='67d36d23674daab20d1e0df7', description="The unique ID of this object.")
+    metadata: Optional[Dict[str, Any]] = None
     create_at: Optional[datetime]
-    update_at: Optional[datetime] = None
+    update_at: Optional[datetime]
     name: StrictStr = Field(description="The name of the hotel branch. By default, it combines a base name with a random town.")
     postcode: Optional[StrictStr] = Field(default='000-0000', description="The postal code of the branch location.")
     address: Optional[StrictStr] = Field(default='000-0000', description="The full effective of the branch, including administrative unit, city, town, and detailed location.")
     telephone: StrictStr = Field(description="The contact telephone number for the branch.")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "name", "postcode", "address", "telephone"]
+    __properties: ClassVar[List[str]] = ["id", "metadata", "create_at", "update_at", "name", "postcode", "address", "telephone"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,6 +76,11 @@ class Branch(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if metadata (nullable) is None
+        # and model_fields_set contains the field
+        if self.metadata is None and "metadata" in self.model_fields_set:
+            _dict['metadata'] = None
+
         # set to None if create_at (nullable) is None
         # and model_fields_set contains the field
         if self.create_at is None and "create_at" in self.model_fields_set:
@@ -97,7 +103,8 @@ class Branch(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d36ad2047a5c2885906e9d',
+            "id": obj.get("id") if obj.get("id") is not None else '67d36d23674daab20d1e0df7',
+            "metadata": obj.get("metadata"),
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "name": obj.get("name"),

@@ -35,7 +35,8 @@ class TestModelsManager(unittest.TestCase):
         model = ModelsManager()
         if include_optional:
             return ModelsManager(
-                id = '67d36ad2047a5c2885906e9d',
+                id = '67d36d23674daab20d1e0df7',
+                metadata = None,
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 model = '',
@@ -50,6 +51,7 @@ class TestModelsManager(unittest.TestCase):
         else:
             return ModelsManager(
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 model = '',
                 etcd_host = '',
                 etcd_user = '',

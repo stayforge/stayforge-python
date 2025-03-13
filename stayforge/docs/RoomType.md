@@ -5,11 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '67d36ad2047a5c2885906e9d']
-**create_at** | **datetime** |  | 
-**update_at** | **datetime** |  | [optional] 
-**parent** | **str** | Parent room type&#39;s name. When it is None,  | [optional] 
-**name** | **str** | Unique name of RoomType | 
+**parent** | **str** | Parent room type’s name. If set to None, it will be considered a top-level room type. | [optional] 
+**name** | **str** | Unique name of RoomType. | 
 **name_visible** | **str** | A visible name of the room type. | 
 **description** | **str** | Description of the room type. | [optional] 
 **branch** | **List[str]** | Branch names that this type is available. If None, it will follow the parent settings or allow all branches by default. | [optional] 
@@ -18,6 +15,10 @@ Name | Type | Description | Notes
 **min_usage** | **float** | Minimum usage hours. | [optional] [default to 8]
 **max_usage** | **float** | Maximum usage hours. | [optional] [default to 720]
 **allow_extension** | **bool** | When it True, this type will marked as allowed to extend. | [optional] [default to True]
+**id** | **str** | The unique ID of this object. | [optional] [default to '67d36d23674daab20d1e0df7']
+**metadata** | **object** |  | [optional] 
+**create_at** | **datetime** |  | 
+**update_at** | **datetime** |  | 
 
 ## Example
 

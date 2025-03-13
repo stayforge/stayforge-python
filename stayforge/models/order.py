@@ -28,16 +28,17 @@ class Order(BaseModel):
     """
     Order
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906e9d', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='67d36d23674daab20d1e0df7', description="The unique ID of this object.")
+    metadata: Optional[Dict[str, Any]] = None
     create_at: Optional[datetime]
-    update_at: Optional[datetime] = None
+    update_at: Optional[datetime]
     num: StrictStr = Field(description="Order number")
     room_id: Optional[StrictStr] = Field(default=None, description="Room ID")
     guest: Optional[Guest] = Field(default=None, description="Guest information")
     type: StrictStr = Field(description="OrderType")
     scheduled_checkin_at: Optional[datetime] = Field(default=None, description="Creation timestamp")
     scheduled_checkout_at: Optional[datetime] = Field(default=None, description="Creation timestamp")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "num", "room_id", "guest", "type", "scheduled_checkin_at", "scheduled_checkout_at"]
+    __properties: ClassVar[List[str]] = ["id", "metadata", "create_at", "update_at", "num", "room_id", "guest", "type", "scheduled_checkin_at", "scheduled_checkout_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +82,11 @@ class Order(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of guest
         if self.guest:
             _dict['guest'] = self.guest.to_dict()
+        # set to None if metadata (nullable) is None
+        # and model_fields_set contains the field
+        if self.metadata is None and "metadata" in self.model_fields_set:
+            _dict['metadata'] = None
+
         # set to None if create_at (nullable) is None
         # and model_fields_set contains the field
         if self.create_at is None and "create_at" in self.model_fields_set:
@@ -103,7 +109,8 @@ class Order(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d36ad2047a5c2885906e9d',
+            "id": obj.get("id") if obj.get("id") is not None else '67d36d23674daab20d1e0df7',
+            "metadata": obj.get("metadata"),
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "num": obj.get("num"),

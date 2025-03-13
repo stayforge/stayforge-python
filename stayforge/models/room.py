@@ -27,14 +27,15 @@ class Room(BaseModel):
     """
     Room
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906e9d', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='67d36d23674daab20d1e0df7', description="The unique ID of this object.")
+    metadata: Optional[Dict[str, Any]] = None
     create_at: Optional[datetime]
-    update_at: Optional[datetime] = None
-    key_id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906e9f', description="Reference ID of the key.")
-    room_type_id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906ea0', description="Reference ID of the RoomType.")
+    update_at: Optional[datetime]
+    key_id: Optional[StrictStr] = Field(default='67d36d23674daab20d1e0df9', description="Reference ID of the key.")
+    room_type_id: Optional[StrictStr] = Field(default='67d36d23674daab20d1e0dfa', description="Reference ID of the RoomType.")
     number: StrictStr = Field(description="The number of rooms, e.g., 203.")
     priority: StrictInt = Field(description="The OTA system will give priority to rooms with a higher value to guests. If the priorities are the same, then it is random.")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "key_id", "room_type_id", "number", "priority"]
+    __properties: ClassVar[List[str]] = ["id", "metadata", "create_at", "update_at", "key_id", "room_type_id", "number", "priority"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,6 +76,11 @@ class Room(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if metadata (nullable) is None
+        # and model_fields_set contains the field
+        if self.metadata is None and "metadata" in self.model_fields_set:
+            _dict['metadata'] = None
+
         # set to None if create_at (nullable) is None
         # and model_fields_set contains the field
         if self.create_at is None and "create_at" in self.model_fields_set:
@@ -97,11 +103,12 @@ class Room(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d36ad2047a5c2885906e9d',
+            "id": obj.get("id") if obj.get("id") is not None else '67d36d23674daab20d1e0df7',
+            "metadata": obj.get("metadata"),
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
-            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '67d36ad2047a5c2885906e9f',
-            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '67d36ad2047a5c2885906ea0',
+            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '67d36d23674daab20d1e0df9',
+            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '67d36d23674daab20d1e0dfa',
             "number": obj.get("number"),
             "priority": obj.get("priority")
         })

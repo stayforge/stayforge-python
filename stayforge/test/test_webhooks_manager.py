@@ -35,7 +35,8 @@ class TestWebhooksManager(unittest.TestCase):
         model = WebhooksManager()
         if include_optional:
             return WebhooksManager(
-                id = '67d36ad2047a5c2885906e9d',
+                id = '67d36d23674daab20d1e0df7',
+                metadata = None,
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 webhook_name = '',
@@ -51,6 +52,7 @@ class TestWebhooksManager(unittest.TestCase):
         else:
             return WebhooksManager(
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 webhook_name = '',
                 endpoint = '0',
                 catch_path = '',

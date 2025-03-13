@@ -5,9 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '67d36ad2047a5c2885906e9d']
+**id** | **str** | The unique ID of this object. | [optional] [default to '67d36d23674daab20d1e0df7']
+**metadata** | **object** |  | [optional] 
 **create_at** | **datetime** |  | 
-**update_at** | **datetime** |  | [optional] 
+**update_at** | **datetime** |  | 
 **name** | **str** | The name of the hotel branch. By default, it combines a base name with a random town. | 
 **postcode** | **str** | The postal code of the branch location. | [optional] [default to '000-0000']
 **address** | **str** | The full effective of the branch, including administrative unit, city, town, and detailed location. | [optional] [default to '000-0000']

@@ -29,9 +29,10 @@ class WebhooksManager(BaseModel):
     """
     WebhooksManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906e9d', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='67d36d23674daab20d1e0df7', description="The unique ID of this object.")
+    metadata: Optional[Dict[str, Any]] = None
     create_at: Optional[datetime]
-    update_at: Optional[datetime] = None
+    update_at: Optional[datetime]
     webhook_name: StrictStr = Field(description="The name of the webhook configuration.")
     endpoint: Annotated[str, Field(min_length=1, strict=True, max_length=2083)] = Field(description="The URL where webhook events will be sent.")
     catch_path: StrictStr = Field(description="The path to monitor for webhook events.")
@@ -39,7 +40,7 @@ class WebhooksManager(BaseModel):
     catch_status: Optional[StrictInt] = None
     retry_status_code: Optional[List[StrictStr]] = None
     retry_times: Optional[RetryTimes] = None
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "webhook_name", "endpoint", "catch_path", "catch_method", "catch_status", "retry_status_code", "retry_times"]
+    __properties: ClassVar[List[str]] = ["id", "metadata", "create_at", "update_at", "webhook_name", "endpoint", "catch_path", "catch_method", "catch_status", "retry_status_code", "retry_times"]
 
     @field_validator('catch_method')
     def catch_method_validate_enum(cls, value):
@@ -90,6 +91,11 @@ class WebhooksManager(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of retry_times
         if self.retry_times:
             _dict['retry_times'] = self.retry_times.to_dict()
+        # set to None if metadata (nullable) is None
+        # and model_fields_set contains the field
+        if self.metadata is None and "metadata" in self.model_fields_set:
+            _dict['metadata'] = None
+
         # set to None if create_at (nullable) is None
         # and model_fields_set contains the field
         if self.create_at is None and "create_at" in self.model_fields_set:
@@ -127,7 +133,8 @@ class WebhooksManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d36ad2047a5c2885906e9d',
+            "id": obj.get("id") if obj.get("id") is not None else '67d36d23674daab20d1e0df7',
+            "metadata": obj.get("metadata"),
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "webhook_name": obj.get("webhook_name"),

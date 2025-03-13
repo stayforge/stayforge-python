@@ -35,9 +35,6 @@ class TestRoomType(unittest.TestCase):
         model = RoomType()
         if include_optional:
             return RoomType(
-                id = '67d36ad2047a5c2885906e9d',
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 parent = '',
                 name = '',
                 name_visible = '',
@@ -49,14 +46,19 @@ class TestRoomType(unittest.TestCase):
                 price_policy = '',
                 min_usage = 1.337,
                 max_usage = 1.337,
-                allow_extension = True
+                allow_extension = True,
+                id = '67d36d23674daab20d1e0df7',
+                metadata = stayforge.models.metadata.metadata(),
+                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
             return RoomType(
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 name = '',
                 name_visible = '',
                 base_price = '',
+                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )
         """
 

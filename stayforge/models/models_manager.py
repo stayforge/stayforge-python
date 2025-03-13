@@ -27,9 +27,10 @@ class ModelsManager(BaseModel):
     """
     ModelsManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906e9d', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='67d36d23674daab20d1e0df7', description="The unique ID of this object.")
+    metadata: Optional[Dict[str, Any]] = None
     create_at: Optional[datetime]
-    update_at: Optional[datetime] = None
+    update_at: Optional[datetime]
     model: StrictStr = Field(description="The host URL of the model. This is used to generate webhook URLs and other model-related paths.")
     model_version: Optional[StrictStr] = Field(default='latest', description="The version of the model. This helps in tracking updates and ensuring compatibility.")
     local_name: Optional[StrictStr] = None
@@ -38,7 +39,7 @@ class ModelsManager(BaseModel):
     etcd_port: Optional[StrictInt] = 2379
     etcd_user: StrictStr
     etcd_password: StrictStr
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "model", "model_version", "local_name", "permissions", "etcd_host", "etcd_port", "etcd_user", "etcd_password"]
+    __properties: ClassVar[List[str]] = ["id", "metadata", "create_at", "update_at", "model", "model_version", "local_name", "permissions", "etcd_host", "etcd_port", "etcd_user", "etcd_password"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +80,11 @@ class ModelsManager(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if metadata (nullable) is None
+        # and model_fields_set contains the field
+        if self.metadata is None and "metadata" in self.model_fields_set:
+            _dict['metadata'] = None
+
         # set to None if create_at (nullable) is None
         # and model_fields_set contains the field
         if self.create_at is None and "create_at" in self.model_fields_set:
@@ -111,7 +117,8 @@ class ModelsManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d36ad2047a5c2885906e9d',
+            "id": obj.get("id") if obj.get("id") is not None else '67d36d23674daab20d1e0df7',
+            "metadata": obj.get("metadata"),
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
             "model": obj.get("model"),

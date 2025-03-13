@@ -37,7 +37,8 @@ class TestBranchResponses(unittest.TestCase):
             return BranchResponses(
                 data = [
                     stayforge.models.branch.Branch(
-                        id = '67d36ad2047a5c2885906e9d', 
+                        id = '67d36d23674daab20d1e0df7', 
+                        metadata = stayforge.models.metadata.metadata(), 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '', 
@@ -55,7 +56,8 @@ class TestBranchResponses(unittest.TestCase):
             return BranchResponses(
                 data = [
                     stayforge.models.branch.Branch(
-                        id = '67d36ad2047a5c2885906e9d', 
+                        id = '67d36d23674daab20d1e0df7', 
+                        metadata = stayforge.models.metadata.metadata(), 
                         create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '', 

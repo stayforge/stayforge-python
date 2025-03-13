@@ -27,8 +27,8 @@ class RoomTypeBase(BaseModel):
     """
     RoomTypeBase
     """ # noqa: E501
-    parent: Optional[StrictStr] = Field(default=None, description="Parent room type's name. When it is None, ")
-    name: StrictStr = Field(description="Unique name of RoomType")
+    parent: Optional[StrictStr] = Field(default=None, description="Parent room type’s name. If set to None, it will be considered a top-level room type.")
+    name: StrictStr = Field(description="Unique name of RoomType.")
     name_visible: StrictStr = Field(description="A visible name of the room type.", alias="nameVisible")
     description: Optional[StrictStr] = Field(default=None, description="Description of the room type.")
     branch: Optional[List[StrictStr]] = Field(default=None, description="Branch names that this type is available. If None, it will follow the parent settings or allow all branches by default.")
