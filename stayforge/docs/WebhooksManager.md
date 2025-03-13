@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Reference ID of the key. | [optional] [default to '678dfb74eab6bd78287dc426']
+**id** | **str** | Reference ID of the key. | [optional] [default to '67d35f43c210cb550f8e32ed']
 **create_at** | **datetime** |  | 
 **update_at** | **datetime** |  | [optional] 
 **webhook_name** | **str** | The name of the webhook configuration. | 
