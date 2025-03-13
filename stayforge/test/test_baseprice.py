@@ -14,53 +14,37 @@
 
 import unittest
 
-from stayforge.api.room_types_api import RoomTypesApi
+from stayforge.models.baseprice import Baseprice
 
+class TestBaseprice(unittest.TestCase):
+    """Baseprice unit test stubs"""
 
-class TestRoomTypesApi(unittest.TestCase):
-    """RoomTypesApi unit test stubs"""
-
-    def setUp(self) -> None:
-        self.api = RoomTypesApi()
-
-    def tearDown(self) -> None:
+    def setUp(self):
         pass
 
-    def test_create_room_type_api_room_type_rooms_post(self) -> None:
-        """Test case for create_room_type_api_room_type_rooms_post
+    def tearDown(self):
+        pass
 
-        Create Room Type
+    def make_instance(self, include_optional) -> Baseprice:
+        """Test Baseprice
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `Baseprice`
         """
-        pass
-
-    def test_delete_room_type_api_room_type_room_types_room_type_id_delete(self) -> None:
-        """Test case for delete_room_type_api_room_type_room_types_room_type_id_delete
-
-        Delete Room Type
+        model = Baseprice()
+        if include_optional:
+            return Baseprice(
+            )
+        else:
+            return Baseprice(
+        )
         """
-        pass
 
-    def test_get_room_type_api_room_type_room_types_room_type_id_get(self) -> None:
-        """Test case for get_room_type_api_room_type_room_types_room_type_id_get
-
-        Get Room Type
-        """
-        pass
-
-    def test_get_room_types_api_room_type_rooms_get(self) -> None:
-        """Test case for get_room_types_api_room_type_rooms_get
-
-        Get Room Types
-        """
-        pass
-
-    def test_update_room_type_api_room_type_room_types_room_type_id_put(self) -> None:
-        """Test case for update_room_type_api_room_type_room_types_room_type_id_put
-
-        Update Room Type
-        """
-        pass
-
+    def testBaseprice(self):
+        """Test Baseprice"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
 
 if __name__ == '__main__':
     unittest.main()

@@ -17,24 +17,27 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from stayforge.models.baseprice import Baseprice
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Room(BaseModel):
+class RoomTypeBase(BaseModel):
     """
-    Room
+    RoomTypeBase
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906e9d', description="Reference ID of the key.")
-    create_at: Optional[datetime]
-    update_at: Optional[datetime] = None
-    key_id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906e9f', description="Reference ID of the key.")
-    room_type_id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906ea0', description="Reference ID of the RoomType.")
-    number: StrictStr = Field(description="The number of rooms, e.g., 203.")
-    priority: StrictInt = Field(description="The OTA system will give priority to rooms with a higher value to guests. If the priorities are the same, then it is random.")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "key_id", "room_type_id", "number", "priority"]
+    parent: Optional[StrictStr] = Field(default=None, description="Parent room type's name. When it is None, ")
+    name: StrictStr = Field(description="Unique name of RoomType")
+    name_visible: StrictStr = Field(description="A visible name of the room type.", alias="nameVisible")
+    description: Optional[StrictStr] = Field(default=None, description="Description of the room type.")
+    branch: Optional[List[StrictStr]] = Field(default=None, description="Branch names that this type is available. If None, it will follow the parent settings or allow all branches by default.")
+    base_price: Baseprice = Field(alias="basePrice")
+    price_policy: Optional[StrictStr] = Field(default=None, description="The price controller will modify the corresponding price field based on the price policy name.", alias="pricePolicy")
+    min_usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=8, description="Minimum usage hours.")
+    max_usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=720, description="Maximum usage hours.")
+    allow_extension: Optional[StrictBool] = Field(default=True, description="When it True, this type will marked as allowed to extend.", alias="allowExtension")
+    __properties: ClassVar[List[str]] = ["parent", "name", "nameVisible", "description", "branch", "basePrice", "pricePolicy", "min_usage", "max_usage", "allowExtension"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +57,7 @@ class Room(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Room from a JSON string"""
+        """Create an instance of RoomTypeBase from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,21 +78,14 @@ class Room(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if create_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.create_at is None and "create_at" in self.model_fields_set:
-            _dict['create_at'] = None
-
-        # set to None if update_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.update_at is None and "update_at" in self.model_fields_set:
-            _dict['update_at'] = None
-
+        # override the default output from pydantic by calling `to_dict()` of base_price
+        if self.base_price:
+            _dict['basePrice'] = self.base_price.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Room from a dict"""
+        """Create an instance of RoomTypeBase from a dict"""
         if obj is None:
             return None
 
@@ -97,13 +93,16 @@ class Room(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d36ad2047a5c2885906e9d',
-            "create_at": obj.get("create_at"),
-            "update_at": obj.get("update_at"),
-            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '67d36ad2047a5c2885906e9f',
-            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '67d36ad2047a5c2885906ea0',
-            "number": obj.get("number"),
-            "priority": obj.get("priority")
+            "parent": obj.get("parent"),
+            "name": obj.get("name"),
+            "nameVisible": obj.get("nameVisible"),
+            "description": obj.get("description"),
+            "branch": obj.get("branch"),
+            "basePrice": Baseprice.from_dict(obj["basePrice"]) if obj.get("basePrice") is not None else None,
+            "pricePolicy": obj.get("pricePolicy"),
+            "min_usage": obj.get("min_usage") if obj.get("min_usage") is not None else 8,
+            "max_usage": obj.get("max_usage") if obj.get("max_usage") is not None else 720,
+            "allowExtension": obj.get("allowExtension") if obj.get("allowExtension") is not None else True
         })
         return _obj
 

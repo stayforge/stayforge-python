@@ -14,6 +14,7 @@
 
 
 # import models into model package
+from stayforge.models.baseprice import Baseprice
 from stayforge.models.branch import Branch
 from stayforge.models.branch_input import BranchInput
 from stayforge.models.branch_responses import BranchResponses
@@ -29,16 +30,12 @@ from stayforge.models.order import Order
 from stayforge.models.order_input import OrderInput
 from stayforge.models.order_responses import OrderResponses
 from stayforge.models.photocopy import Photocopy
-from stayforge.models.price import Price
-from stayforge.models.price_max import PriceMax
-from stayforge.models.price_min import PriceMin
 from stayforge.models.retry_times import RetryTimes
 from stayforge.models.room import Room
 from stayforge.models.room_input import RoomInput
 from stayforge.models.room_responses import RoomResponses
 from stayforge.models.room_type import RoomType
-from stayforge.models.room_type_input import RoomTypeInput
-from stayforge.models.room_type_responses import RoomTypeResponses
+from stayforge.models.room_type_base import RoomTypeBase
 from stayforge.models.stayforge import Stayforge
 from stayforge.models.validation_error import ValidationError
 from stayforge.models.validation_error_loc_inner import ValidationErrorLocInner

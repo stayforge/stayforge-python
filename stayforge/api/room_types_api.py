@@ -16,11 +16,10 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr
-from typing import Optional
-from typing_extensions import Annotated
-from stayforge.models.room_type_input import RoomTypeInput
-from stayforge.models.room_type_responses import RoomTypeResponses
+from pydantic import StrictStr
+from typing import Any, List
+from stayforge.models.room_type import RoomType
+from stayforge.models.room_type_base import RoomTypeBase
 
 from stayforge.api_client import ApiClient, RequestSerialized
 from stayforge.api_response import ApiResponse
@@ -41,9 +40,9 @@ class RoomTypesApi:
 
 
     @validate_call
-    def create_room_type_api_room_type_post(
+    def create_room_type_api_room_type_rooms_post(
         self,
-        room_type_input: RoomTypeInput,
+        room_type_base: RoomTypeBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -56,12 +55,12 @@ class RoomTypesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RoomTypeResponses:
+    ) -> RoomType:
         """Create Room Type
 
 
-        :param room_type_input: (required)
-        :type room_type_input: RoomTypeInput
+        :param room_type_base: (required)
+        :type room_type_base: RoomTypeBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -84,8 +83,8 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_room_type_api_room_type_post_serialize(
-            room_type_input=room_type_input,
+        _param = self._create_room_type_api_room_type_rooms_post_serialize(
+            room_type_base=room_type_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -93,8 +92,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
-            '409': None,
+            '200': "RoomType",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -109,9 +107,9 @@ class RoomTypesApi:
 
 
     @validate_call
-    def create_room_type_api_room_type_post_with_http_info(
+    def create_room_type_api_room_type_rooms_post_with_http_info(
         self,
-        room_type_input: RoomTypeInput,
+        room_type_base: RoomTypeBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -124,12 +122,12 @@ class RoomTypesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[RoomTypeResponses]:
+    ) -> ApiResponse[RoomType]:
         """Create Room Type
 
 
-        :param room_type_input: (required)
-        :type room_type_input: RoomTypeInput
+        :param room_type_base: (required)
+        :type room_type_base: RoomTypeBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -152,8 +150,8 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_room_type_api_room_type_post_serialize(
-            room_type_input=room_type_input,
+        _param = self._create_room_type_api_room_type_rooms_post_serialize(
+            room_type_base=room_type_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -161,8 +159,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
-            '409': None,
+            '200': "RoomType",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -177,9 +174,9 @@ class RoomTypesApi:
 
 
     @validate_call
-    def create_room_type_api_room_type_post_without_preload_content(
+    def create_room_type_api_room_type_rooms_post_without_preload_content(
         self,
-        room_type_input: RoomTypeInput,
+        room_type_base: RoomTypeBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -196,8 +193,8 @@ class RoomTypesApi:
         """Create Room Type
 
 
-        :param room_type_input: (required)
-        :type room_type_input: RoomTypeInput
+        :param room_type_base: (required)
+        :type room_type_base: RoomTypeBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -220,8 +217,8 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_room_type_api_room_type_post_serialize(
-            room_type_input=room_type_input,
+        _param = self._create_room_type_api_room_type_rooms_post_serialize(
+            room_type_base=room_type_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -229,8 +226,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
-            '409': None,
+            '200': "RoomType",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -240,9 +236,9 @@ class RoomTypesApi:
         return response_data.response
 
 
-    def _create_room_type_api_room_type_post_serialize(
+    def _create_room_type_api_room_type_rooms_post_serialize(
         self,
-        room_type_input,
+        room_type_base,
         _request_auth,
         _content_type,
         _headers,
@@ -268,8 +264,8 @@ class RoomTypesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if room_type_input is not None:
-            _body_params = room_type_input
+        if room_type_base is not None:
+            _body_params = room_type_base
 
 
         # set the HTTP header `Accept`
@@ -300,7 +296,7 @@ class RoomTypesApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/room_type/',
+            resource_path='/api/room_type/rooms/',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -317,9 +313,9 @@ class RoomTypesApi:
 
 
     @validate_call
-    def delete_room_type_api_room_type_id_delete(
+    def delete_room_type_api_room_type_room_types_room_type_id_delete(
         self,
-        id: StrictStr,
+        room_type_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -332,12 +328,12 @@ class RoomTypesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RoomTypeResponses:
+    ) -> object:
         """Delete Room Type
 
 
-        :param id: (required)
-        :type id: str
+        :param room_type_id: (required)
+        :type room_type_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -360,8 +356,8 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_room_type_api_room_type_id_delete_serialize(
-            id=id,
+        _param = self._delete_room_type_api_room_type_room_types_room_type_id_delete_serialize(
+            room_type_id=room_type_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -369,7 +365,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
+            '200': "object",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -384,9 +380,9 @@ class RoomTypesApi:
 
 
     @validate_call
-    def delete_room_type_api_room_type_id_delete_with_http_info(
+    def delete_room_type_api_room_type_room_types_room_type_id_delete_with_http_info(
         self,
-        id: StrictStr,
+        room_type_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -399,12 +395,12 @@ class RoomTypesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[RoomTypeResponses]:
+    ) -> ApiResponse[object]:
         """Delete Room Type
 
 
-        :param id: (required)
-        :type id: str
+        :param room_type_id: (required)
+        :type room_type_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -427,8 +423,8 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_room_type_api_room_type_id_delete_serialize(
-            id=id,
+        _param = self._delete_room_type_api_room_type_room_types_room_type_id_delete_serialize(
+            room_type_id=room_type_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -436,7 +432,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
+            '200': "object",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -451,9 +447,9 @@ class RoomTypesApi:
 
 
     @validate_call
-    def delete_room_type_api_room_type_id_delete_without_preload_content(
+    def delete_room_type_api_room_type_room_types_room_type_id_delete_without_preload_content(
         self,
-        id: StrictStr,
+        room_type_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -470,8 +466,8 @@ class RoomTypesApi:
         """Delete Room Type
 
 
-        :param id: (required)
-        :type id: str
+        :param room_type_id: (required)
+        :type room_type_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -494,8 +490,8 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_room_type_api_room_type_id_delete_serialize(
-            id=id,
+        _param = self._delete_room_type_api_room_type_room_types_room_type_id_delete_serialize(
+            room_type_id=room_type_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -503,7 +499,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
+            '200': "object",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -513,9 +509,9 @@ class RoomTypesApi:
         return response_data.response
 
 
-    def _delete_room_type_api_room_type_id_delete_serialize(
+    def _delete_room_type_api_room_type_room_types_room_type_id_delete_serialize(
         self,
-        id,
+        room_type_id,
         _request_auth,
         _content_type,
         _headers,
@@ -537,8 +533,8 @@ class RoomTypesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if room_type_id is not None:
+            _path_params['room_type_id'] = room_type_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -560,7 +556,7 @@ class RoomTypesApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/api/room_type/{id}',
+            resource_path='/api/room_type/room_types/{room_type_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -577,9 +573,9 @@ class RoomTypesApi:
 
 
     @validate_call
-    def get_room_type_api_room_type_id_get(
+    def get_room_type_api_room_type_room_types_room_type_id_get(
         self,
-        id: StrictStr,
+        room_type_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -592,12 +588,12 @@ class RoomTypesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RoomTypeResponses:
+    ) -> RoomType:
         """Get Room Type
 
 
-        :param id: (required)
-        :type id: str
+        :param room_type_id: (required)
+        :type room_type_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -620,8 +616,8 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_room_type_api_room_type_id_get_serialize(
-            id=id,
+        _param = self._get_room_type_api_room_type_room_types_room_type_id_get_serialize(
+            room_type_id=room_type_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -629,7 +625,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
+            '200': "RoomType",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -644,9 +640,9 @@ class RoomTypesApi:
 
 
     @validate_call
-    def get_room_type_api_room_type_id_get_with_http_info(
+    def get_room_type_api_room_type_room_types_room_type_id_get_with_http_info(
         self,
-        id: StrictStr,
+        room_type_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -659,12 +655,12 @@ class RoomTypesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[RoomTypeResponses]:
+    ) -> ApiResponse[RoomType]:
         """Get Room Type
 
 
-        :param id: (required)
-        :type id: str
+        :param room_type_id: (required)
+        :type room_type_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -687,8 +683,8 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_room_type_api_room_type_id_get_serialize(
-            id=id,
+        _param = self._get_room_type_api_room_type_room_types_room_type_id_get_serialize(
+            room_type_id=room_type_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -696,7 +692,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
+            '200': "RoomType",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -711,9 +707,9 @@ class RoomTypesApi:
 
 
     @validate_call
-    def get_room_type_api_room_type_id_get_without_preload_content(
+    def get_room_type_api_room_type_room_types_room_type_id_get_without_preload_content(
         self,
-        id: StrictStr,
+        room_type_id: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -730,8 +726,8 @@ class RoomTypesApi:
         """Get Room Type
 
 
-        :param id: (required)
-        :type id: str
+        :param room_type_id: (required)
+        :type room_type_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -754,8 +750,8 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_room_type_api_room_type_id_get_serialize(
-            id=id,
+        _param = self._get_room_type_api_room_type_room_types_room_type_id_get_serialize(
+            room_type_id=room_type_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -763,7 +759,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
+            '200': "RoomType",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -773,9 +769,9 @@ class RoomTypesApi:
         return response_data.response
 
 
-    def _get_room_type_api_room_type_id_get_serialize(
+    def _get_room_type_api_room_type_room_types_room_type_id_get_serialize(
         self,
-        id,
+        room_type_id,
         _request_auth,
         _content_type,
         _headers,
@@ -797,8 +793,8 @@ class RoomTypesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if room_type_id is not None:
+            _path_params['room_type_id'] = room_type_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -820,7 +816,7 @@ class RoomTypesApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/room_type/{id}',
+            resource_path='/api/room_type/room_types/{room_type_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -837,14 +833,8 @@ class RoomTypesApi:
 
 
     @validate_call
-    def get_room_types_api_room_type_get(
+    def get_room_types_api_room_type_rooms_get(
         self,
-        name: Annotated[StrictStr, Field(description="The Type of RoomTypeType")],
-        price: Annotated[StrictInt, Field(description="Current price. If you deploy a price controller, this value will be updated automatically.")],
-        price_min: Annotated[StrictInt, Field(description="The min of price.")],
-        description: Annotated[Optional[StrictStr], Field(description="Description of the room_type type")] = None,
-        price_policy: Annotated[Optional[StrictStr], Field(description="The price controller will modify the corresponding price field based on the price policy ID.")] = None,
-        price_max: Annotated[Optional[StrictInt], Field(description="The max of price.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -857,22 +847,10 @@ class RoomTypesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RoomTypeResponses:
+    ) -> List[RoomType]:
         """Get Room Types
 
 
-        :param name: The Type of RoomTypeType (required)
-        :type name: str
-        :param price: Current price. If you deploy a price controller, this value will be updated automatically. (required)
-        :type price: int
-        :param price_min: The min of price. (required)
-        :type price_min: int
-        :param description: Description of the room_type type
-        :type description: str
-        :param price_policy: The price controller will modify the corresponding price field based on the price policy ID.
-        :type price_policy: str
-        :param price_max: The max of price.
-        :type price_max: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -895,13 +873,7 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_room_types_api_room_type_get_serialize(
-            name=name,
-            price=price,
-            price_min=price_min,
-            description=description,
-            price_policy=price_policy,
-            price_max=price_max,
+        _param = self._get_room_types_api_room_type_rooms_get_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -909,8 +881,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
-            '422': "HTTPValidationError",
+            '200': "List[RoomType]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -924,14 +895,8 @@ class RoomTypesApi:
 
 
     @validate_call
-    def get_room_types_api_room_type_get_with_http_info(
+    def get_room_types_api_room_type_rooms_get_with_http_info(
         self,
-        name: Annotated[StrictStr, Field(description="The Type of RoomTypeType")],
-        price: Annotated[StrictInt, Field(description="Current price. If you deploy a price controller, this value will be updated automatically.")],
-        price_min: Annotated[StrictInt, Field(description="The min of price.")],
-        description: Annotated[Optional[StrictStr], Field(description="Description of the room_type type")] = None,
-        price_policy: Annotated[Optional[StrictStr], Field(description="The price controller will modify the corresponding price field based on the price policy ID.")] = None,
-        price_max: Annotated[Optional[StrictInt], Field(description="The max of price.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -944,22 +909,10 @@ class RoomTypesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[RoomTypeResponses]:
+    ) -> ApiResponse[List[RoomType]]:
         """Get Room Types
 
 
-        :param name: The Type of RoomTypeType (required)
-        :type name: str
-        :param price: Current price. If you deploy a price controller, this value will be updated automatically. (required)
-        :type price: int
-        :param price_min: The min of price. (required)
-        :type price_min: int
-        :param description: Description of the room_type type
-        :type description: str
-        :param price_policy: The price controller will modify the corresponding price field based on the price policy ID.
-        :type price_policy: str
-        :param price_max: The max of price.
-        :type price_max: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -982,13 +935,7 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_room_types_api_room_type_get_serialize(
-            name=name,
-            price=price,
-            price_min=price_min,
-            description=description,
-            price_policy=price_policy,
-            price_max=price_max,
+        _param = self._get_room_types_api_room_type_rooms_get_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -996,8 +943,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
-            '422': "HTTPValidationError",
+            '200': "List[RoomType]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1011,14 +957,8 @@ class RoomTypesApi:
 
 
     @validate_call
-    def get_room_types_api_room_type_get_without_preload_content(
+    def get_room_types_api_room_type_rooms_get_without_preload_content(
         self,
-        name: Annotated[StrictStr, Field(description="The Type of RoomTypeType")],
-        price: Annotated[StrictInt, Field(description="Current price. If you deploy a price controller, this value will be updated automatically.")],
-        price_min: Annotated[StrictInt, Field(description="The min of price.")],
-        description: Annotated[Optional[StrictStr], Field(description="Description of the room_type type")] = None,
-        price_policy: Annotated[Optional[StrictStr], Field(description="The price controller will modify the corresponding price field based on the price policy ID.")] = None,
-        price_max: Annotated[Optional[StrictInt], Field(description="The max of price.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1035,18 +975,6 @@ class RoomTypesApi:
         """Get Room Types
 
 
-        :param name: The Type of RoomTypeType (required)
-        :type name: str
-        :param price: Current price. If you deploy a price controller, this value will be updated automatically. (required)
-        :type price: int
-        :param price_min: The min of price. (required)
-        :type price_min: int
-        :param description: Description of the room_type type
-        :type description: str
-        :param price_policy: The price controller will modify the corresponding price field based on the price policy ID.
-        :type price_policy: str
-        :param price_max: The max of price.
-        :type price_max: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1069,13 +997,7 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_room_types_api_room_type_get_serialize(
-            name=name,
-            price=price,
-            price_min=price_min,
-            description=description,
-            price_policy=price_policy,
-            price_max=price_max,
+        _param = self._get_room_types_api_room_type_rooms_get_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1083,8 +1005,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
-            '422': "HTTPValidationError",
+            '200': "List[RoomType]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1093,14 +1014,8 @@ class RoomTypesApi:
         return response_data.response
 
 
-    def _get_room_types_api_room_type_get_serialize(
+    def _get_room_types_api_room_type_rooms_get_serialize(
         self,
-        name,
-        price,
-        price_min,
-        description,
-        price_policy,
-        price_max,
         _request_auth,
         _content_type,
         _headers,
@@ -1123,30 +1038,6 @@ class RoomTypesApi:
 
         # process the path parameters
         # process the query parameters
-        if name is not None:
-            
-            _query_params.append(('name', name))
-            
-        if description is not None:
-            
-            _query_params.append(('description', description))
-            
-        if price is not None:
-            
-            _query_params.append(('price', price))
-            
-        if price_policy is not None:
-            
-            _query_params.append(('price_policy', price_policy))
-            
-        if price_max is not None:
-            
-            _query_params.append(('price_max', price_max))
-            
-        if price_min is not None:
-            
-            _query_params.append(('price_min', price_min))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1167,7 +1058,7 @@ class RoomTypesApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/room_type/',
+            resource_path='/api/room_type/rooms/',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1184,10 +1075,10 @@ class RoomTypesApi:
 
 
     @validate_call
-    def put_room_type_api_room_type_id_put(
+    def update_room_type_api_room_type_room_types_room_type_id_put(
         self,
-        id: StrictStr,
-        room_type_input: RoomTypeInput,
+        room_type_id: StrictStr,
+        room_type_base: RoomTypeBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1200,14 +1091,14 @@ class RoomTypesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RoomTypeResponses:
-        """Put Room Type
+    ) -> RoomType:
+        """Update Room Type
 
 
-        :param id: (required)
-        :type id: str
-        :param room_type_input: (required)
-        :type room_type_input: RoomTypeInput
+        :param room_type_id: (required)
+        :type room_type_id: str
+        :param room_type_base: (required)
+        :type room_type_base: RoomTypeBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1230,9 +1121,9 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_room_type_api_room_type_id_put_serialize(
-            id=id,
-            room_type_input=room_type_input,
+        _param = self._update_room_type_api_room_type_room_types_room_type_id_put_serialize(
+            room_type_id=room_type_id,
+            room_type_base=room_type_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1240,8 +1131,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
-            '409': None,
+            '200': "RoomType",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1256,10 +1146,10 @@ class RoomTypesApi:
 
 
     @validate_call
-    def put_room_type_api_room_type_id_put_with_http_info(
+    def update_room_type_api_room_type_room_types_room_type_id_put_with_http_info(
         self,
-        id: StrictStr,
-        room_type_input: RoomTypeInput,
+        room_type_id: StrictStr,
+        room_type_base: RoomTypeBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1272,14 +1162,14 @@ class RoomTypesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[RoomTypeResponses]:
-        """Put Room Type
+    ) -> ApiResponse[RoomType]:
+        """Update Room Type
 
 
-        :param id: (required)
-        :type id: str
-        :param room_type_input: (required)
-        :type room_type_input: RoomTypeInput
+        :param room_type_id: (required)
+        :type room_type_id: str
+        :param room_type_base: (required)
+        :type room_type_base: RoomTypeBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1302,9 +1192,9 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_room_type_api_room_type_id_put_serialize(
-            id=id,
-            room_type_input=room_type_input,
+        _param = self._update_room_type_api_room_type_room_types_room_type_id_put_serialize(
+            room_type_id=room_type_id,
+            room_type_base=room_type_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1312,8 +1202,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
-            '409': None,
+            '200': "RoomType",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1328,10 +1217,10 @@ class RoomTypesApi:
 
 
     @validate_call
-    def put_room_type_api_room_type_id_put_without_preload_content(
+    def update_room_type_api_room_type_room_types_room_type_id_put_without_preload_content(
         self,
-        id: StrictStr,
-        room_type_input: RoomTypeInput,
+        room_type_id: StrictStr,
+        room_type_base: RoomTypeBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1345,13 +1234,13 @@ class RoomTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Put Room Type
+        """Update Room Type
 
 
-        :param id: (required)
-        :type id: str
-        :param room_type_input: (required)
-        :type room_type_input: RoomTypeInput
+        :param room_type_id: (required)
+        :type room_type_id: str
+        :param room_type_base: (required)
+        :type room_type_base: RoomTypeBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1374,9 +1263,9 @@ class RoomTypesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_room_type_api_room_type_id_put_serialize(
-            id=id,
-            room_type_input=room_type_input,
+        _param = self._update_room_type_api_room_type_room_types_room_type_id_put_serialize(
+            room_type_id=room_type_id,
+            room_type_base=room_type_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1384,8 +1273,7 @@ class RoomTypesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeResponses",
-            '409': None,
+            '200': "RoomType",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1395,10 +1283,10 @@ class RoomTypesApi:
         return response_data.response
 
 
-    def _put_room_type_api_room_type_id_put_serialize(
+    def _update_room_type_api_room_type_room_types_room_type_id_put_serialize(
         self,
-        id,
-        room_type_input,
+        room_type_id,
+        room_type_base,
         _request_auth,
         _content_type,
         _headers,
@@ -1420,14 +1308,14 @@ class RoomTypesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if room_type_id is not None:
+            _path_params['room_type_id'] = room_type_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if room_type_input is not None:
-            _body_params = room_type_input
+        if room_type_base is not None:
+            _body_params = room_type_base
 
 
         # set the HTTP header `Accept`
@@ -1458,7 +1346,7 @@ class RoomTypesApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/api/room_type/{id}',
+            resource_path='/api/room_type/room_types/{room_type_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

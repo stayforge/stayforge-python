@@ -35,22 +35,28 @@ class TestRoomType(unittest.TestCase):
         model = RoomType()
         if include_optional:
             return RoomType(
-                id = '67d35f43c210cb550f8e32ed',
+                id = '67d36ad2047a5c2885906e9d',
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                parent = '',
                 name = '',
+                name_visible = '',
                 description = '',
-                price = '',
+                branch = [
+                    ''
+                    ],
+                base_price = '',
                 price_policy = '',
-                price_max = '',
-                price_min = ''
+                min_usage = 1.337,
+                max_usage = 1.337,
+                allow_extension = True
             )
         else:
             return RoomType(
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 name = '',
-                price = '',
-                price_min = '',
+                name_visible = '',
+                base_price = '',
         )
         """
 

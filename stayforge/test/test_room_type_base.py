@@ -14,10 +14,10 @@
 
 import unittest
 
-from stayforge.models.branch import Branch
+from stayforge.models.room_type_base import RoomTypeBase
 
-class TestBranch(unittest.TestCase):
-    """Branch unit test stubs"""
+class TestRoomTypeBase(unittest.TestCase):
+    """RoomTypeBase unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,34 +25,39 @@ class TestBranch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Branch:
-        """Test Branch
+    def make_instance(self, include_optional) -> RoomTypeBase:
+        """Test RoomTypeBase
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `Branch`
+        # uncomment below to create an instance of `RoomTypeBase`
         """
-        model = Branch()
+        model = RoomTypeBase()
         if include_optional:
-            return Branch(
-                id = '67d36ad2047a5c2885906e9d',
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+            return RoomTypeBase(
+                parent = '',
                 name = '',
-                postcode = '000-0000',
-                address = '000-0000',
-                telephone = ''
+                name_visible = '',
+                description = '',
+                branch = [
+                    ''
+                    ],
+                base_price = None,
+                price_policy = '',
+                min_usage = 1.337,
+                max_usage = 1.337,
+                allow_extension = True
             )
         else:
-            return Branch(
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+            return RoomTypeBase(
                 name = '',
-                telephone = '',
+                name_visible = '',
+                base_price = None,
         )
         """
 
-    def testBranch(self):
-        """Test Branch"""
+    def testRoomTypeBase(self):
+        """Test RoomTypeBase"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

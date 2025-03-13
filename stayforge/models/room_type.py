@@ -18,8 +18,8 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,16 +27,20 @@ class RoomType(BaseModel):
     """
     RoomType
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d35f43c210cb550f8e32ed', description="Reference ID of the key.")
+    id: Optional[StrictStr] = Field(default='67d36ad2047a5c2885906e9d', description="Reference ID of the key.")
     create_at: Optional[datetime]
     update_at: Optional[datetime] = None
-    name: StrictStr = Field(description="The Type of RoomType")
+    parent: Optional[StrictStr] = Field(default=None, description="Parent room type's name. When it is None, ")
+    name: StrictStr = Field(description="Unique name of RoomType")
+    name_visible: StrictStr = Field(description="A visible name of the room type.", alias="nameVisible")
     description: Optional[StrictStr] = Field(default=None, description="Description of the room type.")
-    price: StrictStr = Field(description="Current price. If you deploy a price controller, this value will be updated automatically.")
-    price_policy: Optional[StrictStr] = Field(default=None, description="The price controller will modify the corresponding price field based on the price policy ID.")
-    price_max: Optional[StrictStr] = Field(default=None, description="The max of price.")
-    price_min: StrictStr = Field(description="The min of price.")
-    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "name", "description", "price", "price_policy", "price_max", "price_min"]
+    branch: Optional[List[StrictStr]] = Field(default=None, description="Branch names that this type is available. If None, it will follow the parent settings or allow all branches by default.")
+    base_price: StrictStr = Field(description="Base price. If you set a price strategy, the price will automatically increase according to the strategy.", alias="basePrice")
+    price_policy: Optional[StrictStr] = Field(default=None, description="The price controller will modify the corresponding price field based on the price policy name.", alias="pricePolicy")
+    min_usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=8, description="Minimum usage hours.")
+    max_usage: Optional[Union[StrictFloat, StrictInt]] = Field(default=720, description="Maximum usage hours.")
+    allow_extension: Optional[StrictBool] = Field(default=True, description="When it True, this type will marked as allowed to extend.", alias="allowExtension")
+    __properties: ClassVar[List[str]] = ["id", "create_at", "update_at", "parent", "name", "nameVisible", "description", "branch", "basePrice", "pricePolicy", "min_usage", "max_usage", "allowExtension"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,15 +103,19 @@ class RoomType(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d35f43c210cb550f8e32ed',
+            "id": obj.get("id") if obj.get("id") is not None else '67d36ad2047a5c2885906e9d',
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
+            "parent": obj.get("parent"),
             "name": obj.get("name"),
+            "nameVisible": obj.get("nameVisible"),
             "description": obj.get("description"),
-            "price": obj.get("price"),
-            "price_policy": obj.get("price_policy"),
-            "price_max": obj.get("price_max"),
-            "price_min": obj.get("price_min")
+            "branch": obj.get("branch"),
+            "basePrice": obj.get("basePrice"),
+            "pricePolicy": obj.get("pricePolicy"),
+            "min_usage": obj.get("min_usage") if obj.get("min_usage") is not None else 8,
+            "max_usage": obj.get("max_usage") if obj.get("max_usage") is not None else 720,
+            "allowExtension": obj.get("allowExtension") if obj.get("allowExtension") is not None else True
         })
         return _obj
 
