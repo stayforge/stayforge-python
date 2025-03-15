@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.0-85d541d"
+__version__ = "0.0.0-7116e2a"
 
 # import apis into sdk package
 from stayforge.api.message_queue_api import MessageQueueApi

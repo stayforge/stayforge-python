@@ -29,7 +29,7 @@ class WebhooksManager(BaseModel):
     """
     WebhooksManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d560b7d94852fc2f0185c5', description="The unique ID of this object.")
+    id: Optional[StrictStr] = Field(default='67d560c1bcc0959d3b8a4bce', description="The unique ID of this object.")
     metadata: Optional[Dict[str, Any]] = None
     create_at: Optional[datetime]
     update_at: Optional[datetime]
@@ -133,7 +133,7 @@ class WebhooksManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d560b7d94852fc2f0185c5',
+            "id": obj.get("id") if obj.get("id") is not None else '67d560c1bcc0959d3b8a4bce',
             "metadata": obj.get("metadata"),
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),
