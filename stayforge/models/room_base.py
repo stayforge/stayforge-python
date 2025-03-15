@@ -17,28 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from stayforge.models.guest import Guest
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Order(BaseModel):
+class RoomBase(BaseModel):
     """
-    Order
+    RoomBase
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d54b8eb72d4716c189460c', description="The unique ID of this object.")
-    metadata: Optional[Dict[str, Any]] = None
-    create_at: Optional[datetime]
-    update_at: Optional[datetime]
-    num: StrictStr = Field(description="Order number")
-    room_id: Optional[StrictStr] = Field(default=None, description="Room ID")
-    guest: Optional[Guest] = Field(default=None, description="Guest information")
-    type: StrictStr = Field(description="OrderType")
-    scheduled_checkin_at: Optional[datetime] = Field(default=None, description="Creation timestamp")
-    scheduled_checkout_at: Optional[datetime] = Field(default=None, description="Creation timestamp")
-    __properties: ClassVar[List[str]] = ["id", "metadata", "create_at", "update_at", "num", "room_id", "guest", "type", "scheduled_checkin_at", "scheduled_checkout_at"]
+    key_id: Optional[StrictStr] = Field(default='67d54b8eb72d4716c189460e', description="Reference ID of the key.")
+    room_type_id: Optional[StrictStr] = Field(default='67d54b8eb72d4716c189460f', description="Reference ID of the RoomType.")
+    number: StrictStr = Field(description="The number of rooms, e.g., 203.")
+    priority: StrictInt = Field(description="Stayforge will prioritize rooms with high priority numbers to guests. When the priority is the same, it is randomly selected according to certain rules.")
+    __properties: ClassVar[List[str]] = ["key_id", "room_type_id", "number", "priority"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -58,7 +50,7 @@ class Order(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Order from a JSON string"""
+        """Create an instance of RoomBase from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -79,29 +71,11 @@ class Order(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of guest
-        if self.guest:
-            _dict['guest'] = self.guest.to_dict()
-        # set to None if metadata (nullable) is None
-        # and model_fields_set contains the field
-        if self.metadata is None and "metadata" in self.model_fields_set:
-            _dict['metadata'] = None
-
-        # set to None if create_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.create_at is None and "create_at" in self.model_fields_set:
-            _dict['create_at'] = None
-
-        # set to None if update_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.update_at is None and "update_at" in self.model_fields_set:
-            _dict['update_at'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Order from a dict"""
+        """Create an instance of RoomBase from a dict"""
         if obj is None:
             return None
 
@@ -109,16 +83,10 @@ class Order(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d54b8eb72d4716c189460c',
-            "metadata": obj.get("metadata"),
-            "create_at": obj.get("create_at"),
-            "update_at": obj.get("update_at"),
-            "num": obj.get("num"),
-            "room_id": obj.get("room_id"),
-            "guest": Guest.from_dict(obj["guest"]) if obj.get("guest") is not None else None,
-            "type": obj.get("type"),
-            "scheduled_checkin_at": obj.get("scheduled_checkin_at"),
-            "scheduled_checkout_at": obj.get("scheduled_checkout_at")
+            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '67d54b8eb72d4716c189460e',
+            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '67d54b8eb72d4716c189460f',
+            "number": obj.get("number"),
+            "priority": obj.get("priority")
         })
         return _obj
 

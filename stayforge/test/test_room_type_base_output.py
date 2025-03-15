@@ -14,10 +14,10 @@
 
 import unittest
 
-from stayforge.models.branch import Branch
+from stayforge.models.room_type_base_output import RoomTypeBaseOutput
 
-class TestBranch(unittest.TestCase):
-    """Branch unit test stubs"""
+class TestRoomTypeBaseOutput(unittest.TestCase):
+    """RoomTypeBaseOutput unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,36 +25,41 @@ class TestBranch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Branch:
-        """Test Branch
+    def make_instance(self, include_optional) -> RoomTypeBaseOutput:
+        """Test RoomTypeBaseOutput
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `Branch`
+        # uncomment below to create an instance of `RoomTypeBaseOutput`
         """
-        model = Branch()
+        model = RoomTypeBaseOutput()
         if include_optional:
-            return Branch(
-                id = '67d54b8eb72d4716c189460c',
-                metadata = None,
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+            return RoomTypeBaseOutput(
+                parent = '',
                 name = '',
-                postcode = '000-0000',
-                address = '000-0000',
-                telephone = ''
+                name_visible = '',
+                description = '',
+                branch = [
+                    ''
+                    ],
+                base_price = '',
+                price_policy = '',
+                min_usage = 1.337,
+                max_usage = 1.337,
+                allow_extension = True
             )
         else:
-            return Branch(
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+            return RoomTypeBaseOutput(
                 name = '',
-                telephone = '',
+                name_visible = '',
+                base_price = '',
+                min_usage = 1.337,
+                max_usage = 1.337,
         )
         """
 
-    def testBranch(self):
-        """Test Branch"""
+    def testRoomTypeBaseOutput(self):
+        """Test RoomTypeBaseOutput"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -31,11 +31,9 @@ from stayforge.models.order_input import OrderInput
 from stayforge.models.order_responses import OrderResponses
 from stayforge.models.photocopy import Photocopy
 from stayforge.models.retry_times import RetryTimes
-from stayforge.models.room import Room
-from stayforge.models.room_input import RoomInput
-from stayforge.models.room_responses import RoomResponses
-from stayforge.models.room_type import RoomType
-from stayforge.models.room_type_base import RoomTypeBase
+from stayforge.models.room_base import RoomBase
+from stayforge.models.room_type_base_input import RoomTypeBaseInput
+from stayforge.models.room_type_base_output import RoomTypeBaseOutput
 from stayforge.models.stayforge import Stayforge
 from stayforge.models.validation_error import ValidationError
 from stayforge.models.validation_error_loc_inner import ValidationErrorLocInner

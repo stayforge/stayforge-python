@@ -14,10 +14,10 @@
 
 import unittest
 
-from stayforge.models.branch import Branch
+from stayforge.models.room_base import RoomBase
 
-class TestBranch(unittest.TestCase):
-    """Branch unit test stubs"""
+class TestRoomBase(unittest.TestCase):
+    """RoomBase unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,36 +25,30 @@ class TestBranch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Branch:
-        """Test Branch
+    def make_instance(self, include_optional) -> RoomBase:
+        """Test RoomBase
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `Branch`
+        # uncomment below to create an instance of `RoomBase`
         """
-        model = Branch()
+        model = RoomBase()
         if include_optional:
-            return Branch(
-                id = '67d54b8eb72d4716c189460c',
-                metadata = None,
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                name = '',
-                postcode = '000-0000',
-                address = '000-0000',
-                telephone = ''
+            return RoomBase(
+                key_id = '67d54b8eb72d4716c189460e',
+                room_type_id = '67d54b8eb72d4716c189460f',
+                number = '',
+                priority = 56
             )
         else:
-            return Branch(
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                name = '',
-                telephone = '',
+            return RoomBase(
+                number = '',
+                priority = 56,
         )
         """
 
-    def testBranch(self):
-        """Test Branch"""
+    def testRoomBase(self):
+        """Test RoomBase"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

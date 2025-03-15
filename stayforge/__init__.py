@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.0-d4ccf91"
+__version__ = "0.0.0-61d19af"
 
 # import apis into sdk package
 from stayforge.api.branches_api import BranchesApi
@@ -22,9 +22,9 @@ from stayforge.api.message_queue_api import MessageQueueApi
 from stayforge.api.models_etcd_api import ModelsEtcdApi
 from stayforge.api.models_manager_api import ModelsManagerApi
 from stayforge.api.orders_api import OrdersApi
-from stayforge.api.room_types_api import RoomTypesApi
-from stayforge.api.rooms_api import RoomsApi
 from stayforge.api.webhooks_manager_api import WebhooksManagerApi
+from stayforge.api.room_api import RoomApi
+from stayforge.api.room_type_api import RoomTypeApi
 
 # import ApiClient
 from stayforge.api_response import ApiResponse
@@ -55,11 +55,9 @@ from stayforge.models.order_input import OrderInput
 from stayforge.models.order_responses import OrderResponses
 from stayforge.models.photocopy import Photocopy
 from stayforge.models.retry_times import RetryTimes
-from stayforge.models.room import Room
-from stayforge.models.room_input import RoomInput
-from stayforge.models.room_responses import RoomResponses
-from stayforge.models.room_type import RoomType
-from stayforge.models.room_type_base import RoomTypeBase
+from stayforge.models.room_base import RoomBase
+from stayforge.models.room_type_base_input import RoomTypeBaseInput
+from stayforge.models.room_type_base_output import RoomTypeBaseOutput
 from stayforge.models.stayforge import Stayforge
 from stayforge.models.validation_error import ValidationError
 from stayforge.models.validation_error_loc_inner import ValidationErrorLocInner
