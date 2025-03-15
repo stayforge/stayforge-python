@@ -26,11 +26,11 @@ class RoomBase(BaseModel):
     """
     RoomBase
     """ # noqa: E501
-    key_id: Optional[StrictStr] = Field(default='67d54b8eb72d4716c189460e', description="Reference ID of the key.")
-    room_type_id: Optional[StrictStr] = Field(default='67d54b8eb72d4716c189460f', description="Reference ID of the RoomType.")
+    room_type_id: StrictStr = Field(description="Reference ID of the RoomType.")
+    branch_id: StrictStr = Field(description="Reference ID of the Branch.")
     number: StrictStr = Field(description="The number of rooms, e.g., 203.")
-    priority: StrictInt = Field(description="Stayforge will prioritize rooms with high priority numbers to guests. When the priority is the same, it is randomly selected according to certain rules.")
-    __properties: ClassVar[List[str]] = ["key_id", "room_type_id", "number", "priority"]
+    priority: Optional[StrictInt] = Field(default=0, description="Stayforge will prioritize rooms with high priority numbers to guests. When the priority is the same, it is randomly selected according to certain rules.")
+    __properties: ClassVar[List[str]] = ["room_type_id", "branch_id", "number", "priority"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,10 +83,10 @@ class RoomBase(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "key_id": obj.get("key_id") if obj.get("key_id") is not None else '67d54b8eb72d4716c189460e',
-            "room_type_id": obj.get("room_type_id") if obj.get("room_type_id") is not None else '67d54b8eb72d4716c189460f',
+            "room_type_id": obj.get("room_type_id"),
+            "branch_id": obj.get("branch_id"),
             "number": obj.get("number"),
-            "priority": obj.get("priority")
+            "priority": obj.get("priority") if obj.get("priority") is not None else 0
         })
         return _obj
 

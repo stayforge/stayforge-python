@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key_id** | **str** | Reference ID of the key. | [optional] [default to '67d54b8eb72d4716c189460e']
-**room_type_id** | **str** | Reference ID of the RoomType. | [optional] [default to '67d54b8eb72d4716c189460f']
+**room_type_id** | **str** | Reference ID of the RoomType. | 
+**branch_id** | **str** | Reference ID of the Branch. | 
 **number** | **str** | The number of rooms, e.g., 203. | 
-**priority** | **int** | Stayforge will prioritize rooms with high priority numbers to guests. When the priority is the same, it is randomly selected according to certain rules. | 
+**priority** | **int** | Stayforge will prioritize rooms with high priority numbers to guests. When the priority is the same, it is randomly selected according to certain rules. | [optional] [default to 0]
 
 ## Example
 

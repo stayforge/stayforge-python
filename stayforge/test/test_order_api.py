@@ -14,44 +14,53 @@
 
 import unittest
 
-from stayforge.models.room_base import RoomBase
+from stayforge.api.order_api import OrderApi
 
-class TestRoomBase(unittest.TestCase):
-    """RoomBase unit test stubs"""
 
-    def setUp(self):
+class TestOrderApi(unittest.TestCase):
+    """OrderApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = OrderApi()
+
+    def tearDown(self) -> None:
         pass
 
-    def tearDown(self):
+    def test_order_create(self) -> None:
+        """Test case for order_create
+
+        order_create
+        """
         pass
 
-    def make_instance(self, include_optional) -> RoomBase:
-        """Test RoomBase
-            include_optional is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # uncomment below to create an instance of `RoomBase`
-        """
-        model = RoomBase()
-        if include_optional:
-            return RoomBase(
-                room_type_id = '',
-                branch_id = '',
-                number = '',
-                priority = 56
-            )
-        else:
-            return RoomBase(
-                room_type_id = '',
-                branch_id = '',
-                number = '',
-        )
-        """
+    def test_order_delete(self) -> None:
+        """Test case for order_delete
 
-    def testRoomBase(self):
-        """Test RoomBase"""
-        # inst_req_only = self.make_instance(include_optional=False)
-        # inst_req_and_optional = self.make_instance(include_optional=True)
+        order_delete
+        """
+        pass
+
+    def test_order_get(self) -> None:
+        """Test case for order_get
+
+        order_get
+        """
+        pass
+
+    def test_order_list(self) -> None:
+        """Test case for order_list
+
+        order_list
+        """
+        pass
+
+    def test_order_update(self) -> None:
+        """Test case for order_update
+
+        order_update
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
