@@ -18,8 +18,8 @@ from typing_extensions import Annotated
 
 from pydantic import StrictStr
 from typing import List
-from stayforge.models.room_type_base_input import RoomTypeBaseInput
-from stayforge.models.room_type_base_output import RoomTypeBaseOutput
+from stayforge.models.branch_base import BranchBase
+from stayforge.models.room_type_base import RoomTypeBase
 
 from stayforge.api_client import ApiClient, RequestSerialized
 from stayforge.api_response import ApiResponse
@@ -42,7 +42,7 @@ class RoomTypeApi:
     @validate_call
     def room_type_create(
         self,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -55,13 +55,13 @@ class RoomTypeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RoomTypeBaseOutput:
+    ) -> RoomTypeBase:
         """room_type_create
 
         room_type_create operation for room_type
 
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -85,7 +85,7 @@ class RoomTypeApi:
         """ # noqa: E501
 
         _param = self._room_type_create_serialize(
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -93,7 +93,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeBaseOutput",
+            '200': "RoomTypeBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -110,7 +110,7 @@ class RoomTypeApi:
     @validate_call
     def room_type_create_with_http_info(
         self,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -123,13 +123,13 @@ class RoomTypeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[RoomTypeBaseOutput]:
+    ) -> ApiResponse[RoomTypeBase]:
         """room_type_create
 
         room_type_create operation for room_type
 
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -153,7 +153,7 @@ class RoomTypeApi:
         """ # noqa: E501
 
         _param = self._room_type_create_serialize(
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -161,7 +161,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeBaseOutput",
+            '200': "RoomTypeBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -178,7 +178,7 @@ class RoomTypeApi:
     @validate_call
     def room_type_create_without_preload_content(
         self,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -196,8 +196,8 @@ class RoomTypeApi:
 
         room_type_create operation for room_type
 
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -221,7 +221,7 @@ class RoomTypeApi:
         """ # noqa: E501
 
         _param = self._room_type_create_serialize(
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -229,7 +229,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeBaseOutput",
+            '200': "RoomTypeBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -241,7 +241,7 @@ class RoomTypeApi:
 
     def _room_type_create_serialize(
         self,
-        room_type_base_input,
+        branch_base,
         _request_auth,
         _content_type,
         _headers,
@@ -267,8 +267,8 @@ class RoomTypeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if room_type_base_input is not None:
-            _body_params = room_type_base_input
+        if branch_base is not None:
+            _body_params = branch_base
 
 
         # set the HTTP header `Accept`
@@ -331,7 +331,7 @@ class RoomTypeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RoomTypeBaseOutput:
+    ) -> RoomTypeBase:
         """room_type_delete
 
         room_type_delete operation for room_type
@@ -369,7 +369,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeBaseOutput",
+            '200': "RoomTypeBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -399,7 +399,7 @@ class RoomTypeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[RoomTypeBaseOutput]:
+    ) -> ApiResponse[RoomTypeBase]:
         """room_type_delete
 
         room_type_delete operation for room_type
@@ -437,7 +437,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeBaseOutput",
+            '200': "RoomTypeBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -505,7 +505,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeBaseOutput",
+            '200': "RoomTypeBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -594,7 +594,7 @@ class RoomTypeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[RoomTypeBaseOutput]:
+    ) -> List[RoomTypeBase]:
         """room_type_get
 
         room_type_get operation for room_type
@@ -632,7 +632,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[RoomTypeBaseOutput]",
+            '200': "List[RoomTypeBase]",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -662,7 +662,7 @@ class RoomTypeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[RoomTypeBaseOutput]]:
+    ) -> ApiResponse[List[RoomTypeBase]]:
         """room_type_get
 
         room_type_get operation for room_type
@@ -700,7 +700,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[RoomTypeBaseOutput]",
+            '200': "List[RoomTypeBase]",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -768,7 +768,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[RoomTypeBaseOutput]",
+            '200': "List[RoomTypeBase]",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -856,7 +856,7 @@ class RoomTypeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[RoomTypeBaseOutput]:
+    ) -> List[RoomTypeBase]:
         """room_type_list
 
         room_type_list operation for room_type
@@ -891,7 +891,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[RoomTypeBaseOutput]",
+            '200': "List[RoomTypeBase]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -919,7 +919,7 @@ class RoomTypeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[RoomTypeBaseOutput]]:
+    ) -> ApiResponse[List[RoomTypeBase]]:
         """room_type_list
 
         room_type_list operation for room_type
@@ -954,7 +954,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[RoomTypeBaseOutput]",
+            '200': "List[RoomTypeBase]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1017,7 +1017,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[RoomTypeBaseOutput]",
+            '200': "List[RoomTypeBase]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1090,7 +1090,7 @@ class RoomTypeApi:
     def room_type_update(
         self,
         id: StrictStr,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1103,15 +1103,15 @@ class RoomTypeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RoomTypeBaseOutput:
+    ) -> RoomTypeBase:
         """room_type_update
 
         room_type_update operation for room_type
 
         :param id: (required)
         :type id: str
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1136,7 +1136,7 @@ class RoomTypeApi:
 
         _param = self._room_type_update_serialize(
             id=id,
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1144,7 +1144,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeBaseOutput",
+            '200': "RoomTypeBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1162,7 +1162,7 @@ class RoomTypeApi:
     def room_type_update_with_http_info(
         self,
         id: StrictStr,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1175,15 +1175,15 @@ class RoomTypeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[RoomTypeBaseOutput]:
+    ) -> ApiResponse[RoomTypeBase]:
         """room_type_update
 
         room_type_update operation for room_type
 
         :param id: (required)
         :type id: str
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1208,7 +1208,7 @@ class RoomTypeApi:
 
         _param = self._room_type_update_serialize(
             id=id,
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1216,7 +1216,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeBaseOutput",
+            '200': "RoomTypeBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1234,7 +1234,7 @@ class RoomTypeApi:
     def room_type_update_without_preload_content(
         self,
         id: StrictStr,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1254,8 +1254,8 @@ class RoomTypeApi:
 
         :param id: (required)
         :type id: str
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1280,7 +1280,7 @@ class RoomTypeApi:
 
         _param = self._room_type_update_serialize(
             id=id,
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1288,7 +1288,7 @@ class RoomTypeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoomTypeBaseOutput",
+            '200': "RoomTypeBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1301,7 +1301,7 @@ class RoomTypeApi:
     def _room_type_update_serialize(
         self,
         id,
-        room_type_base_input,
+        branch_base,
         _request_auth,
         _content_type,
         _headers,
@@ -1329,8 +1329,8 @@ class RoomTypeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if room_type_base_input is not None:
-            _body_params = room_type_base_input
+        if branch_base is not None:
+            _body_params = branch_base
 
 
         # set the HTTP header `Accept`

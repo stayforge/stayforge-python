@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import StrictStr
 from typing import Any, List
-from stayforge.models.room_type_base_input import RoomTypeBaseInput
+from stayforge.models.branch_base import BranchBase
 
 from stayforge.api_client import ApiClient, RequestSerialized
 from stayforge.api_response import ApiResponse
@@ -41,7 +41,7 @@ class OrderApi:
     @validate_call
     def order_create(
         self,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,8 +59,8 @@ class OrderApi:
 
         order_create operation for order
 
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -84,7 +84,7 @@ class OrderApi:
         """ # noqa: E501
 
         _param = self._order_create_serialize(
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -109,7 +109,7 @@ class OrderApi:
     @validate_call
     def order_create_with_http_info(
         self,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -127,8 +127,8 @@ class OrderApi:
 
         order_create operation for order
 
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -152,7 +152,7 @@ class OrderApi:
         """ # noqa: E501
 
         _param = self._order_create_serialize(
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -177,7 +177,7 @@ class OrderApi:
     @validate_call
     def order_create_without_preload_content(
         self,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -195,8 +195,8 @@ class OrderApi:
 
         order_create operation for order
 
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -220,7 +220,7 @@ class OrderApi:
         """ # noqa: E501
 
         _param = self._order_create_serialize(
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -240,7 +240,7 @@ class OrderApi:
 
     def _order_create_serialize(
         self,
-        room_type_base_input,
+        branch_base,
         _request_auth,
         _content_type,
         _headers,
@@ -266,8 +266,8 @@ class OrderApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if room_type_base_input is not None:
-            _body_params = room_type_base_input
+        if branch_base is not None:
+            _body_params = branch_base
 
 
         # set the HTTP header `Accept`
@@ -1089,7 +1089,7 @@ class OrderApi:
     def order_update(
         self,
         id: StrictStr,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1109,8 +1109,8 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1135,7 +1135,7 @@ class OrderApi:
 
         _param = self._order_update_serialize(
             id=id,
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1161,7 +1161,7 @@ class OrderApi:
     def order_update_with_http_info(
         self,
         id: StrictStr,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1181,8 +1181,8 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1207,7 +1207,7 @@ class OrderApi:
 
         _param = self._order_update_serialize(
             id=id,
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1233,7 +1233,7 @@ class OrderApi:
     def order_update_without_preload_content(
         self,
         id: StrictStr,
-        room_type_base_input: RoomTypeBaseInput,
+        branch_base: BranchBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1253,8 +1253,8 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param room_type_base_input: (required)
-        :type room_type_base_input: RoomTypeBaseInput
+        :param branch_base: (required)
+        :type branch_base: BranchBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1279,7 +1279,7 @@ class OrderApi:
 
         _param = self._order_update_serialize(
             id=id,
-            room_type_base_input=room_type_base_input,
+            branch_base=branch_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1300,7 +1300,7 @@ class OrderApi:
     def _order_update_serialize(
         self,
         id,
-        room_type_base_input,
+        branch_base,
         _request_auth,
         _content_type,
         _headers,
@@ -1328,8 +1328,8 @@ class OrderApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if room_type_base_input is not None:
-            _body_params = room_type_base_input
+        if branch_base is not None:
+            _body_params = branch_base
 
 
         # set the HTTP header `Accept`

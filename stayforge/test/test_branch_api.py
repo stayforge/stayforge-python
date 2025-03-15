@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Stayforge API
 
@@ -13,20 +12,55 @@
 """  # noqa: E501
 
 
-# import models into model package
-from stayforge.models.branch_base import BranchBase
-from stayforge.models.http_validation_error import HTTPValidationError
-from stayforge.models.key_value_request import KeyValueRequest
-from stayforge.models.mq_enqueue import MQEnqueue
-from stayforge.models.models_manager import ModelsManager
-from stayforge.models.models_manager_input import ModelsManagerInput
-from stayforge.models.models_manager_responses import ModelsManagerResponses
-from stayforge.models.retry_times import RetryTimes
-from stayforge.models.room_base import RoomBase
-from stayforge.models.room_type_base import RoomTypeBase
-from stayforge.models.stayforge import Stayforge
-from stayforge.models.validation_error import ValidationError
-from stayforge.models.validation_error_loc_inner import ValidationErrorLocInner
-from stayforge.models.webhooks_manager import WebhooksManager
-from stayforge.models.webhooks_manager_input import WebhooksManagerInput
-from stayforge.models.webhooks_manager_responses import WebhooksManagerResponses
+import unittest
+
+from stayforge.api.branch_api import BranchApi
+
+
+class TestBranchApi(unittest.TestCase):
+    """BranchApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = BranchApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_branch_create(self) -> None:
+        """Test case for branch_create
+
+        branch_create
+        """
+        pass
+
+    def test_branch_delete(self) -> None:
+        """Test case for branch_delete
+
+        branch_delete
+        """
+        pass
+
+    def test_branch_get(self) -> None:
+        """Test case for branch_get
+
+        branch_get
+        """
+        pass
+
+    def test_branch_list(self) -> None:
+        """Test case for branch_list
+
+        branch_list
+        """
+        pass
+
+    def test_branch_update(self) -> None:
+        """Test case for branch_update
+
+        branch_update
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

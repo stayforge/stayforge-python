@@ -14,10 +14,10 @@
 
 import unittest
 
-from stayforge.models.models_manager import ModelsManager
+from stayforge.models.branch_base import BranchBase
 
-class TestModelsManager(unittest.TestCase):
-    """ModelsManager unit test stubs"""
+class TestBranchBase(unittest.TestCase):
+    """BranchBase unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,42 +25,30 @@ class TestModelsManager(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ModelsManager:
-        """Test ModelsManager
+    def make_instance(self, include_optional) -> BranchBase:
+        """Test BranchBase
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ModelsManager`
+        # uncomment below to create an instance of `BranchBase`
         """
-        model = ModelsManager()
+        model = BranchBase()
         if include_optional:
-            return ModelsManager(
-                id = '67d560b7d94852fc2f0185c5',
-                metadata = None,
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                model = '',
-                model_version = 'latest',
-                local_name = '',
-                permissions = None,
-                etcd_host = '',
-                etcd_port = 56,
-                etcd_user = '',
-                etcd_password = ''
+            return BranchBase(
+                name = '',
+                postcode = '000-0000',
+                address = '000-0000',
+                telephone = ''
             )
         else:
-            return ModelsManager(
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                model = '',
-                etcd_host = '',
-                etcd_user = '',
-                etcd_password = '',
+            return BranchBase(
+                name = '',
+                telephone = '',
         )
         """
 
-    def testModelsManager(self):
-        """Test ModelsManager"""
+    def testBranchBase(self):
+        """Test BranchBase"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **order_create**
-> object order_create(room_type_base_input)
+> object order_create(branch_base)
 
 order_create
 
@@ -23,7 +23,7 @@ order_create operation for order
 
 ```python
 import stayforge
-from stayforge.models.room_type_base_input import RoomTypeBaseInput
+from stayforge.models.branch_base import BranchBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -38,11 +38,11 @@ configuration = stayforge.Configuration(
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.OrderApi(api_client)
-    room_type_base_input = stayforge.RoomTypeBaseInput() # RoomTypeBaseInput | 
+    branch_base = stayforge.BranchBase() # BranchBase | 
 
     try:
         # order_create
-        api_response = api_instance.order_create(room_type_base_input)
+        api_response = api_instance.order_create(branch_base)
         print("The response of OrderApi->order_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -56,7 +56,7 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **room_type_base_input** | [**RoomTypeBaseInput**](RoomTypeBaseInput.md)|  | 
+ **branch_base** | [**BranchBase**](BranchBase.md)|  | 
 
 ### Return type
 
@@ -280,7 +280,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **order_update**
-> object order_update(id, room_type_base_input)
+> object order_update(id, branch_base)
 
 order_update
 
@@ -291,7 +291,7 @@ order_update operation for order
 
 ```python
 import stayforge
-from stayforge.models.room_type_base_input import RoomTypeBaseInput
+from stayforge.models.branch_base import BranchBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -307,11 +307,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.OrderApi(api_client)
     id = 'id_example' # str | 
-    room_type_base_input = stayforge.RoomTypeBaseInput() # RoomTypeBaseInput | 
+    branch_base = stayforge.BranchBase() # BranchBase | 
 
     try:
         # order_update
-        api_response = api_instance.order_update(id, room_type_base_input)
+        api_response = api_instance.order_update(id, branch_base)
         print("The response of OrderApi->order_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -326,7 +326,7 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **room_type_base_input** | [**RoomTypeBaseInput**](RoomTypeBaseInput.md)|  | 
+ **branch_base** | [**BranchBase**](BranchBase.md)|  | 
 
 ### Return type
 

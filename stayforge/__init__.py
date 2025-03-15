@@ -14,14 +14,14 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.0-bd97dc4"
+__version__ = "0.0.0-85d541d"
 
 # import apis into sdk package
-from stayforge.api.branches_api import BranchesApi
 from stayforge.api.message_queue_api import MessageQueueApi
 from stayforge.api.models_etcd_api import ModelsEtcdApi
 from stayforge.api.models_manager_api import ModelsManagerApi
 from stayforge.api.webhooks_manager_api import WebhooksManagerApi
+from stayforge.api.branch_api import BranchApi
 from stayforge.api.order_api import OrderApi
 from stayforge.api.room_api import RoomApi
 from stayforge.api.room_type_api import RoomTypeApi
@@ -38,10 +38,7 @@ from stayforge.exceptions import ApiAttributeError
 from stayforge.exceptions import ApiException
 
 # import models into sdk package
-from stayforge.models.baseprice import Baseprice
-from stayforge.models.branch import Branch
-from stayforge.models.branch_input import BranchInput
-from stayforge.models.branch_responses import BranchResponses
+from stayforge.models.branch_base import BranchBase
 from stayforge.models.http_validation_error import HTTPValidationError
 from stayforge.models.key_value_request import KeyValueRequest
 from stayforge.models.mq_enqueue import MQEnqueue
@@ -50,8 +47,7 @@ from stayforge.models.models_manager_input import ModelsManagerInput
 from stayforge.models.models_manager_responses import ModelsManagerResponses
 from stayforge.models.retry_times import RetryTimes
 from stayforge.models.room_base import RoomBase
-from stayforge.models.room_type_base_input import RoomTypeBaseInput
-from stayforge.models.room_type_base_output import RoomTypeBaseOutput
+from stayforge.models.room_type_base import RoomTypeBase
 from stayforge.models.stayforge import Stayforge
 from stayforge.models.validation_error import ValidationError
 from stayforge.models.validation_error_loc_inner import ValidationErrorLocInner

@@ -17,26 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class RoomTypeBase(BaseModel):
+class BranchBase(BaseModel):
     """
-    RoomTypeBase
+    BranchBase
     """ # noqa: E501
-    parent: Optional[StrictStr] = Field(default=None, description="Parent room type’s name. If set to None, it will be considered a top-level room type.")
-    name: StrictStr = Field(description="Unique name of RoomType.")
-    name_visible: StrictStr = Field(description="A visible name of the room type.", alias="nameVisible")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the room type.")
-    branch: Optional[List[StrictStr]] = Field(default=None, description="Branch names that this type is available. If None, it will follow the parent settings or allow all branches by default.")
-    base_price: StrictStr = Field(description="Base price. If you set a price strategy, the price will automatically increase according to the strategy.", alias="basePrice")
-    price_policy: Optional[StrictStr] = Field(default=None, description="The price controller will modify the corresponding price field based on the price policy name.", alias="pricePolicy")
-    min_usage: Union[StrictFloat, StrictInt] = Field(description="Minimum usage hours.")
-    max_usage: Union[StrictFloat, StrictInt] = Field(description="Maximum usage hours.")
-    allow_extension: Optional[StrictBool] = Field(default=None, description="When it True, this type will marked as allowed to extend.", alias="allowExtension")
-    __properties: ClassVar[List[str]] = ["parent", "name", "nameVisible", "description", "branch", "basePrice", "pricePolicy", "min_usage", "max_usage", "allowExtension"]
+    name: StrictStr = Field(description="The name of the hotel branch. By default, it combines a base name with a random town.")
+    postcode: Optional[StrictStr] = Field(default='000-0000', description="The postal code of the branch location.")
+    address: Optional[StrictStr] = Field(default='000-0000', description="The full effective of the branch, including administrative unit, city, town, and detailed location.")
+    telephone: StrictStr = Field(description="The contact telephone number for the branch.")
+    __properties: ClassVar[List[str]] = ["name", "postcode", "address", "telephone"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -56,7 +50,7 @@ class RoomTypeBase(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RoomTypeBase from a JSON string"""
+        """Create an instance of BranchBase from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -81,7 +75,7 @@ class RoomTypeBase(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RoomTypeBase from a dict"""
+        """Create an instance of BranchBase from a dict"""
         if obj is None:
             return None
 
@@ -89,16 +83,10 @@ class RoomTypeBase(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "parent": obj.get("parent"),
             "name": obj.get("name"),
-            "nameVisible": obj.get("nameVisible"),
-            "description": obj.get("description"),
-            "branch": obj.get("branch"),
-            "basePrice": obj.get("basePrice"),
-            "pricePolicy": obj.get("pricePolicy"),
-            "min_usage": obj.get("min_usage"),
-            "max_usage": obj.get("max_usage"),
-            "allowExtension": obj.get("allowExtension")
+            "postcode": obj.get("postcode") if obj.get("postcode") is not None else '000-0000',
+            "address": obj.get("address") if obj.get("address") is not None else '000-0000',
+            "telephone": obj.get("telephone")
         })
         return _obj
 

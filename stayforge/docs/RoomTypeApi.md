@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **room_type_create**
-> RoomTypeBaseOutput room_type_create(room_type_base_input)
+> RoomTypeBase room_type_create(branch_base)
 
 room_type_create
 
@@ -23,8 +23,8 @@ room_type_create operation for room_type
 
 ```python
 import stayforge
-from stayforge.models.room_type_base_input import RoomTypeBaseInput
-from stayforge.models.room_type_base_output import RoomTypeBaseOutput
+from stayforge.models.branch_base import BranchBase
+from stayforge.models.room_type_base import RoomTypeBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -39,11 +39,11 @@ configuration = stayforge.Configuration(
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomTypeApi(api_client)
-    room_type_base_input = stayforge.RoomTypeBaseInput() # RoomTypeBaseInput | 
+    branch_base = stayforge.BranchBase() # BranchBase | 
 
     try:
         # room_type_create
-        api_response = api_instance.room_type_create(room_type_base_input)
+        api_response = api_instance.room_type_create(branch_base)
         print("The response of RoomTypeApi->room_type_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -57,11 +57,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **room_type_base_input** | [**RoomTypeBaseInput**](RoomTypeBaseInput.md)|  | 
+ **branch_base** | [**BranchBase**](BranchBase.md)|  | 
 
 ### Return type
 
-[**RoomTypeBaseOutput**](RoomTypeBaseOutput.md)
+[**RoomTypeBase**](RoomTypeBase.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_type_delete**
-> RoomTypeBaseOutput room_type_delete(id)
+> RoomTypeBase room_type_delete(id)
 
 room_type_delete
 
@@ -93,7 +93,7 @@ room_type_delete operation for room_type
 
 ```python
 import stayforge
-from stayforge.models.room_type_base_output import RoomTypeBaseOutput
+from stayforge.models.room_type_base import RoomTypeBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoomTypeBaseOutput**](RoomTypeBaseOutput.md)
+[**RoomTypeBase**](RoomTypeBase.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_type_get**
-> List[RoomTypeBaseOutput] room_type_get(id)
+> List[RoomTypeBase] room_type_get(id)
 
 room_type_get
 
@@ -162,7 +162,7 @@ room_type_get operation for room_type
 
 ```python
 import stayforge
-from stayforge.models.room_type_base_output import RoomTypeBaseOutput
+from stayforge.models.room_type_base import RoomTypeBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[RoomTypeBaseOutput]**](RoomTypeBaseOutput.md)
+[**List[RoomTypeBase]**](RoomTypeBase.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_type_list**
-> List[RoomTypeBaseOutput] room_type_list()
+> List[RoomTypeBase] room_type_list()
 
 room_type_list
 
@@ -231,7 +231,7 @@ room_type_list operation for room_type
 
 ```python
 import stayforge
-from stayforge.models.room_type_base_output import RoomTypeBaseOutput
+from stayforge.models.room_type_base import RoomTypeBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -264,7 +264,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[RoomTypeBaseOutput]**](RoomTypeBaseOutput.md)
+[**List[RoomTypeBase]**](RoomTypeBase.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_type_update**
-> RoomTypeBaseOutput room_type_update(id, room_type_base_input)
+> RoomTypeBase room_type_update(id, branch_base)
 
 room_type_update
 
@@ -295,8 +295,8 @@ room_type_update operation for room_type
 
 ```python
 import stayforge
-from stayforge.models.room_type_base_input import RoomTypeBaseInput
-from stayforge.models.room_type_base_output import RoomTypeBaseOutput
+from stayforge.models.branch_base import BranchBase
+from stayforge.models.room_type_base import RoomTypeBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -312,11 +312,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomTypeApi(api_client)
     id = 'id_example' # str | 
-    room_type_base_input = stayforge.RoomTypeBaseInput() # RoomTypeBaseInput | 
+    branch_base = stayforge.BranchBase() # BranchBase | 
 
     try:
         # room_type_update
-        api_response = api_instance.room_type_update(id, room_type_base_input)
+        api_response = api_instance.room_type_update(id, branch_base)
         print("The response of RoomTypeApi->room_type_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -331,11 +331,11 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **room_type_base_input** | [**RoomTypeBaseInput**](RoomTypeBaseInput.md)|  | 
+ **branch_base** | [**BranchBase**](BranchBase.md)|  | 
 
 ### Return type
 
-[**RoomTypeBaseOutput**](RoomTypeBaseOutput.md)
+[**RoomTypeBase**](RoomTypeBase.md)
 
 ### Authorization
 

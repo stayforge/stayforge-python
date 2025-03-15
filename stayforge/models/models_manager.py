@@ -27,7 +27,7 @@ class ModelsManager(BaseModel):
     """
     ModelsManager
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d54e366debe848decb7b9e', description="The unique ID of this object.")
+    id: Optional[StrictStr] = Field(default='67d560b7d94852fc2f0185c5', description="The unique ID of this object.")
     metadata: Optional[Dict[str, Any]] = None
     create_at: Optional[datetime]
     update_at: Optional[datetime]
@@ -117,7 +117,7 @@ class ModelsManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d54e366debe848decb7b9e',
+            "id": obj.get("id") if obj.get("id") is not None else '67d560b7d94852fc2f0185c5',
             "metadata": obj.get("metadata"),
             "create_at": obj.get("create_at"),
             "update_at": obj.get("update_at"),

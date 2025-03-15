@@ -42,7 +42,7 @@ class TestRoomTypeBase(unittest.TestCase):
                 branch = [
                     ''
                     ],
-                base_price = None,
+                base_price = '',
                 price_policy = '',
                 min_usage = 1.337,
                 max_usage = 1.337,
@@ -52,7 +52,9 @@ class TestRoomTypeBase(unittest.TestCase):
             return RoomTypeBase(
                 name = '',
                 name_visible = '',
-                base_price = None,
+                base_price = '',
+                min_usage = 1.337,
+                max_usage = 1.337,
         )
         """
 

@@ -1,22 +1,22 @@
-# stayforge.RoomApi
+# stayforge.BranchApi
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**room_create**](RoomApi.md#room_create) | **POST** /api/v1/room/ | room_create
-[**room_delete**](RoomApi.md#room_delete) | **DELETE** /api/v1/room/{id} | room_delete
-[**room_get**](RoomApi.md#room_get) | **GET** /api/v1/room/{id} | room_get
-[**room_list**](RoomApi.md#room_list) | **GET** /api/v1/room/ | room_list
-[**room_update**](RoomApi.md#room_update) | **PUT** /api/v1/room/{id} | room_update
+[**branch_create**](BranchApi.md#branch_create) | **POST** /api/v1/branch/ | branch_create
+[**branch_delete**](BranchApi.md#branch_delete) | **DELETE** /api/v1/branch/{id} | branch_delete
+[**branch_get**](BranchApi.md#branch_get) | **GET** /api/v1/branch/{id} | branch_get
+[**branch_list**](BranchApi.md#branch_list) | **GET** /api/v1/branch/ | branch_list
+[**branch_update**](BranchApi.md#branch_update) | **PUT** /api/v1/branch/{id} | branch_update
 
 
-# **room_create**
-> RoomBase room_create(branch_base)
+# **branch_create**
+> BranchBase branch_create(branch_base)
 
-room_create
+branch_create
 
-room_create operation for room
+branch_create operation for branch
 
 ### Example
 
@@ -24,7 +24,6 @@ room_create operation for room
 ```python
 import stayforge
 from stayforge.models.branch_base import BranchBase
-from stayforge.models.room_base import RoomBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -38,16 +37,16 @@ configuration = stayforge.Configuration(
 # Enter a context with an instance of the API client
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = stayforge.RoomApi(api_client)
+    api_instance = stayforge.BranchApi(api_client)
     branch_base = stayforge.BranchBase() # BranchBase | 
 
     try:
-        # room_create
-        api_response = api_instance.room_create(branch_base)
-        print("The response of RoomApi->room_create:\n")
+        # branch_create
+        api_response = api_instance.branch_create(branch_base)
+        print("The response of BranchApi->branch_create:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RoomApi->room_create: %s\n" % e)
+        print("Exception when calling BranchApi->branch_create: %s\n" % e)
 ```
 
 
@@ -61,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoomBase**](RoomBase.md)
+[**BranchBase**](BranchBase.md)
 
 ### Authorization
 
@@ -81,19 +80,19 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **room_delete**
-> RoomBase room_delete(id)
+# **branch_delete**
+> BranchBase branch_delete(id)
 
-room_delete
+branch_delete
 
-room_delete operation for room
+branch_delete operation for branch
 
 ### Example
 
 
 ```python
 import stayforge
-from stayforge.models.room_base import RoomBase
+from stayforge.models.branch_base import BranchBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -107,16 +106,16 @@ configuration = stayforge.Configuration(
 # Enter a context with an instance of the API client
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = stayforge.RoomApi(api_client)
+    api_instance = stayforge.BranchApi(api_client)
     id = 'id_example' # str | 
 
     try:
-        # room_delete
-        api_response = api_instance.room_delete(id)
-        print("The response of RoomApi->room_delete:\n")
+        # branch_delete
+        api_response = api_instance.branch_delete(id)
+        print("The response of BranchApi->branch_delete:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RoomApi->room_delete: %s\n" % e)
+        print("Exception when calling BranchApi->branch_delete: %s\n" % e)
 ```
 
 
@@ -130,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoomBase**](RoomBase.md)
+[**BranchBase**](BranchBase.md)
 
 ### Authorization
 
@@ -150,19 +149,19 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **room_get**
-> List[RoomBase] room_get(id)
+# **branch_get**
+> List[BranchBase] branch_get(id)
 
-room_get
+branch_get
 
-room_get operation for room
+branch_get operation for branch
 
 ### Example
 
 
 ```python
 import stayforge
-from stayforge.models.room_base import RoomBase
+from stayforge.models.branch_base import BranchBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -176,16 +175,16 @@ configuration = stayforge.Configuration(
 # Enter a context with an instance of the API client
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = stayforge.RoomApi(api_client)
+    api_instance = stayforge.BranchApi(api_client)
     id = 'id_example' # str | 
 
     try:
-        # room_get
-        api_response = api_instance.room_get(id)
-        print("The response of RoomApi->room_get:\n")
+        # branch_get
+        api_response = api_instance.branch_get(id)
+        print("The response of BranchApi->branch_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RoomApi->room_get: %s\n" % e)
+        print("Exception when calling BranchApi->branch_get: %s\n" % e)
 ```
 
 
@@ -199,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[RoomBase]**](RoomBase.md)
+[**List[BranchBase]**](BranchBase.md)
 
 ### Authorization
 
@@ -219,19 +218,19 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **room_list**
-> List[RoomBase] room_list()
+# **branch_list**
+> List[BranchBase] branch_list()
 
-room_list
+branch_list
 
-room_list operation for room
+branch_list operation for branch
 
 ### Example
 
 
 ```python
 import stayforge
-from stayforge.models.room_base import RoomBase
+from stayforge.models.branch_base import BranchBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -245,15 +244,15 @@ configuration = stayforge.Configuration(
 # Enter a context with an instance of the API client
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = stayforge.RoomApi(api_client)
+    api_instance = stayforge.BranchApi(api_client)
 
     try:
-        # room_list
-        api_response = api_instance.room_list()
-        print("The response of RoomApi->room_list:\n")
+        # branch_list
+        api_response = api_instance.branch_list()
+        print("The response of BranchApi->branch_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RoomApi->room_list: %s\n" % e)
+        print("Exception when calling BranchApi->branch_list: %s\n" % e)
 ```
 
 
@@ -264,7 +263,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[RoomBase]**](RoomBase.md)
+[**List[BranchBase]**](BranchBase.md)
 
 ### Authorization
 
@@ -283,12 +282,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **room_update**
-> RoomBase room_update(id, branch_base)
+# **branch_update**
+> BranchBase branch_update(id, branch_base)
 
-room_update
+branch_update
 
-room_update operation for room
+branch_update operation for branch
 
 ### Example
 
@@ -296,7 +295,6 @@ room_update operation for room
 ```python
 import stayforge
 from stayforge.models.branch_base import BranchBase
-from stayforge.models.room_base import RoomBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -310,17 +308,17 @@ configuration = stayforge.Configuration(
 # Enter a context with an instance of the API client
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = stayforge.RoomApi(api_client)
+    api_instance = stayforge.BranchApi(api_client)
     id = 'id_example' # str | 
     branch_base = stayforge.BranchBase() # BranchBase | 
 
     try:
-        # room_update
-        api_response = api_instance.room_update(id, branch_base)
-        print("The response of RoomApi->room_update:\n")
+        # branch_update
+        api_response = api_instance.branch_update(id, branch_base)
+        print("The response of BranchApi->branch_update:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RoomApi->room_update: %s\n" % e)
+        print("Exception when calling BranchApi->branch_update: %s\n" % e)
 ```
 
 
@@ -335,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoomBase**](RoomBase.md)
+[**BranchBase**](BranchBase.md)
 
 ### Authorization
 
