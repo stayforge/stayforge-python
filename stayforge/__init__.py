@@ -14,9 +14,10 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.0-6211037"
+__version__ = "0.0.0-a01cba7"
 
 # import apis into sdk package
+from stayforge.api.auth_api import AuthApi
 from stayforge.api.message_queue_api import MessageQueueApi
 from stayforge.api.models_etcd_api import ModelsEtcdApi
 from stayforge.api.models_manager_api import ModelsManagerApi
@@ -25,6 +26,7 @@ from stayforge.api.branch_api import BranchApi
 from stayforge.api.order_api import OrderApi
 from stayforge.api.room_api import RoomApi
 from stayforge.api.room_type_api import RoomTypeApi
+from stayforge.api.service_account_api import ServiceAccountApi
 
 # import ApiClient
 from stayforge.api_response import ApiResponse
@@ -38,6 +40,8 @@ from stayforge.exceptions import ApiAttributeError
 from stayforge.exceptions import ApiException
 
 # import models into sdk package
+from stayforge.models.account import Account
+from stayforge.models.body_authenticate_api_auth_authenticate_post import BodyAuthenticateApiAuthAuthenticatePost
 from stayforge.models.branch_base import BranchBase
 from stayforge.models.http_validation_error import HTTPValidationError
 from stayforge.models.key_value_request import KeyValueRequest
@@ -48,7 +52,10 @@ from stayforge.models.models_manager_responses import ModelsManagerResponses
 from stayforge.models.retry_times import RetryTimes
 from stayforge.models.room_base import RoomBase
 from stayforge.models.room_type_base import RoomTypeBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.models.stayforge import Stayforge
+from stayforge.models.token_refresh_request import TokenRefreshRequest
+from stayforge.models.token_response import TokenResponse
 from stayforge.models.validation_error import ValidationError
 from stayforge.models.validation_error_loc_inner import ValidationErrorLocInner
 from stayforge.models.webhooks_manager import WebhooksManager

@@ -19,6 +19,7 @@ from typing_extensions import Annotated
 from pydantic import StrictStr
 from typing import List
 from stayforge.models.branch_base import BranchBase
+from stayforge.models.service_account import ServiceAccount
 
 from stayforge.api_client import ApiClient, RequestSerialized
 from stayforge.api_response import ApiResponse
@@ -41,7 +42,8 @@ class BranchApi:
     @validate_call
     def branch_create(
         self,
-        branch_base: BranchBase,
+        account: StrictStr,
+        service_account: ServiceAccount,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,8 +61,10 @@ class BranchApi:
 
         branch_create operation for branch
 
-        :param branch_base: (required)
-        :type branch_base: BranchBase
+        :param account: (required)
+        :type account: str
+        :param service_account: (required)
+        :type service_account: ServiceAccount
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -84,7 +88,8 @@ class BranchApi:
         """ # noqa: E501
 
         _param = self._branch_create_serialize(
-            branch_base=branch_base,
+            account=account,
+            service_account=service_account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -109,7 +114,8 @@ class BranchApi:
     @validate_call
     def branch_create_with_http_info(
         self,
-        branch_base: BranchBase,
+        account: StrictStr,
+        service_account: ServiceAccount,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -127,8 +133,10 @@ class BranchApi:
 
         branch_create operation for branch
 
-        :param branch_base: (required)
-        :type branch_base: BranchBase
+        :param account: (required)
+        :type account: str
+        :param service_account: (required)
+        :type service_account: ServiceAccount
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -152,7 +160,8 @@ class BranchApi:
         """ # noqa: E501
 
         _param = self._branch_create_serialize(
-            branch_base=branch_base,
+            account=account,
+            service_account=service_account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -177,7 +186,8 @@ class BranchApi:
     @validate_call
     def branch_create_without_preload_content(
         self,
-        branch_base: BranchBase,
+        account: StrictStr,
+        service_account: ServiceAccount,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -195,8 +205,10 @@ class BranchApi:
 
         branch_create operation for branch
 
-        :param branch_base: (required)
-        :type branch_base: BranchBase
+        :param account: (required)
+        :type account: str
+        :param service_account: (required)
+        :type service_account: ServiceAccount
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -220,7 +232,8 @@ class BranchApi:
         """ # noqa: E501
 
         _param = self._branch_create_serialize(
-            branch_base=branch_base,
+            account=account,
+            service_account=service_account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -240,7 +253,8 @@ class BranchApi:
 
     def _branch_create_serialize(
         self,
-        branch_base,
+        account,
+        service_account,
         _request_auth,
         _content_type,
         _headers,
@@ -263,11 +277,15 @@ class BranchApi:
 
         # process the path parameters
         # process the query parameters
+        if account is not None:
+            
+            _query_params.append(('account', account))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if branch_base is not None:
-            _body_params = branch_base
+        if service_account is not None:
+            _body_params = service_account
 
 
         # set the HTTP header `Accept`
@@ -294,6 +312,7 @@ class BranchApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'BearerAuth'
         ]
 
         return self.api_client.param_serialize(
@@ -318,6 +337,7 @@ class BranchApi:
     def branch_delete(
         self,
         id: StrictStr,
+        account: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -337,6 +357,8 @@ class BranchApi:
 
         :param id: (required)
         :type id: str
+        :param account: (required)
+        :type account: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -361,6 +383,7 @@ class BranchApi:
 
         _param = self._branch_delete_serialize(
             id=id,
+            account=account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -386,6 +409,7 @@ class BranchApi:
     def branch_delete_with_http_info(
         self,
         id: StrictStr,
+        account: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -405,6 +429,8 @@ class BranchApi:
 
         :param id: (required)
         :type id: str
+        :param account: (required)
+        :type account: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -429,6 +455,7 @@ class BranchApi:
 
         _param = self._branch_delete_serialize(
             id=id,
+            account=account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -454,6 +481,7 @@ class BranchApi:
     def branch_delete_without_preload_content(
         self,
         id: StrictStr,
+        account: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -473,6 +501,8 @@ class BranchApi:
 
         :param id: (required)
         :type id: str
+        :param account: (required)
+        :type account: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -497,6 +527,7 @@ class BranchApi:
 
         _param = self._branch_delete_serialize(
             id=id,
+            account=account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -517,6 +548,7 @@ class BranchApi:
     def _branch_delete_serialize(
         self,
         id,
+        account,
         _request_auth,
         _content_type,
         _headers,
@@ -541,6 +573,10 @@ class BranchApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
+        if account is not None:
+            
+            _query_params.append(('account', account))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -557,6 +593,7 @@ class BranchApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'BearerAuth'
         ]
 
         return self.api_client.param_serialize(
@@ -581,6 +618,7 @@ class BranchApi:
     def branch_get(
         self,
         id: StrictStr,
+        account: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -600,6 +638,8 @@ class BranchApi:
 
         :param id: (required)
         :type id: str
+        :param account: (required)
+        :type account: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -624,6 +664,7 @@ class BranchApi:
 
         _param = self._branch_get_serialize(
             id=id,
+            account=account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -649,6 +690,7 @@ class BranchApi:
     def branch_get_with_http_info(
         self,
         id: StrictStr,
+        account: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -668,6 +710,8 @@ class BranchApi:
 
         :param id: (required)
         :type id: str
+        :param account: (required)
+        :type account: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -692,6 +736,7 @@ class BranchApi:
 
         _param = self._branch_get_serialize(
             id=id,
+            account=account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -717,6 +762,7 @@ class BranchApi:
     def branch_get_without_preload_content(
         self,
         id: StrictStr,
+        account: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -736,6 +782,8 @@ class BranchApi:
 
         :param id: (required)
         :type id: str
+        :param account: (required)
+        :type account: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -760,6 +808,7 @@ class BranchApi:
 
         _param = self._branch_get_serialize(
             id=id,
+            account=account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -780,6 +829,7 @@ class BranchApi:
     def _branch_get_serialize(
         self,
         id,
+        account,
         _request_auth,
         _content_type,
         _headers,
@@ -804,6 +854,10 @@ class BranchApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
+        if account is not None:
+            
+            _query_params.append(('account', account))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -820,6 +874,7 @@ class BranchApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'BearerAuth'
         ]
 
         return self.api_client.param_serialize(
@@ -843,6 +898,7 @@ class BranchApi:
     @validate_call
     def branch_list(
         self,
+        account: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -860,6 +916,8 @@ class BranchApi:
 
         branch_list operation for branch
 
+        :param account: (required)
+        :type account: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -883,6 +941,7 @@ class BranchApi:
         """ # noqa: E501
 
         _param = self._branch_list_serialize(
+            account=account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -891,6 +950,7 @@ class BranchApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[BranchBase]",
+            '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -906,6 +966,7 @@ class BranchApi:
     @validate_call
     def branch_list_with_http_info(
         self,
+        account: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -923,6 +984,8 @@ class BranchApi:
 
         branch_list operation for branch
 
+        :param account: (required)
+        :type account: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -946,6 +1009,7 @@ class BranchApi:
         """ # noqa: E501
 
         _param = self._branch_list_serialize(
+            account=account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -954,6 +1018,7 @@ class BranchApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[BranchBase]",
+            '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -969,6 +1034,7 @@ class BranchApi:
     @validate_call
     def branch_list_without_preload_content(
         self,
+        account: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -986,6 +1052,8 @@ class BranchApi:
 
         branch_list operation for branch
 
+        :param account: (required)
+        :type account: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1009,6 +1077,7 @@ class BranchApi:
         """ # noqa: E501
 
         _param = self._branch_list_serialize(
+            account=account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1017,6 +1086,7 @@ class BranchApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[BranchBase]",
+            '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1027,6 +1097,7 @@ class BranchApi:
 
     def _branch_list_serialize(
         self,
+        account,
         _request_auth,
         _content_type,
         _headers,
@@ -1049,6 +1120,10 @@ class BranchApi:
 
         # process the path parameters
         # process the query parameters
+        if account is not None:
+            
+            _query_params.append(('account', account))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1065,6 +1140,7 @@ class BranchApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'BearerAuth'
         ]
 
         return self.api_client.param_serialize(
@@ -1089,7 +1165,8 @@ class BranchApi:
     def branch_update(
         self,
         id: StrictStr,
-        branch_base: BranchBase,
+        account: StrictStr,
+        service_account: ServiceAccount,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1109,8 +1186,10 @@ class BranchApi:
 
         :param id: (required)
         :type id: str
-        :param branch_base: (required)
-        :type branch_base: BranchBase
+        :param account: (required)
+        :type account: str
+        :param service_account: (required)
+        :type service_account: ServiceAccount
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1135,7 +1214,8 @@ class BranchApi:
 
         _param = self._branch_update_serialize(
             id=id,
-            branch_base=branch_base,
+            account=account,
+            service_account=service_account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1161,7 +1241,8 @@ class BranchApi:
     def branch_update_with_http_info(
         self,
         id: StrictStr,
-        branch_base: BranchBase,
+        account: StrictStr,
+        service_account: ServiceAccount,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1181,8 +1262,10 @@ class BranchApi:
 
         :param id: (required)
         :type id: str
-        :param branch_base: (required)
-        :type branch_base: BranchBase
+        :param account: (required)
+        :type account: str
+        :param service_account: (required)
+        :type service_account: ServiceAccount
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1207,7 +1290,8 @@ class BranchApi:
 
         _param = self._branch_update_serialize(
             id=id,
-            branch_base=branch_base,
+            account=account,
+            service_account=service_account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1233,7 +1317,8 @@ class BranchApi:
     def branch_update_without_preload_content(
         self,
         id: StrictStr,
-        branch_base: BranchBase,
+        account: StrictStr,
+        service_account: ServiceAccount,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1253,8 +1338,10 @@ class BranchApi:
 
         :param id: (required)
         :type id: str
-        :param branch_base: (required)
-        :type branch_base: BranchBase
+        :param account: (required)
+        :type account: str
+        :param service_account: (required)
+        :type service_account: ServiceAccount
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1279,7 +1366,8 @@ class BranchApi:
 
         _param = self._branch_update_serialize(
             id=id,
-            branch_base=branch_base,
+            account=account,
+            service_account=service_account,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1300,7 +1388,8 @@ class BranchApi:
     def _branch_update_serialize(
         self,
         id,
-        branch_base,
+        account,
+        service_account,
         _request_auth,
         _content_type,
         _headers,
@@ -1325,11 +1414,15 @@ class BranchApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
+        if account is not None:
+            
+            _query_params.append(('account', account))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if branch_base is not None:
-            _body_params = branch_base
+        if service_account is not None:
+            _body_params = service_account
 
 
         # set the HTTP header `Accept`
@@ -1356,6 +1449,7 @@ class BranchApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'BearerAuth'
         ]
 
         return self.api_client.param_serialize(

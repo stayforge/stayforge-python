@@ -14,10 +14,10 @@
 
 import unittest
 
-from stayforge.models.models_manager import ModelsManager
+from stayforge.models.service_account import ServiceAccount
 
-class TestModelsManager(unittest.TestCase):
-    """ModelsManager unit test stubs"""
+class TestServiceAccount(unittest.TestCase):
+    """ServiceAccount unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,42 +25,31 @@ class TestModelsManager(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ModelsManager:
-        """Test ModelsManager
+    def make_instance(self, include_optional) -> ServiceAccount:
+        """Test ServiceAccount
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ModelsManager`
+        # uncomment below to create an instance of `ServiceAccount`
         """
-        model = ModelsManager()
+        model = ServiceAccount()
         if include_optional:
-            return ModelsManager(
-                id = '67d6962c3398cfff444af1b3',
-                metadata = None,
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                model = '',
-                model_version = 'latest',
-                local_name = '',
-                permissions = None,
-                etcd_host = '',
-                etcd_port = 56,
-                etcd_user = '',
-                etcd_password = ''
+            return ServiceAccount(
+                account = serviceaccount@iam.auth.stayforge.io,
+                secret = '',
+                iam = [
+                    ''
+                    ]
             )
         else:
-            return ModelsManager(
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                model = '',
-                etcd_host = '',
-                etcd_user = '',
-                etcd_password = '',
+            return ServiceAccount(
+                account = serviceaccount@iam.auth.stayforge.io,
+                secret = '',
         )
         """
 
-    def testModelsManager(self):
-        """Test ModelsManager"""
+    def testServiceAccount(self):
+        """Test ServiceAccount"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

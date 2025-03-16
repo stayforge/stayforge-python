@@ -17,29 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from stayforge.models.account import Account
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ModelsManager(BaseModel):
+class ServiceAccount(BaseModel):
     """
-    ModelsManager
+    ServiceAccount
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default='67d6962c3398cfff444af1b3', description="The unique ID of this object.")
-    metadata: Optional[Dict[str, Any]] = None
-    create_at: Optional[datetime]
-    update_at: Optional[datetime]
-    model: StrictStr = Field(description="The host URL of the model. This is used to generate webhook URLs and other model-related paths.")
-    model_version: Optional[StrictStr] = Field(default='latest', description="The version of the model. This helps in tracking updates and ensuring compatibility.")
-    local_name: Optional[StrictStr] = None
-    permissions: Optional[Dict[str, Any]] = None
-    etcd_host: StrictStr
-    etcd_port: Optional[StrictInt] = 2379
-    etcd_user: StrictStr
-    etcd_password: StrictStr
-    __properties: ClassVar[List[str]] = ["id", "metadata", "create_at", "update_at", "model", "model_version", "local_name", "permissions", "etcd_host", "etcd_port", "etcd_user", "etcd_password"]
+    account: Account
+    secret: StrictStr = Field(description="`API Key` (For M2M) or `Password` (For human user).")
+    iam: Optional[List[StrictStr]] = None
+    __properties: ClassVar[List[str]] = ["account", "secret", "iam"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -59,7 +50,7 @@ class ModelsManager(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ModelsManager from a JSON string"""
+        """Create an instance of ServiceAccount from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,36 +71,19 @@ class ModelsManager(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if metadata (nullable) is None
+        # override the default output from pydantic by calling `to_dict()` of account
+        if self.account:
+            _dict['account'] = self.account.to_dict()
+        # set to None if iam (nullable) is None
         # and model_fields_set contains the field
-        if self.metadata is None and "metadata" in self.model_fields_set:
-            _dict['metadata'] = None
-
-        # set to None if create_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.create_at is None and "create_at" in self.model_fields_set:
-            _dict['create_at'] = None
-
-        # set to None if update_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.update_at is None and "update_at" in self.model_fields_set:
-            _dict['update_at'] = None
-
-        # set to None if local_name (nullable) is None
-        # and model_fields_set contains the field
-        if self.local_name is None and "local_name" in self.model_fields_set:
-            _dict['local_name'] = None
-
-        # set to None if permissions (nullable) is None
-        # and model_fields_set contains the field
-        if self.permissions is None and "permissions" in self.model_fields_set:
-            _dict['permissions'] = None
+        if self.iam is None and "iam" in self.model_fields_set:
+            _dict['iam'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ModelsManager from a dict"""
+        """Create an instance of ServiceAccount from a dict"""
         if obj is None:
             return None
 
@@ -117,18 +91,9 @@ class ModelsManager(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id") if obj.get("id") is not None else '67d6962c3398cfff444af1b3',
-            "metadata": obj.get("metadata"),
-            "create_at": obj.get("create_at"),
-            "update_at": obj.get("update_at"),
-            "model": obj.get("model"),
-            "model_version": obj.get("model_version") if obj.get("model_version") is not None else 'latest',
-            "local_name": obj.get("local_name"),
-            "permissions": obj.get("permissions"),
-            "etcd_host": obj.get("etcd_host"),
-            "etcd_port": obj.get("etcd_port") if obj.get("etcd_port") is not None else 2379,
-            "etcd_user": obj.get("etcd_user"),
-            "etcd_password": obj.get("etcd_password")
+            "account": Account.from_dict(obj["account"]) if obj.get("account") is not None else None,
+            "secret": obj.get("secret"),
+            "iam": obj.get("iam")
         })
         return _obj
 

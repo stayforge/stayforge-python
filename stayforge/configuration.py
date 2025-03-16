@@ -59,6 +59,7 @@ class Configuration:
       in PEM format.
     :param retries: Number of retries for API requests.
 
+    :Example:
     """
 
     _default = None
@@ -373,6 +374,14 @@ class Configuration:
         :return: The Auth Settings information dict.
         """
         auth = {}
+        if self.access_token is not None:
+            auth['BearerAuth'] = {
+                'type': 'bearer',
+                'in': 'header',
+                'format': 'JWT',
+                'key': 'Authorization',
+                'value': 'Bearer ' + self.access_token
+            }
         return auth
 
     def to_debug_report(self):
@@ -384,7 +393,7 @@ class Configuration:
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.0.0\n"\
-               "SDK Package Version: 0.0.0-6211037".\
+               "SDK Package Version: 0.0.0-a01cba7".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

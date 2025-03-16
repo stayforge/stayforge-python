@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **room_create**
-> RoomBase room_create(branch_base)
+> RoomBase room_create(account, service_account)
 
 room_create
 
@@ -20,11 +20,12 @@ room_create operation for room
 
 ### Example
 
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import stayforge
-from stayforge.models.branch_base import BranchBase
 from stayforge.models.room_base import RoomBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -34,16 +35,26 @@ configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = stayforge.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomApi(api_client)
-    branch_base = stayforge.BranchBase() # BranchBase | 
+    account = 'account_example' # str | 
+    service_account = stayforge.ServiceAccount() # ServiceAccount | 
 
     try:
         # room_create
-        api_response = api_instance.room_create(branch_base)
+        api_response = api_instance.room_create(account, service_account)
         print("The response of RoomApi->room_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -57,7 +68,8 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **branch_base** | [**BranchBase**](BranchBase.md)|  | 
+ **account** | **str**|  | 
+ **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
 
 ### Return type
 
@@ -65,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +94,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_delete**
-> RoomBase room_delete(id)
+> RoomBase room_delete(id, account)
 
 room_delete
 
@@ -90,6 +102,7 @@ room_delete operation for room
 
 ### Example
 
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import stayforge
@@ -103,16 +116,26 @@ configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = stayforge.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomApi(api_client)
     id = 'id_example' # str | 
+    account = 'account_example' # str | 
 
     try:
         # room_delete
-        api_response = api_instance.room_delete(id)
+        api_response = api_instance.room_delete(id, account)
         print("The response of RoomApi->room_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -127,6 +150,7 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
+ **account** | **str**|  | 
 
 ### Return type
 
@@ -134,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +175,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_get**
-> List[RoomBase] room_get(id)
+> List[RoomBase] room_get(id, account)
 
 room_get
 
@@ -159,6 +183,7 @@ room_get operation for room
 
 ### Example
 
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import stayforge
@@ -172,16 +197,26 @@ configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = stayforge.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomApi(api_client)
     id = 'id_example' # str | 
+    account = 'account_example' # str | 
 
     try:
         # room_get
-        api_response = api_instance.room_get(id)
+        api_response = api_instance.room_get(id, account)
         print("The response of RoomApi->room_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -196,6 +231,7 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
+ **account** | **str**|  | 
 
 ### Return type
 
@@ -203,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -220,7 +256,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_list**
-> List[RoomBase] room_list()
+> List[RoomBase] room_list(account)
 
 room_list
 
@@ -228,6 +264,7 @@ room_list operation for room
 
 ### Example
 
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import stayforge
@@ -241,15 +278,25 @@ configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = stayforge.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomApi(api_client)
+    account = 'account_example' # str | 
 
     try:
         # room_list
-        api_response = api_instance.room_list()
+        api_response = api_instance.room_list(account)
         print("The response of RoomApi->room_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -260,7 +307,10 @@ with stayforge.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account** | **str**|  | 
 
 ### Return type
 
@@ -268,7 +318,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -280,11 +330,12 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_update**
-> RoomBase room_update(id, branch_base)
+> RoomBase room_update(id, account, service_account)
 
 room_update
 
@@ -292,11 +343,12 @@ room_update operation for room
 
 ### Example
 
+* Bearer (JWT) Authentication (BearerAuth):
 
 ```python
 import stayforge
-from stayforge.models.branch_base import BranchBase
 from stayforge.models.room_base import RoomBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -306,17 +358,27 @@ configuration = stayforge.Configuration(
     host = "http://localhost"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = stayforge.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomApi(api_client)
     id = 'id_example' # str | 
-    branch_base = stayforge.BranchBase() # BranchBase | 
+    account = 'account_example' # str | 
+    service_account = stayforge.ServiceAccount() # ServiceAccount | 
 
     try:
         # room_update
-        api_response = api_instance.room_update(id, branch_base)
+        api_response = api_instance.room_update(id, account, service_account)
         print("The response of RoomApi->room_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -331,7 +393,8 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **branch_base** | [**BranchBase**](BranchBase.md)|  | 
+ **account** | **str**|  | 
+ **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
 
 ### Return type
 
@@ -339,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
