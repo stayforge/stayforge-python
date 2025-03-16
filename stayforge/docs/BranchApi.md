@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **branch_create**
-> BranchBase branch_create(account, service_account)
+> BranchBase branch_create(account, service_account_base)
 
 branch_create
 
@@ -25,7 +25,7 @@ branch_create operation for branch
 ```python
 import stayforge
 from stayforge.models.branch_base import BranchBase
-from stayforge.models.service_account import ServiceAccount
+from stayforge.models.service_account_base import ServiceAccountBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -50,11 +50,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.BranchApi(api_client)
     account = 'account_example' # str | 
-    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
 
     try:
         # branch_create
-        api_response = api_instance.branch_create(account, service_account)
+        api_response = api_instance.branch_create(account, service_account_base)
         print("The response of BranchApi->branch_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -69,7 +69,7 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account** | **str**|  | 
- **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
 
 ### Return type
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **branch_update**
-> BranchBase branch_update(id, account, service_account)
+> BranchBase branch_update(id, account, service_account_base)
 
 branch_update
 
@@ -348,7 +348,7 @@ branch_update operation for branch
 ```python
 import stayforge
 from stayforge.models.branch_base import BranchBase
-from stayforge.models.service_account import ServiceAccount
+from stayforge.models.service_account_base import ServiceAccountBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -374,11 +374,11 @@ with stayforge.ApiClient(configuration) as api_client:
     api_instance = stayforge.BranchApi(api_client)
     id = 'id_example' # str | 
     account = 'account_example' # str | 
-    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
 
     try:
         # branch_update
-        api_response = api_instance.branch_update(id, account, service_account)
+        api_response = api_instance.branch_update(id, account, service_account_base)
         print("The response of BranchApi->branch_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
  **account** | **str**|  | 
- **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
 
 ### Return type
 

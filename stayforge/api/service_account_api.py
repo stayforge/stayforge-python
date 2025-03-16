@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import StrictStr
 from typing import List
-from stayforge.models.service_account import ServiceAccount
+from stayforge.models.service_account_base import ServiceAccountBase
 
 from stayforge.api_client import ApiClient, RequestSerialized
 from stayforge.api_response import ApiResponse
@@ -42,7 +42,7 @@ class ServiceAccountApi:
     def service_account_create(
         self,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -55,15 +55,15 @@ class ServiceAccountApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ServiceAccount:
+    ) -> ServiceAccountBase:
         """service_account_create
 
         service_account_create operation for service_account
 
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,7 +88,7 @@ class ServiceAccountApi:
 
         _param = self._service_account_create_serialize(
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -96,7 +96,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServiceAccount",
+            '200': "ServiceAccountBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -114,7 +114,7 @@ class ServiceAccountApi:
     def service_account_create_with_http_info(
         self,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -127,15 +127,15 @@ class ServiceAccountApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ServiceAccount]:
+    ) -> ApiResponse[ServiceAccountBase]:
         """service_account_create
 
         service_account_create operation for service_account
 
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -160,7 +160,7 @@ class ServiceAccountApi:
 
         _param = self._service_account_create_serialize(
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -168,7 +168,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServiceAccount",
+            '200': "ServiceAccountBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -186,7 +186,7 @@ class ServiceAccountApi:
     def service_account_create_without_preload_content(
         self,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -206,8 +206,8 @@ class ServiceAccountApi:
 
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -232,7 +232,7 @@ class ServiceAccountApi:
 
         _param = self._service_account_create_serialize(
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -240,7 +240,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServiceAccount",
+            '200': "ServiceAccountBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -253,7 +253,7 @@ class ServiceAccountApi:
     def _service_account_create_serialize(
         self,
         account,
-        service_account,
+        service_account_base,
         _request_auth,
         _content_type,
         _headers,
@@ -283,8 +283,8 @@ class ServiceAccountApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if service_account is not None:
-            _body_params = service_account
+        if service_account_base is not None:
+            _body_params = service_account_base
 
 
         # set the HTTP header `Accept`
@@ -349,7 +349,7 @@ class ServiceAccountApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ServiceAccount:
+    ) -> ServiceAccountBase:
         """service_account_delete
 
         service_account_delete operation for service_account
@@ -390,7 +390,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServiceAccount",
+            '200': "ServiceAccountBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -421,7 +421,7 @@ class ServiceAccountApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ServiceAccount]:
+    ) -> ApiResponse[ServiceAccountBase]:
         """service_account_delete
 
         service_account_delete operation for service_account
@@ -462,7 +462,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServiceAccount",
+            '200': "ServiceAccountBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -534,7 +534,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServiceAccount",
+            '200': "ServiceAccountBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -630,7 +630,7 @@ class ServiceAccountApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[ServiceAccount]:
+    ) -> List[ServiceAccountBase]:
         """service_account_get
 
         service_account_get operation for service_account
@@ -671,7 +671,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ServiceAccount]",
+            '200': "List[ServiceAccountBase]",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -702,7 +702,7 @@ class ServiceAccountApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[ServiceAccount]]:
+    ) -> ApiResponse[List[ServiceAccountBase]]:
         """service_account_get
 
         service_account_get operation for service_account
@@ -743,7 +743,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ServiceAccount]",
+            '200': "List[ServiceAccountBase]",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -815,7 +815,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ServiceAccount]",
+            '200': "List[ServiceAccountBase]",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -910,7 +910,7 @@ class ServiceAccountApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[ServiceAccount]:
+    ) -> List[ServiceAccountBase]:
         """service_account_list
 
         service_account_list operation for service_account
@@ -948,7 +948,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ServiceAccount]",
+            '200': "List[ServiceAccountBase]",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -978,7 +978,7 @@ class ServiceAccountApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[ServiceAccount]]:
+    ) -> ApiResponse[List[ServiceAccountBase]]:
         """service_account_list
 
         service_account_list operation for service_account
@@ -1016,7 +1016,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ServiceAccount]",
+            '200': "List[ServiceAccountBase]",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1084,7 +1084,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ServiceAccount]",
+            '200': "List[ServiceAccountBase]",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1165,7 +1165,7 @@ class ServiceAccountApi:
         self,
         id: StrictStr,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1178,7 +1178,7 @@ class ServiceAccountApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ServiceAccount:
+    ) -> ServiceAccountBase:
         """service_account_update
 
         service_account_update operation for service_account
@@ -1187,8 +1187,8 @@ class ServiceAccountApi:
         :type id: str
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1214,7 +1214,7 @@ class ServiceAccountApi:
         _param = self._service_account_update_serialize(
             id=id,
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1222,7 +1222,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServiceAccount",
+            '200': "ServiceAccountBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1241,7 +1241,7 @@ class ServiceAccountApi:
         self,
         id: StrictStr,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1254,7 +1254,7 @@ class ServiceAccountApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ServiceAccount]:
+    ) -> ApiResponse[ServiceAccountBase]:
         """service_account_update
 
         service_account_update operation for service_account
@@ -1263,8 +1263,8 @@ class ServiceAccountApi:
         :type id: str
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1290,7 +1290,7 @@ class ServiceAccountApi:
         _param = self._service_account_update_serialize(
             id=id,
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1298,7 +1298,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServiceAccount",
+            '200': "ServiceAccountBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1317,7 +1317,7 @@ class ServiceAccountApi:
         self,
         id: StrictStr,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1339,8 +1339,8 @@ class ServiceAccountApi:
         :type id: str
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1366,7 +1366,7 @@ class ServiceAccountApi:
         _param = self._service_account_update_serialize(
             id=id,
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1374,7 +1374,7 @@ class ServiceAccountApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServiceAccount",
+            '200': "ServiceAccountBase",
             '422': "HTTPValidationError",
         }
         response_data = self.api_client.call_api(
@@ -1388,7 +1388,7 @@ class ServiceAccountApi:
         self,
         id,
         account,
-        service_account,
+        service_account_base,
         _request_auth,
         _content_type,
         _headers,
@@ -1420,8 +1420,8 @@ class ServiceAccountApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if service_account is not None:
-            _body_params = service_account
+        if service_account_base is not None:
+            _body_params = service_account_base
 
 
         # set the HTTP header `Accept`

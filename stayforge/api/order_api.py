@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import StrictStr
 from typing import Any, List
-from stayforge.models.service_account import ServiceAccount
+from stayforge.models.service_account_base import ServiceAccountBase
 
 from stayforge.api_client import ApiClient, RequestSerialized
 from stayforge.api_response import ApiResponse
@@ -42,7 +42,7 @@ class OrderApi:
     def order_create(
         self,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -62,8 +62,8 @@ class OrderApi:
 
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,7 +88,7 @@ class OrderApi:
 
         _param = self._order_create_serialize(
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -114,7 +114,7 @@ class OrderApi:
     def order_create_with_http_info(
         self,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,8 +134,8 @@ class OrderApi:
 
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -160,7 +160,7 @@ class OrderApi:
 
         _param = self._order_create_serialize(
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -186,7 +186,7 @@ class OrderApi:
     def order_create_without_preload_content(
         self,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -206,8 +206,8 @@ class OrderApi:
 
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -232,7 +232,7 @@ class OrderApi:
 
         _param = self._order_create_serialize(
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -253,7 +253,7 @@ class OrderApi:
     def _order_create_serialize(
         self,
         account,
-        service_account,
+        service_account_base,
         _request_auth,
         _content_type,
         _headers,
@@ -283,8 +283,8 @@ class OrderApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if service_account is not None:
-            _body_params = service_account
+        if service_account_base is not None:
+            _body_params = service_account_base
 
 
         # set the HTTP header `Accept`
@@ -1165,7 +1165,7 @@ class OrderApi:
         self,
         id: StrictStr,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1187,8 +1187,8 @@ class OrderApi:
         :type id: str
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1214,7 +1214,7 @@ class OrderApi:
         _param = self._order_update_serialize(
             id=id,
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1241,7 +1241,7 @@ class OrderApi:
         self,
         id: StrictStr,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1263,8 +1263,8 @@ class OrderApi:
         :type id: str
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1290,7 +1290,7 @@ class OrderApi:
         _param = self._order_update_serialize(
             id=id,
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1317,7 +1317,7 @@ class OrderApi:
         self,
         id: StrictStr,
         account: StrictStr,
-        service_account: ServiceAccount,
+        service_account_base: ServiceAccountBase,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1339,8 +1339,8 @@ class OrderApi:
         :type id: str
         :param account: (required)
         :type account: str
-        :param service_account: (required)
-        :type service_account: ServiceAccount
+        :param service_account_base: (required)
+        :type service_account_base: ServiceAccountBase
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1366,7 +1366,7 @@ class OrderApi:
         _param = self._order_update_serialize(
             id=id,
             account=account,
-            service_account=service_account,
+            service_account_base=service_account_base,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1388,7 +1388,7 @@ class OrderApi:
         self,
         id,
         account,
-        service_account,
+        service_account_base,
         _request_auth,
         _content_type,
         _headers,
@@ -1420,8 +1420,8 @@ class OrderApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if service_account is not None:
-            _body_params = service_account
+        if service_account_base is not None:
+            _body_params = service_account_base
 
 
         # set the HTTP header `Accept`

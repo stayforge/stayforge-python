@@ -26,7 +26,7 @@ from stayforge.models.models_manager_responses import ModelsManagerResponses
 from stayforge.models.retry_times import RetryTimes
 from stayforge.models.room_base import RoomBase
 from stayforge.models.room_type_base import RoomTypeBase
-from stayforge.models.service_account import ServiceAccount
+from stayforge.models.service_account_base import ServiceAccountBase
 from stayforge.models.stayforge import Stayforge
 from stayforge.models.token_refresh_request import TokenRefreshRequest
 from stayforge.models.token_response import TokenResponse

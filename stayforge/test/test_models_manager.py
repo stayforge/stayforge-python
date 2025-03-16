@@ -35,7 +35,7 @@ class TestModelsManager(unittest.TestCase):
         model = ModelsManager()
         if include_optional:
             return ModelsManager(
-                id = '67d6962c3398cfff444af1b3',
+                id = '67d6aa60c568e43be66a67c6',
                 metadata = None,
                 create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),

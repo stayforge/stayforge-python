@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **order_create**
-> object order_create(account, service_account)
+> object order_create(account, service_account_base)
 
 order_create
 
@@ -24,7 +24,7 @@ order_create operation for order
 
 ```python
 import stayforge
-from stayforge.models.service_account import ServiceAccount
+from stayforge.models.service_account_base import ServiceAccountBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -49,11 +49,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.OrderApi(api_client)
     account = 'account_example' # str | 
-    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
 
     try:
         # order_create
-        api_response = api_instance.order_create(account, service_account)
+        api_response = api_instance.order_create(account, service_account_base)
         print("The response of OrderApi->order_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -68,7 +68,7 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account** | **str**|  | 
- **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
 
 ### Return type
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **order_update**
-> object order_update(id, account, service_account)
+> object order_update(id, account, service_account_base)
 
 order_update
 
@@ -343,7 +343,7 @@ order_update operation for order
 
 ```python
 import stayforge
-from stayforge.models.service_account import ServiceAccount
+from stayforge.models.service_account_base import ServiceAccountBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -369,11 +369,11 @@ with stayforge.ApiClient(configuration) as api_client:
     api_instance = stayforge.OrderApi(api_client)
     id = 'id_example' # str | 
     account = 'account_example' # str | 
-    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
 
     try:
         # order_update
-        api_response = api_instance.order_update(id, account, service_account)
+        api_response = api_instance.order_update(id, account, service_account_base)
         print("The response of OrderApi->order_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
  **account** | **str**|  | 
- **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
 
 ### Return type
 

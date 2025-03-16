@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **room_type_create**
-> RoomTypeBase room_type_create(account, service_account)
+> RoomTypeBase room_type_create(account, service_account_base)
 
 room_type_create
 
@@ -25,7 +25,7 @@ room_type_create operation for room_type
 ```python
 import stayforge
 from stayforge.models.room_type_base import RoomTypeBase
-from stayforge.models.service_account import ServiceAccount
+from stayforge.models.service_account_base import ServiceAccountBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -50,11 +50,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomTypeApi(api_client)
     account = 'account_example' # str | 
-    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
 
     try:
         # room_type_create
-        api_response = api_instance.room_type_create(account, service_account)
+        api_response = api_instance.room_type_create(account, service_account_base)
         print("The response of RoomTypeApi->room_type_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -69,7 +69,7 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account** | **str**|  | 
- **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
 
 ### Return type
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_type_update**
-> RoomTypeBase room_type_update(id, account, service_account)
+> RoomTypeBase room_type_update(id, account, service_account_base)
 
 room_type_update
 
@@ -348,7 +348,7 @@ room_type_update operation for room_type
 ```python
 import stayforge
 from stayforge.models.room_type_base import RoomTypeBase
-from stayforge.models.service_account import ServiceAccount
+from stayforge.models.service_account_base import ServiceAccountBase
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -374,11 +374,11 @@ with stayforge.ApiClient(configuration) as api_client:
     api_instance = stayforge.RoomTypeApi(api_client)
     id = 'id_example' # str | 
     account = 'account_example' # str | 
-    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
 
     try:
         # room_type_update
-        api_response = api_instance.room_type_update(id, account, service_account)
+        api_response = api_instance.room_type_update(id, account, service_account_base)
         print("The response of RoomTypeApi->room_type_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
  **account** | **str**|  | 
- **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
 
 ### Return type
 

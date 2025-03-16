@@ -14,10 +14,10 @@
 
 import unittest
 
-from stayforge.models.webhooks_manager import WebhooksManager
+from stayforge.models.service_account_base import ServiceAccountBase
 
-class TestWebhooksManager(unittest.TestCase):
-    """WebhooksManager unit test stubs"""
+class TestServiceAccountBase(unittest.TestCase):
+    """ServiceAccountBase unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,43 +25,26 @@ class TestWebhooksManager(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> WebhooksManager:
-        """Test WebhooksManager
+    def make_instance(self, include_optional) -> ServiceAccountBase:
+        """Test ServiceAccountBase
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `WebhooksManager`
+        # uncomment below to create an instance of `ServiceAccountBase`
         """
-        model = WebhooksManager()
+        model = ServiceAccountBase()
         if include_optional:
-            return WebhooksManager(
-                id = '67d6aa60c568e43be66a67c6',
-                metadata = None,
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                webhook_name = '',
-                endpoint = '0',
-                catch_path = '',
-                catch_method = 'POST',
-                catch_status = 56,
-                retry_status_code = [
-                    ''
-                    ],
-                retry_times = None
+            return ServiceAccountBase(
+                account = serviceaccount@iam.auth.stayforge.io
             )
         else:
-            return WebhooksManager(
-                create_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                webhook_name = '',
-                endpoint = '0',
-                catch_path = '',
-                catch_method = 'POST',
+            return ServiceAccountBase(
+                account = serviceaccount@iam.auth.stayforge.io,
         )
         """
 
-    def testWebhooksManager(self):
-        """Test WebhooksManager"""
+    def testServiceAccountBase(self):
+        """Test ServiceAccountBase"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
