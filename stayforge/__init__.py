@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.0-fc31435"
+__version__ = "0.0.0-245bafa"
 
 # import apis into sdk package
 from stayforge.api.auth_api import AuthApi

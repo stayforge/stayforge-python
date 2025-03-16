@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from stayforge.models.account import Account
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,8 @@ class ServiceAccountBase(BaseModel):
     ServiceAccountBase
     """ # noqa: E501
     account: Account
-    __properties: ClassVar[List[str]] = ["account"]
+    role: Optional[List[StrictStr]] = None
+    __properties: ClassVar[List[str]] = ["account", "role"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,6 +73,11 @@ class ServiceAccountBase(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of account
         if self.account:
             _dict['account'] = self.account.to_dict()
+        # set to None if role (nullable) is None
+        # and model_fields_set contains the field
+        if self.role is None and "role" in self.model_fields_set:
+            _dict['role'] = None
+
         return _dict
 
     @classmethod
@@ -84,7 +90,8 @@ class ServiceAccountBase(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "account": Account.from_dict(obj["account"]) if obj.get("account") is not None else None
+            "account": Account.from_dict(obj["account"]) if obj.get("account") is not None else None,
+            "role": obj.get("role")
         })
         return _obj
 

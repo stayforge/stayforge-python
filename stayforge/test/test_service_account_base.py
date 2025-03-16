@@ -35,11 +35,14 @@ class TestServiceAccountBase(unittest.TestCase):
         model = ServiceAccountBase()
         if include_optional:
             return ServiceAccountBase(
-                account = serviceaccount@iam.auth.stayforge.io
+                account = serviceaccount@role.auth.stayforge.io,
+                role = [
+                    ''
+                    ]
             )
         else:
             return ServiceAccountBase(
-                account = serviceaccount@iam.auth.stayforge.io,
+                account = serviceaccount@role.auth.stayforge.io,
         )
         """
 
