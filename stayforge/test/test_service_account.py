@@ -35,15 +35,15 @@ class TestServiceAccount(unittest.TestCase):
         model = ServiceAccount()
         if include_optional:
             return ServiceAccount(
-                account = serviceaccount@iam.auth.stayforge.io,
-                secret = '',
-                iam = [
+                account = serviceaccount@role.auth.stayforge.io,
+                role = [
                     ''
-                    ]
+                    ],
+                secret = ''
             )
         else:
             return ServiceAccount(
-                account = serviceaccount@iam.auth.stayforge.io,
+                account = serviceaccount@role.auth.stayforge.io,
                 secret = '',
         )
         """

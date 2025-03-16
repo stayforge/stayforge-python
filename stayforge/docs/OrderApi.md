@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **order_create**
-> object order_create(account, service_account_base)
+> object order_create(service_account, authorization=authorization)
 
 order_create
 
@@ -24,7 +24,7 @@ order_create operation for order
 
 ```python
 import stayforge
-from stayforge.models.service_account_base import ServiceAccountBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -48,12 +48,12 @@ configuration = stayforge.Configuration(
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.OrderApi(api_client)
-    account = 'account_example' # str | 
-    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
+    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # order_create
-        api_response = api_instance.order_create(account, service_account_base)
+        api_response = api_instance.order_create(service_account, authorization=authorization)
         print("The response of OrderApi->order_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -67,8 +67,8 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | **str**|  | 
- **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
+ **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **order_delete**
-> object order_delete(id, account)
+> object order_delete(id, authorization=authorization)
 
 order_delete
 
@@ -129,11 +129,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.OrderApi(api_client)
     id = 'id_example' # str | 
-    account = 'account_example' # str | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # order_delete
-        api_response = api_instance.order_delete(id, account)
+        api_response = api_instance.order_delete(id, authorization=authorization)
         print("The response of OrderApi->order_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -148,7 +148,7 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **account** | **str**|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **order_get**
-> List[Optional[object]] order_get(id, account)
+> List[Optional[object]] order_get(id, authorization=authorization)
 
 order_get
 
@@ -209,11 +209,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.OrderApi(api_client)
     id = 'id_example' # str | 
-    account = 'account_example' # str | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # order_get
-        api_response = api_instance.order_get(id, account)
+        api_response = api_instance.order_get(id, authorization=authorization)
         print("The response of OrderApi->order_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -228,7 +228,7 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **account** | **str**|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **order_list**
-> List[Optional[object]] order_list(account)
+> List[Optional[object]] order_list(authorization=authorization)
 
 order_list
 
@@ -288,11 +288,11 @@ configuration = stayforge.Configuration(
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.OrderApi(api_client)
-    account = 'account_example' # str | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # order_list
-        api_response = api_instance.order_list(account)
+        api_response = api_instance.order_list(authorization=authorization)
         print("The response of OrderApi->order_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -306,7 +306,7 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | **str**|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **order_update**
-> object order_update(id, account, service_account_base)
+> object order_update(id, service_account, authorization=authorization)
 
 order_update
 
@@ -343,7 +343,7 @@ order_update operation for order
 
 ```python
 import stayforge
-from stayforge.models.service_account_base import ServiceAccountBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -368,12 +368,12 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.OrderApi(api_client)
     id = 'id_example' # str | 
-    account = 'account_example' # str | 
-    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
+    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # order_update
-        api_response = api_instance.order_update(id, account, service_account_base)
+        api_response = api_instance.order_update(id, service_account, authorization=authorization)
         print("The response of OrderApi->order_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -388,8 +388,8 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **account** | **str**|  | 
- **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
+ **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 

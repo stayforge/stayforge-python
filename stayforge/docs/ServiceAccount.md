@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account** | [**Account**](Account.md) |  | 
+**role** | **List[str]** |  | [optional] 
 **secret** | **str** | &#x60;API Key&#x60; (For M2M) or &#x60;Password&#x60; (For human user). | 
-**iam** | **List[str]** |  | [optional] 
 
 ## Example
 

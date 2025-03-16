@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **room_create**
-> RoomBase room_create(account, service_account_base)
+> RoomBase room_create(service_account, authorization=authorization)
 
 room_create
 
@@ -25,7 +25,7 @@ room_create operation for room
 ```python
 import stayforge
 from stayforge.models.room_base import RoomBase
-from stayforge.models.service_account_base import ServiceAccountBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -49,12 +49,12 @@ configuration = stayforge.Configuration(
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomApi(api_client)
-    account = 'account_example' # str | 
-    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
+    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # room_create
-        api_response = api_instance.room_create(account, service_account_base)
+        api_response = api_instance.room_create(service_account, authorization=authorization)
         print("The response of RoomApi->room_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -68,8 +68,8 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | **str**|  | 
- **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
+ **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_delete**
-> RoomBase room_delete(id, account)
+> RoomBase room_delete(id, authorization=authorization)
 
 room_delete
 
@@ -131,11 +131,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomApi(api_client)
     id = 'id_example' # str | 
-    account = 'account_example' # str | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # room_delete
-        api_response = api_instance.room_delete(id, account)
+        api_response = api_instance.room_delete(id, authorization=authorization)
         print("The response of RoomApi->room_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -150,7 +150,7 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **account** | **str**|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_get**
-> List[RoomBase] room_get(id, account)
+> List[RoomBase] room_get(id, authorization=authorization)
 
 room_get
 
@@ -212,11 +212,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomApi(api_client)
     id = 'id_example' # str | 
-    account = 'account_example' # str | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # room_get
-        api_response = api_instance.room_get(id, account)
+        api_response = api_instance.room_get(id, authorization=authorization)
         print("The response of RoomApi->room_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -231,7 +231,7 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **account** | **str**|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_list**
-> List[RoomBase] room_list(account)
+> List[RoomBase] room_list(authorization=authorization)
 
 room_list
 
@@ -292,11 +292,11 @@ configuration = stayforge.Configuration(
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomApi(api_client)
-    account = 'account_example' # str | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # room_list
-        api_response = api_instance.room_list(account)
+        api_response = api_instance.room_list(authorization=authorization)
         print("The response of RoomApi->room_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -310,7 +310,7 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | **str**|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **room_update**
-> RoomBase room_update(id, account, service_account_base)
+> RoomBase room_update(id, service_account, authorization=authorization)
 
 room_update
 
@@ -348,7 +348,7 @@ room_update operation for room
 ```python
 import stayforge
 from stayforge.models.room_base import RoomBase
-from stayforge.models.service_account_base import ServiceAccountBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -373,12 +373,12 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.RoomApi(api_client)
     id = 'id_example' # str | 
-    account = 'account_example' # str | 
-    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
+    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # room_update
-        api_response = api_instance.room_update(id, account, service_account_base)
+        api_response = api_instance.room_update(id, service_account, authorization=authorization)
         print("The response of RoomApi->room_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -393,8 +393,8 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **account** | **str**|  | 
- **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
+ **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 

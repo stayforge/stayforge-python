@@ -17,8 +17,8 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from typing import Any, List
-from stayforge.models.service_account_base import ServiceAccountBase
+from typing import Any, List, Optional
+from stayforge.models.service_account import ServiceAccount
 
 from stayforge.api_client import ApiClient, RequestSerialized
 from stayforge.api_response import ApiResponse
@@ -41,8 +41,8 @@ class OrderApi:
     @validate_call
     def order_create(
         self,
-        account: StrictStr,
-        service_account_base: ServiceAccountBase,
+        service_account: ServiceAccount,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -60,10 +60,10 @@ class OrderApi:
 
         order_create operation for order
 
-        :param account: (required)
-        :type account: str
-        :param service_account_base: (required)
-        :type service_account_base: ServiceAccountBase
+        :param service_account: (required)
+        :type service_account: ServiceAccount
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -87,8 +87,8 @@ class OrderApi:
         """ # noqa: E501
 
         _param = self._order_create_serialize(
-            account=account,
-            service_account_base=service_account_base,
+            service_account=service_account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -113,8 +113,8 @@ class OrderApi:
     @validate_call
     def order_create_with_http_info(
         self,
-        account: StrictStr,
-        service_account_base: ServiceAccountBase,
+        service_account: ServiceAccount,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -132,10 +132,10 @@ class OrderApi:
 
         order_create operation for order
 
-        :param account: (required)
-        :type account: str
-        :param service_account_base: (required)
-        :type service_account_base: ServiceAccountBase
+        :param service_account: (required)
+        :type service_account: ServiceAccount
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -159,8 +159,8 @@ class OrderApi:
         """ # noqa: E501
 
         _param = self._order_create_serialize(
-            account=account,
-            service_account_base=service_account_base,
+            service_account=service_account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -185,8 +185,8 @@ class OrderApi:
     @validate_call
     def order_create_without_preload_content(
         self,
-        account: StrictStr,
-        service_account_base: ServiceAccountBase,
+        service_account: ServiceAccount,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -204,10 +204,10 @@ class OrderApi:
 
         order_create operation for order
 
-        :param account: (required)
-        :type account: str
-        :param service_account_base: (required)
-        :type service_account_base: ServiceAccountBase
+        :param service_account: (required)
+        :type service_account: ServiceAccount
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -231,8 +231,8 @@ class OrderApi:
         """ # noqa: E501
 
         _param = self._order_create_serialize(
-            account=account,
-            service_account_base=service_account_base,
+            service_account=service_account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -252,8 +252,8 @@ class OrderApi:
 
     def _order_create_serialize(
         self,
-        account,
-        service_account_base,
+        service_account,
+        authorization,
         _request_auth,
         _content_type,
         _headers,
@@ -276,15 +276,13 @@ class OrderApi:
 
         # process the path parameters
         # process the query parameters
-        if account is not None:
-            
-            _query_params.append(('account', account))
-            
         # process the header parameters
+        if authorization is not None:
+            _header_params['Authorization'] = authorization
         # process the form parameters
         # process the body parameter
-        if service_account_base is not None:
-            _body_params = service_account_base
+        if service_account is not None:
+            _body_params = service_account
 
 
         # set the HTTP header `Accept`
@@ -336,7 +334,7 @@ class OrderApi:
     def order_delete(
         self,
         id: StrictStr,
-        account: StrictStr,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -356,8 +354,8 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param account: (required)
-        :type account: str
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -382,7 +380,7 @@ class OrderApi:
 
         _param = self._order_delete_serialize(
             id=id,
-            account=account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -408,7 +406,7 @@ class OrderApi:
     def order_delete_with_http_info(
         self,
         id: StrictStr,
-        account: StrictStr,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -428,8 +426,8 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param account: (required)
-        :type account: str
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -454,7 +452,7 @@ class OrderApi:
 
         _param = self._order_delete_serialize(
             id=id,
-            account=account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -480,7 +478,7 @@ class OrderApi:
     def order_delete_without_preload_content(
         self,
         id: StrictStr,
-        account: StrictStr,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -500,8 +498,8 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param account: (required)
-        :type account: str
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -526,7 +524,7 @@ class OrderApi:
 
         _param = self._order_delete_serialize(
             id=id,
-            account=account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -547,7 +545,7 @@ class OrderApi:
     def _order_delete_serialize(
         self,
         id,
-        account,
+        authorization,
         _request_auth,
         _content_type,
         _headers,
@@ -572,11 +570,9 @@ class OrderApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
-        if account is not None:
-            
-            _query_params.append(('account', account))
-            
         # process the header parameters
+        if authorization is not None:
+            _header_params['Authorization'] = authorization
         # process the form parameters
         # process the body parameter
 
@@ -617,7 +613,7 @@ class OrderApi:
     def order_get(
         self,
         id: StrictStr,
-        account: StrictStr,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -637,8 +633,8 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param account: (required)
-        :type account: str
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -663,7 +659,7 @@ class OrderApi:
 
         _param = self._order_get_serialize(
             id=id,
-            account=account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -689,7 +685,7 @@ class OrderApi:
     def order_get_with_http_info(
         self,
         id: StrictStr,
-        account: StrictStr,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -709,8 +705,8 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param account: (required)
-        :type account: str
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -735,7 +731,7 @@ class OrderApi:
 
         _param = self._order_get_serialize(
             id=id,
-            account=account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -761,7 +757,7 @@ class OrderApi:
     def order_get_without_preload_content(
         self,
         id: StrictStr,
-        account: StrictStr,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -781,8 +777,8 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param account: (required)
-        :type account: str
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -807,7 +803,7 @@ class OrderApi:
 
         _param = self._order_get_serialize(
             id=id,
-            account=account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -828,7 +824,7 @@ class OrderApi:
     def _order_get_serialize(
         self,
         id,
-        account,
+        authorization,
         _request_auth,
         _content_type,
         _headers,
@@ -853,11 +849,9 @@ class OrderApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
-        if account is not None:
-            
-            _query_params.append(('account', account))
-            
         # process the header parameters
+        if authorization is not None:
+            _header_params['Authorization'] = authorization
         # process the form parameters
         # process the body parameter
 
@@ -897,7 +891,7 @@ class OrderApi:
     @validate_call
     def order_list(
         self,
-        account: StrictStr,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -915,8 +909,8 @@ class OrderApi:
 
         order_list operation for order
 
-        :param account: (required)
-        :type account: str
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -940,7 +934,7 @@ class OrderApi:
         """ # noqa: E501
 
         _param = self._order_list_serialize(
-            account=account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -965,7 +959,7 @@ class OrderApi:
     @validate_call
     def order_list_with_http_info(
         self,
-        account: StrictStr,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -983,8 +977,8 @@ class OrderApi:
 
         order_list operation for order
 
-        :param account: (required)
-        :type account: str
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1008,7 +1002,7 @@ class OrderApi:
         """ # noqa: E501
 
         _param = self._order_list_serialize(
-            account=account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1033,7 +1027,7 @@ class OrderApi:
     @validate_call
     def order_list_without_preload_content(
         self,
-        account: StrictStr,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1051,8 +1045,8 @@ class OrderApi:
 
         order_list operation for order
 
-        :param account: (required)
-        :type account: str
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1076,7 +1070,7 @@ class OrderApi:
         """ # noqa: E501
 
         _param = self._order_list_serialize(
-            account=account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1096,7 +1090,7 @@ class OrderApi:
 
     def _order_list_serialize(
         self,
-        account,
+        authorization,
         _request_auth,
         _content_type,
         _headers,
@@ -1119,11 +1113,9 @@ class OrderApi:
 
         # process the path parameters
         # process the query parameters
-        if account is not None:
-            
-            _query_params.append(('account', account))
-            
         # process the header parameters
+        if authorization is not None:
+            _header_params['Authorization'] = authorization
         # process the form parameters
         # process the body parameter
 
@@ -1164,8 +1156,8 @@ class OrderApi:
     def order_update(
         self,
         id: StrictStr,
-        account: StrictStr,
-        service_account_base: ServiceAccountBase,
+        service_account: ServiceAccount,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1185,10 +1177,10 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param account: (required)
-        :type account: str
-        :param service_account_base: (required)
-        :type service_account_base: ServiceAccountBase
+        :param service_account: (required)
+        :type service_account: ServiceAccount
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1213,8 +1205,8 @@ class OrderApi:
 
         _param = self._order_update_serialize(
             id=id,
-            account=account,
-            service_account_base=service_account_base,
+            service_account=service_account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1240,8 +1232,8 @@ class OrderApi:
     def order_update_with_http_info(
         self,
         id: StrictStr,
-        account: StrictStr,
-        service_account_base: ServiceAccountBase,
+        service_account: ServiceAccount,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1261,10 +1253,10 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param account: (required)
-        :type account: str
-        :param service_account_base: (required)
-        :type service_account_base: ServiceAccountBase
+        :param service_account: (required)
+        :type service_account: ServiceAccount
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1289,8 +1281,8 @@ class OrderApi:
 
         _param = self._order_update_serialize(
             id=id,
-            account=account,
-            service_account_base=service_account_base,
+            service_account=service_account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1316,8 +1308,8 @@ class OrderApi:
     def order_update_without_preload_content(
         self,
         id: StrictStr,
-        account: StrictStr,
-        service_account_base: ServiceAccountBase,
+        service_account: ServiceAccount,
+        authorization: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1337,10 +1329,10 @@ class OrderApi:
 
         :param id: (required)
         :type id: str
-        :param account: (required)
-        :type account: str
-        :param service_account_base: (required)
-        :type service_account_base: ServiceAccountBase
+        :param service_account: (required)
+        :type service_account: ServiceAccount
+        :param authorization:
+        :type authorization: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1365,8 +1357,8 @@ class OrderApi:
 
         _param = self._order_update_serialize(
             id=id,
-            account=account,
-            service_account_base=service_account_base,
+            service_account=service_account,
+            authorization=authorization,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1387,8 +1379,8 @@ class OrderApi:
     def _order_update_serialize(
         self,
         id,
-        account,
-        service_account_base,
+        service_account,
+        authorization,
         _request_auth,
         _content_type,
         _headers,
@@ -1413,15 +1405,13 @@ class OrderApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
-        if account is not None:
-            
-            _query_params.append(('account', account))
-            
         # process the header parameters
+        if authorization is not None:
+            _header_params['Authorization'] = authorization
         # process the form parameters
         # process the body parameter
-        if service_account_base is not None:
-            _body_params = service_account_base
+        if service_account is not None:
+            _body_params = service_account
 
 
         # set the HTTP header `Accept`

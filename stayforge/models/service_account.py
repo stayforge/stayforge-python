@@ -28,9 +28,9 @@ class ServiceAccount(BaseModel):
     ServiceAccount
     """ # noqa: E501
     account: Account
+    role: Optional[List[StrictStr]] = None
     secret: StrictStr = Field(description="`API Key` (For M2M) or `Password` (For human user).")
-    iam: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["account", "secret", "iam"]
+    __properties: ClassVar[List[str]] = ["account", "role", "secret"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,10 +74,10 @@ class ServiceAccount(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of account
         if self.account:
             _dict['account'] = self.account.to_dict()
-        # set to None if iam (nullable) is None
+        # set to None if role (nullable) is None
         # and model_fields_set contains the field
-        if self.iam is None and "iam" in self.model_fields_set:
-            _dict['iam'] = None
+        if self.role is None and "role" in self.model_fields_set:
+            _dict['role'] = None
 
         return _dict
 
@@ -92,8 +92,8 @@ class ServiceAccount(BaseModel):
 
         _obj = cls.model_validate({
             "account": Account.from_dict(obj["account"]) if obj.get("account") is not None else None,
-            "secret": obj.get("secret"),
-            "iam": obj.get("iam")
+            "role": obj.get("role"),
+            "secret": obj.get("secret")
         })
         return _obj
 

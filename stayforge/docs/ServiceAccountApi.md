@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **service_account_create**
-> ServiceAccountBase service_account_create(account, service_account_base)
+> ServiceAccount service_account_create(service_account, authorization=authorization)
 
 service_account_create
 
@@ -24,7 +24,7 @@ service_account_create operation for service_account
 
 ```python
 import stayforge
-from stayforge.models.service_account_base import ServiceAccountBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -48,12 +48,12 @@ configuration = stayforge.Configuration(
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.ServiceAccountApi(api_client)
-    account = 'account_example' # str | 
-    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
+    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # service_account_create
-        api_response = api_instance.service_account_create(account, service_account_base)
+        api_response = api_instance.service_account_create(service_account, authorization=authorization)
         print("The response of ServiceAccountApi->service_account_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -67,12 +67,12 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | **str**|  | 
- **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
+ **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
-[**ServiceAccountBase**](ServiceAccountBase.md)
+[**ServiceAccount**](ServiceAccount.md)
 
 ### Authorization
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **service_account_delete**
-> ServiceAccountBase service_account_delete(id, account)
+> ServiceAccount service_account_delete(id, authorization=authorization)
 
 service_account_delete
 
@@ -105,7 +105,7 @@ service_account_delete operation for service_account
 
 ```python
 import stayforge
-from stayforge.models.service_account_base import ServiceAccountBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -130,11 +130,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.ServiceAccountApi(api_client)
     id = 'id_example' # str | 
-    account = 'account_example' # str | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # service_account_delete
-        api_response = api_instance.service_account_delete(id, account)
+        api_response = api_instance.service_account_delete(id, authorization=authorization)
         print("The response of ServiceAccountApi->service_account_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -149,11 +149,11 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **account** | **str**|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
-[**ServiceAccountBase**](ServiceAccountBase.md)
+[**ServiceAccount**](ServiceAccount.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **service_account_get**
-> List[ServiceAccountBase] service_account_get(id, account)
+> List[ServiceAccount] service_account_get(id, authorization=authorization)
 
 service_account_get
 
@@ -186,7 +186,7 @@ service_account_get operation for service_account
 
 ```python
 import stayforge
-from stayforge.models.service_account_base import ServiceAccountBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -211,11 +211,11 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.ServiceAccountApi(api_client)
     id = 'id_example' # str | 
-    account = 'account_example' # str | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # service_account_get
-        api_response = api_instance.service_account_get(id, account)
+        api_response = api_instance.service_account_get(id, authorization=authorization)
         print("The response of ServiceAccountApi->service_account_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -230,11 +230,11 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **account** | **str**|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
-[**List[ServiceAccountBase]**](ServiceAccountBase.md)
+[**List[ServiceAccount]**](ServiceAccount.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **service_account_list**
-> List[ServiceAccountBase] service_account_list(account)
+> List[ServiceAccount] service_account_list(authorization=authorization)
 
 service_account_list
 
@@ -267,7 +267,7 @@ service_account_list operation for service_account
 
 ```python
 import stayforge
-from stayforge.models.service_account_base import ServiceAccountBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -291,11 +291,11 @@ configuration = stayforge.Configuration(
 with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.ServiceAccountApi(api_client)
-    account = 'account_example' # str | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # service_account_list
-        api_response = api_instance.service_account_list(account)
+        api_response = api_instance.service_account_list(authorization=authorization)
         print("The response of ServiceAccountApi->service_account_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -309,11 +309,11 @@ with stayforge.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | **str**|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
-[**List[ServiceAccountBase]**](ServiceAccountBase.md)
+[**List[ServiceAccount]**](ServiceAccount.md)
 
 ### Authorization
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **service_account_update**
-> ServiceAccountBase service_account_update(id, account, service_account_base)
+> ServiceAccount service_account_update(id, service_account, authorization=authorization)
 
 service_account_update
 
@@ -346,7 +346,7 @@ service_account_update operation for service_account
 
 ```python
 import stayforge
-from stayforge.models.service_account_base import ServiceAccountBase
+from stayforge.models.service_account import ServiceAccount
 from stayforge.rest import ApiException
 from pprint import pprint
 
@@ -371,12 +371,12 @@ with stayforge.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = stayforge.ServiceAccountApi(api_client)
     id = 'id_example' # str | 
-    account = 'account_example' # str | 
-    service_account_base = stayforge.ServiceAccountBase() # ServiceAccountBase | 
+    service_account = stayforge.ServiceAccount() # ServiceAccount | 
+    authorization = 'authorization_example' # str |  (optional)
 
     try:
         # service_account_update
-        api_response = api_instance.service_account_update(id, account, service_account_base)
+        api_response = api_instance.service_account_update(id, service_account, authorization=authorization)
         print("The response of ServiceAccountApi->service_account_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -391,12 +391,12 @@ with stayforge.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **account** | **str**|  | 
- **service_account_base** | [**ServiceAccountBase**](ServiceAccountBase.md)|  | 
+ **service_account** | [**ServiceAccount**](ServiceAccount.md)|  | 
+ **authorization** | **str**|  | [optional] 
 
 ### Return type
 
-[**ServiceAccountBase**](ServiceAccountBase.md)
+[**ServiceAccount**](ServiceAccount.md)
 
 ### Authorization
 
